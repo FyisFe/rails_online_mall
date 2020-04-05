@@ -1,0 +1,1 @@
+# rails_online_mall
