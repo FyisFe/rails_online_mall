@@ -3,7 +3,10 @@ class User < ApplicationRecord
 
   attr_accessor :password, :password_confirmation
 
-  validates_presence_of :email, message: "Enter a valid email address!"
+  validates_presence_of :email, message: "You must enter your email address!"
+  validates_format_of :email, message: "Enter a valid email address!", 
+      with: /\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*/,
+      if: proc { |user| !user.email.blank? }
   validates :email, uniqueness: true
 
   validates_presence_of :password, message: "Enter your password！", 
@@ -14,6 +17,10 @@ class User < ApplicationRecord
     if: :need_validate_password
   validates_length_of :password, message: "Passwords must be at least 6 characters！", minimum: 6,
     if: :need_validate_password
+
+    def username
+        self.email.split('@').first
+    end
 
   private
   def need_validate_password
