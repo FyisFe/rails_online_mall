@@ -25,6 +25,7 @@
       </form>
       <ul class="nav navbar-nav navbar-right">
         <li><a href="#">Cart</a></li>
+
         <% unless logged_in? %>
         <li><a href="<%= new_user_path %>">Sign Up</a></li>
         <li><a href="<%= new_session_path %>">Sign in</a></li>
@@ -32,6 +33,7 @@
           <li><a href="#">Welcome, <%= current_user.username %></a></li>
           <li><%= link_to "Log out", logout_path, method: :delete %></li>
         <% end -%>
+
         <li class="dropdown">
           <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Account&Lists <span class="caret"></span></a>
           <ul class="dropdown-menu">

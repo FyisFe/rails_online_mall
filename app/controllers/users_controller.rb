@@ -9,7 +9,7 @@ class UsersController < ApplicationController
         .permit(:email, :password, :password_confirmation))
   
       if @user.save
-        flash[:notice] = "Registration Success"
+        flash[:notice] = "Successful Registration"
         redirect_to new_session_path
       else
         render action: :new
