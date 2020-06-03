@@ -1,7 +1,17 @@
 {
+  "admin.js": "/packs/js/admin-ceb53a39d979eec99156.js",
+  "admin.js.map": "/packs/js/admin-ceb53a39d979eec99156.js.map",
   "application.js": "/packs/js/application-cd9baa997ab2a6e5febb.js",
   "application.js.map": "/packs/js/application-cd9baa997ab2a6e5febb.js.map",
   "entrypoints": {
+    "admin": {
+      "js": [
+        "/packs/js/admin-ceb53a39d979eec99156.js"
+      ],
+      "js.map": [
+        "/packs/js/admin-ceb53a39d979eec99156.js.map"
+      ]
+    },
     "application": {
       "js": [
         "/packs/js/application-cd9baa997ab2a6e5febb.js"

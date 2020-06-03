@@ -6,4 +6,4 @@ describe Product do
     expect(Product.count).to eq(0)
   end
 
-en
+end
