@@ -982,3 +982,425 @@ Processing by Admin::SessionsController#new as HTML
 Completed 200 OK in 335ms (Views: 333.7ms | ActiveRecord: 0.0ms | Allocations: 80996)
 
 
+DEPRECATION WARNING: Initialization autoloaded the constants ActionText::ContentHelper and ActionText::TagHelper.
+
+Being able to do this is deprecated. Autoloading during initialization is going
+to be an error condition in future versions of Rails.
+
+Reloading does not reboot the application, and therefore code executed during
+initialization does not run again. So, if you reload ActionText::ContentHelper, for example,
+the expected changes won't be reflected in that stale Module object.
+
+These autoloaded constants have been unloaded.
+
+Please, check the "Autoloading and Reloading Constants" guide for solutions.
+ (called from <main> at /home/yfeng/rails_online_mall/config/environment.rb:5)
+Started GET "/" for 127.0.0.1 at 2020-06-03 17:19:16 +0800
+  [1m[35m (0.4ms)[0m  [1m[35mSET NAMES utf8mb4,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+Processing by WelcomeController#index as HTML
+  Rendering welcome/index.html.erb within layouts/application
+  Rendered welcome/index.html.erb within layouts/application (Duration: 0.5ms | Allocations: 184)
+  Rendered layouts/_menu.html.erb (Duration: 2.1ms | Allocations: 372)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 44ms (Views: 43.2ms | ActiveRecord: 0.0ms | Allocations: 28360)
+
+
+Started GET "/admin" for 127.0.0.1 at 2020-06-03 17:19:21 +0800
+Processing by Admin::SessionsController#new as HTML
+  Rendering admin/sessions/new.html.erb within admin/layouts/admin
+  Rendered admin/sessions/new.html.erb within admin/layouts/admin (Duration: 0.3ms | Allocations: 77)
+  Rendered admin/layouts/_menu.html.erb (Duration: 0.4ms | Allocations: 190)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 16ms (Views: 15.3ms | ActiveRecord: 0.0ms | Allocations: 8696)
+
+
+Started GET "/admin/categories" for 127.0.0.1 at 2020-06-03 17:19:27 +0800
+Processing by Admin::CategoriesController#index as HTML
+  Rendering admin/categories/index.html.erb within admin/layouts/admin
+  Rendered admin/categories/index.html.erb within admin/layouts/admin (Duration: 0.3ms | Allocations: 76)
+  Rendered admin/layouts/_menu.html.erb (Duration: 0.2ms | Allocations: 51)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 11ms (Views: 10.4ms | ActiveRecord: 0.0ms | Allocations: 7799)
+
+
+DEPRECATION WARNING: Initialization autoloaded the constants ActionText::ContentHelper and ActionText::TagHelper.
+
+Being able to do this is deprecated. Autoloading during initialization is going
+to be an error condition in future versions of Rails.
+
+Reloading does not reboot the application, and therefore code executed during
+initialization does not run again. So, if you reload ActionText::ContentHelper, for example,
+the expected changes won't be reflected in that stale Module object.
+
+These autoloaded constants have been unloaded.
+
+Please, check the "Autoloading and Reloading Constants" guide for solutions.
+ (called from <main> at /home/yfeng/rails_online_mall/config/environment.rb:5)
+Started GET "/admin/categories" for 127.0.0.1 at 2020-06-03 17:27:56 +0800
+  [1m[35m (0.3ms)[0m  [1m[35mSET NAMES utf8mb4,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+Processing by Admin::CategoriesController#index as HTML
+Completed 500 Internal Server Error in 1ms (ActiveRecord: 0.0ms | Allocations: 1379)
+
+
+  
+NoMethodError (undefined method `page' for nil:NilClass):
+  
+app/controllers/admin/categories_controller.rb:4:in `index'
+Started GET "/admin/categories" for 127.0.0.1 at 2020-06-03 17:31:34 +0800
+Processing by Admin::CategoriesController#index as HTML
+  Rendering admin/categories/index.html.erb within admin/layouts/admin
+  [1m[35m (21.0ms)[0m  [1m[34mSELECT COUNT(*) FROM `categories` WHERE `categories`.`ancestry` IS NULL[0m
+  ↳ app/views/admin/categories/index.html.erb:10
+  [1m[36mCategory Load (12.4ms)[0m  [1m[34mSELECT `categories`.* FROM `categories` WHERE `categories`.`ancestry` IS NULL ORDER BY `categories`.`id` DESC LIMIT 10 OFFSET 0[0m
+  ↳ app/views/admin/categories/index.html.erb:24
+  Rendered admin/categories/index.html.erb within admin/layouts/admin (Duration: 43.1ms | Allocations: 1936)
+  Rendered admin/layouts/_menu.html.erb (Duration: 0.4ms | Allocations: 177)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 280ms (Views: 118.8ms | ActiveRecord: 49.2ms | Allocations: 32769)
+
+
+DEPRECATION WARNING: Initialization autoloaded the constants ActionText::ContentHelper and ActionText::TagHelper.
+
+Being able to do this is deprecated. Autoloading during initialization is going
+to be an error condition in future versions of Rails.
+
+Reloading does not reboot the application, and therefore code executed during
+initialization does not run again. So, if you reload ActionText::ContentHelper, for example,
+the expected changes won't be reflected in that stale Module object.
+
+These autoloaded constants have been unloaded.
+
+Please, check the "Autoloading and Reloading Constants" guide for solutions.
+ (called from <main> at /home/yfeng/rails_online_mall/config/environment.rb:5)
+DEPRECATION WARNING: Initialization autoloaded the constants ActionText::ContentHelper and ActionText::TagHelper.
+
+Being able to do this is deprecated. Autoloading during initialization is going
+to be an error condition in future versions of Rails.
+
+Reloading does not reboot the application, and therefore code executed during
+initialization does not run again. So, if you reload ActionText::ContentHelper, for example,
+the expected changes won't be reflected in that stale Module object.
+
+These autoloaded constants have been unloaded.
+
+Please, check the "Autoloading and Reloading Constants" guide for solutions.
+ (called from <main> at /home/yfeng/rails_online_mall/config/environment.rb:5)
+DEPRECATION WARNING: Initialization autoloaded the constants ActionText::ContentHelper and ActionText::TagHelper.
+
+Being able to do this is deprecated. Autoloading during initialization is going
+to be an error condition in future versions of Rails.
+
+Reloading does not reboot the application, and therefore code executed during
+initialization does not run again. So, if you reload ActionText::ContentHelper, for example,
+the expected changes won't be reflected in that stale Module object.
+
+These autoloaded constants have been unloaded.
+
+Please, check the "Autoloading and Reloading Constants" guide for solutions.
+ (called from <main> at /home/yfeng/rails_online_mall/config/environment.rb:5)
+DEPRECATION WARNING: Initialization autoloaded the constants ActionText::ContentHelper and ActionText::TagHelper.
+
+Being able to do this is deprecated. Autoloading during initialization is going
+to be an error condition in future versions of Rails.
+
+Reloading does not reboot the application, and therefore code executed during
+initialization does not run again. So, if you reload ActionText::ContentHelper, for example,
+the expected changes won't be reflected in that stale Module object.
+
+These autoloaded constants have been unloaded.
+
+Please, check the "Autoloading and Reloading Constants" guide for solutions.
+ (called from <main> at /home/yfeng/rails_online_mall/config/environment.rb:5)
+DEPRECATION WARNING: Initialization autoloaded the constants ActionText::ContentHelper and ActionText::TagHelper.
+
+Being able to do this is deprecated. Autoloading during initialization is going
+to be an error condition in future versions of Rails.
+
+Reloading does not reboot the application, and therefore code executed during
+initialization does not run again. So, if you reload ActionText::ContentHelper, for example,
+the expected changes won't be reflected in that stale Module object.
+
+These autoloaded constants have been unloaded.
+
+Please, check the "Autoloading and Reloading Constants" guide for solutions.
+ (called from <main> at /home/yfeng/rails_online_mall/config/environment.rb:5)
+Started GET "/" for 127.0.0.1 at 2020-06-04 16:29:40 +0800
+  [1m[35m (63.4ms)[0m  [1m[35mSET NAMES utf8mb4,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[35m (1.1ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+Processing by WelcomeController#index as HTML
+  Rendering welcome/index.html.erb within layouts/application
+  Rendered welcome/index.html.erb within layouts/application (Duration: 20.9ms | Allocations: 184)
+  Rendered layouts/_menu.html.erb (Duration: 2.4ms | Allocations: 372)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 256ms (Views: 221.6ms | ActiveRecord: 0.0ms | Allocations: 27949)
+
+
+Started GET "/admin/category" for 127.0.0.1 at 2020-06-04 16:29:46 +0800
+  
+ActionController::RoutingError (No route matches [GET] "/admin/category"):
+  
+actionpack (6.0.3.1) lib/action_dispatch/middleware/debug_exceptions.rb:36:in `call'
+web-console (4.0.2) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.0.2) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.0.2) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.0.2) lib/web_console/middleware.rb:17:in `call'
+actionpack (6.0.3.1) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.3.1) lib/rails/rack/logger.rb:37:in `call_app'
+railties (6.0.3.1) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.3.1) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.3.1) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.3.1) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.3.1) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (6.0.3.1) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.3.1) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.2) lib/rack/method_override.rb:24:in `call'
+rack (2.2.2) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.3.1) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.3.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.3.1) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.2.2) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.0.3.1) lib/action_dispatch/middleware/host_authorization.rb:82:in `call'
+webpacker (4.2.2) lib/webpacker/dev_server_proxy.rb:23:in `perform_request'
+rack-proxy (0.6.5) lib/rack/proxy.rb:57:in `call'
+railties (6.0.3.1) lib/rails/engine.rb:527:in `call'
+rack (2.2.2) lib/rack/handler/webrick.rb:95:in `service'
+/home/yfeng/.rvm/rubies/ruby-2.7.0/lib/ruby/2.7.0/webrick/httpserver.rb:140:in `service'
+/home/yfeng/.rvm/rubies/ruby-2.7.0/lib/ruby/2.7.0/webrick/httpserver.rb:96:in `run'
+/home/yfeng/.rvm/rubies/ruby-2.7.0/lib/ruby/2.7.0/webrick/server.rb:307:in `block in start_thread'
+Started GET "/admin/categories" for 127.0.0.1 at 2020-06-04 16:30:02 +0800
+Processing by Admin::CategoriesController#index as HTML
+  Rendering admin/categories/index.html.erb within admin/layouts/admin
+  [1m[35m (3.6ms)[0m  [1m[34mSELECT COUNT(*) FROM `categories` WHERE `categories`.`ancestry` IS NULL[0m
+  ↳ app/views/admin/categories/index.html.erb:10
+  [1m[36mCategory Load (3.8ms)[0m  [1m[34mSELECT `categories`.* FROM `categories` WHERE `categories`.`ancestry` IS NULL ORDER BY `categories`.`id` DESC LIMIT 10 OFFSET 0[0m
+  ↳ app/views/admin/categories/index.html.erb:24
+  Rendered admin/categories/index.html.erb within admin/layouts/admin (Duration: 28.1ms | Allocations: 1910)
+  Rendered admin/layouts/_menu.html.erb (Duration: 13.3ms | Allocations: 177)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 96ms (Views: 64.1ms | ActiveRecord: 10.0ms | Allocations: 13752)
+
+
+Started GET "/admin/categories/new" for 127.0.0.1 at 2020-06-04 16:30:15 +0800
+Processing by Admin::CategoriesController#new as HTML
+  Rendering admin/categories/new.html.erb within admin/layouts/admin
+  [1m[36mCategory Load (0.4ms)[0m  [1m[34mSELECT `categories`.* FROM `categories` WHERE `categories`.`ancestry` IS NULL ORDER BY `categories`.`id` DESC[0m
+  ↳ app/views/admin/categories/new.html.erb:26
+  Rendered admin/categories/new.html.erb within admin/layouts/admin (Duration: 3.2ms | Allocations: 1689)
+  Rendered admin/layouts/_menu.html.erb (Duration: 0.1ms | Allocations: 37)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 20ms (Views: 10.3ms | ActiveRecord: 1.1ms | Allocations: 12794)
+
+
+Started POST "/admin/categories" for 127.0.0.1 at 2020-06-04 16:30:16 +0800
+Processing by Admin::CategoriesController#create as HTML
+  Parameters: {"authenticity_token"=>"TRHEj79vlfXMJOh5OhYVkjmAqc1UKuU763PrJQV46mkk0wtCoIJbBG1aJZQ/bg8bvPejPyqbBXGn/HcenzgLzA==", "category"=>{"ancestry"=>"", "title"=>"", "weight"=>"0"}, "commit"=>"Create a new category"}
+DEPRECATION WARNING: Uniqueness validator will no longer enforce case sensitive comparison in Rails 6.1. To continue case sensitive comparison on the :title attribute in Category model, pass `case_sensitive: true` option explicitly to the uniqueness validator. (called from create at /home/yfeng/rails_online_mall/app/controllers/admin/categories_controller.rb:16)
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/admin/categories_controller.rb:16:in `create'
+  [1m[36mCategory Exists? (0.8ms)[0m  [1m[34mSELECT 1 AS one FROM `categories` WHERE `categories`.`title` = BINARY '' LIMIT 1[0m
+  ↳ app/controllers/admin/categories_controller.rb:16:in `create'
+  [1m[35m (0.4ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/admin/categories_controller.rb:16:in `create'
+  Rendering admin/categories/new.html.erb within admin/layouts/admin
+  [1m[36mCategory Load (0.7ms)[0m  [1m[34mSELECT `categories`.* FROM `categories` WHERE `categories`.`ancestry` IS NULL ORDER BY `categories`.`id` DESC[0m
+  ↳ app/views/admin/categories/new.html.erb:26
+  Rendered admin/categories/new.html.erb within admin/layouts/admin (Duration: 6.1ms | Allocations: 987)
+  Rendered admin/layouts/_menu.html.erb (Duration: 0.2ms | Allocations: 36)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 80ms (Views: 22.5ms | ActiveRecord: 2.4ms | Allocations: 13755)
+
+
+Started POST "/admin/categories" for 127.0.0.1 at 2020-06-04 16:30:44 +0800
+Processing by Admin::CategoriesController#create as HTML
+  Parameters: {"authenticity_token"=>"TRHEj79vlfXMJOh5OhYVkjmAqc1UKuU763PrJQV46mkk0wtCoIJbBG1aJZQ/bg8bvPejPyqbBXGn/HcenzgLzA==", "category"=>{"ancestry"=>"", "title"=>"", "weight"=>"0"}, "commit"=>"Create a new category"}
+DEPRECATION WARNING: Uniqueness validator will no longer enforce case sensitive comparison in Rails 6.1. To continue case sensitive comparison on the :title attribute in Category model, pass `case_sensitive: true` option explicitly to the uniqueness validator. (called from create at /home/yfeng/rails_online_mall/app/controllers/admin/categories_controller.rb:16)
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/admin/categories_controller.rb:16:in `create'
+  [1m[36mCategory Exists? (0.4ms)[0m  [1m[34mSELECT 1 AS one FROM `categories` WHERE `categories`.`title` = BINARY '' LIMIT 1[0m
+  ↳ app/controllers/admin/categories_controller.rb:16:in `create'
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/admin/categories_controller.rb:16:in `create'
+  Rendering admin/categories/new.html.erb within admin/layouts/admin
+  [1m[36mCategory Load (0.4ms)[0m  [1m[34mSELECT `categories`.* FROM `categories` WHERE `categories`.`ancestry` IS NULL ORDER BY `categories`.`id` DESC[0m
+  ↳ app/views/admin/categories/new.html.erb:26
+  Rendered admin/categories/new.html.erb within admin/layouts/admin (Duration: 3.1ms | Allocations: 1414)
+  Rendered admin/layouts/_menu.html.erb (Duration: 0.4ms | Allocations: 171)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 22ms (Views: 13.8ms | ActiveRecord: 1.1ms | Allocations: 13638)
+
+
+Started POST "/admin/categories" for 127.0.0.1 at 2020-06-04 16:32:18 +0800
+Processing by Admin::CategoriesController#create as HTML
+  Parameters: {"authenticity_token"=>"m1hW3lIpoukaSlXuhHmGpPlQX6+/jrQjwsiPQTf+XWXympkTTcRsGLs0mAOBAZwtfCdVXcE/VGmORxN6rb68wA==", "category"=>{"ancestry"=>"", "title"=>"", "weight"=>"0"}, "commit"=>"Create a new category"}
+DEPRECATION WARNING: Uniqueness validator will no longer enforce case sensitive comparison in Rails 6.1. To continue case sensitive comparison on the :title attribute in Category model, pass `case_sensitive: true` option explicitly to the uniqueness validator. (called from create at /home/yfeng/rails_online_mall/app/controllers/admin/categories_controller.rb:16)
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/admin/categories_controller.rb:16:in `create'
+  [1m[36mCategory Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM `categories` WHERE `categories`.`title` = BINARY '' LIMIT 1[0m
+  ↳ app/controllers/admin/categories_controller.rb:16:in `create'
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/admin/categories_controller.rb:16:in `create'
+  Rendering admin/categories/new.html.erb within admin/layouts/admin
+  [1m[36mCategory Load (0.4ms)[0m  [1m[34mSELECT `categories`.* FROM `categories` WHERE `categories`.`ancestry` IS NULL ORDER BY `categories`.`id` DESC[0m
+  ↳ app/views/admin/categories/new.html.erb:26
+  Rendered admin/categories/new.html.erb within admin/layouts/admin (Duration: 2.4ms | Allocations: 990)
+  Rendered admin/layouts/_menu.html.erb (Duration: 0.1ms | Allocations: 37)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 31ms (Views: 14.6ms | ActiveRecord: 1.8ms | Allocations: 18370)
+
+
+Started POST "/admin/categories" for 127.0.0.1 at 2020-06-04 16:32:55 +0800
+Processing by Admin::CategoriesController#create as HTML
+  Parameters: {"authenticity_token"=>"4MUUvAw4jVpbJn3TtkUX7H1ZNW6FNUeoNe/RuW/8qVuJB9txE9VDq/pYsD6zPQ1l+C4/nPuEp+J5YE2C9bxI/g==", "category"=>{"ancestry"=>"", "title"=>"a", "weight"=>"10"}, "commit"=>"Create a new category"}
+DEPRECATION WARNING: Uniqueness validator will no longer enforce case sensitive comparison in Rails 6.1. To continue case sensitive comparison on the :title attribute in Category model, pass `case_sensitive: true` option explicitly to the uniqueness validator. (called from create at /home/yfeng/rails_online_mall/app/controllers/admin/categories_controller.rb:16)
+  [1m[35m (0.5ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/admin/categories_controller.rb:16:in `create'
+  [1m[36mCategory Exists? (0.7ms)[0m  [1m[34mSELECT 1 AS one FROM `categories` WHERE `categories`.`title` = BINARY 'a' LIMIT 1[0m
+  ↳ app/controllers/admin/categories_controller.rb:16:in `create'
+  [1m[36mCategory Create (0.4ms)[0m  [1m[32mINSERT INTO `categories` (`title`, `weight`, `created_at`, `updated_at`) VALUES ('a', 10, '2020-06-04 08:32:55.253479', '2020-06-04 08:32:55.253479')[0m
+  ↳ app/controllers/admin/categories_controller.rb:16:in `create'
+  [1m[35m (104.8ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/admin/categories_controller.rb:16:in `create'
+Redirected to http://localhost:3000/admin/categories
+Completed 302 Found in 136ms (ActiveRecord: 106.4ms | Allocations: 4330)
+
+
+Started GET "/admin/categories" for 127.0.0.1 at 2020-06-04 16:32:55 +0800
+Processing by Admin::CategoriesController#index as HTML
+  Rendering admin/categories/index.html.erb within admin/layouts/admin
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT COUNT(*) FROM `categories` WHERE `categories`.`ancestry` IS NULL[0m
+  ↳ app/views/admin/categories/index.html.erb:10
+  [1m[36mCategory Load (0.5ms)[0m  [1m[34mSELECT `categories`.* FROM `categories` WHERE `categories`.`ancestry` IS NULL ORDER BY `categories`.`id` DESC LIMIT 10 OFFSET 0[0m
+  ↳ app/views/admin/categories/index.html.erb:24
+  Rendered admin/categories/index.html.erb within admin/layouts/admin (Duration: 14.0ms | Allocations: 1986)
+  Rendered admin/layouts/_menu.html.erb (Duration: 0.1ms | Allocations: 37)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 42ms (Views: 35.9ms | ActiveRecord: 1.0ms | Allocations: 9726)
+
+
+Started GET "/admin/categories" for 127.0.0.1 at 2020-06-04 16:33:15 +0800
+Processing by Admin::CategoriesController#index as HTML
+  Rendering admin/categories/index.html.erb within admin/layouts/admin
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM `categories` WHERE `categories`.`ancestry` IS NULL[0m
+  ↳ app/views/admin/categories/index.html.erb:10
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT `categories`.* FROM `categories` WHERE `categories`.`ancestry` IS NULL ORDER BY `categories`.`id` DESC LIMIT 10 OFFSET 0[0m
+  ↳ app/views/admin/categories/index.html.erb:24
+  Rendered admin/categories/index.html.erb within admin/layouts/admin (Duration: 2.5ms | Allocations: 1553)
+  Rendered admin/layouts/_menu.html.erb (Duration: 0.1ms | Allocations: 36)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 10ms (Views: 9.0ms | ActiveRecord: 0.5ms | Allocations: 9118)
+
+
+Started GET "/admin/categories/new" for 127.0.0.1 at 2020-06-04 16:33:17 +0800
+Processing by Admin::CategoriesController#new as HTML
+  Rendering admin/categories/new.html.erb within admin/layouts/admin
+  [1m[36mCategory Load (0.3ms)[0m  [1m[34mSELECT `categories`.* FROM `categories` WHERE `categories`.`ancestry` IS NULL ORDER BY `categories`.`id` DESC[0m
+  ↳ app/views/admin/categories/new.html.erb:26
+  Rendered admin/categories/new.html.erb within admin/layouts/admin (Duration: 1.9ms | Allocations: 1144)
+  Rendered admin/layouts/_menu.html.erb (Duration: 0.1ms | Allocations: 36)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 9ms (Views: 8.3ms | ActiveRecord: 0.3ms | Allocations: 8479)
+
+
+Started POST "/admin/categories" for 127.0.0.1 at 2020-06-04 16:33:23 +0800
+Processing by Admin::CategoriesController#create as HTML
+  Parameters: {"authenticity_token"=>"qEVVr8u1QLP/+R5EwU3hVRw40O43XHPCRpX4tANkGwLBh5pi1FiOQl6H06nENfvcmU/aHEntk4gKGmSPmST6pw==", "category"=>{"ancestry"=>"1", "title"=>"a1", "weight"=>"100"}, "commit"=>"Create a new category"}
+DEPRECATION WARNING: Uniqueness validator will no longer enforce case sensitive comparison in Rails 6.1. To continue case sensitive comparison on the :title attribute in Category model, pass `case_sensitive: true` option explicitly to the uniqueness validator. (called from create at /home/yfeng/rails_online_mall/app/controllers/admin/categories_controller.rb:16)
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/admin/categories_controller.rb:16:in `create'
+  [1m[36mCategory Exists? (0.4ms)[0m  [1m[34mSELECT 1 AS one FROM `categories` WHERE `categories`.`title` = BINARY 'a1' LIMIT 1[0m
+  ↳ app/controllers/admin/categories_controller.rb:16:in `create'
+  [1m[36mCategory Create (0.4ms)[0m  [1m[32mINSERT INTO `categories` (`title`, `weight`, `created_at`, `updated_at`, `ancestry`) VALUES ('a1', 100, '2020-06-04 08:33:23.500248', '2020-06-04 08:33:23.500248', '1')[0m
+  ↳ app/controllers/admin/categories_controller.rb:16:in `create'
+  [1m[35m (201.9ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/admin/categories_controller.rb:16:in `create'
+Redirected to http://localhost:3000/admin/categories
+Completed 302 Found in 213ms (ActiveRecord: 202.9ms | Allocations: 4118)
+
+
+Started GET "/admin/categories" for 127.0.0.1 at 2020-06-04 16:33:23 +0800
+Processing by Admin::CategoriesController#index as HTML
+  Rendering admin/categories/index.html.erb within admin/layouts/admin
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT COUNT(*) FROM `categories` WHERE `categories`.`ancestry` IS NULL[0m
+  ↳ app/views/admin/categories/index.html.erb:10
+  [1m[36mCategory Load (0.6ms)[0m  [1m[34mSELECT `categories`.* FROM `categories` WHERE `categories`.`ancestry` IS NULL ORDER BY `categories`.`id` DESC LIMIT 10 OFFSET 0[0m
+  ↳ app/views/admin/categories/index.html.erb:24
+  Rendered admin/categories/index.html.erb within admin/layouts/admin (Duration: 6.7ms | Allocations: 1552)
+  Rendered admin/layouts/_menu.html.erb (Duration: 0.1ms | Allocations: 36)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 22ms (Views: 19.2ms | ActiveRecord: 1.3ms | Allocations: 9109)
+
+
+Started GET "/admin/categories?id=1" for 127.0.0.1 at 2020-06-04 16:33:26 +0800
+Processing by Admin::CategoriesController#index as HTML
+  Parameters: {"id"=>"1"}
+  Rendering admin/categories/index.html.erb within admin/layouts/admin
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM `categories` WHERE `categories`.`ancestry` IS NULL[0m
+  ↳ app/views/admin/categories/index.html.erb:10
+  [1m[36mCategory Load (0.3ms)[0m  [1m[34mSELECT `categories`.* FROM `categories` WHERE `categories`.`ancestry` IS NULL ORDER BY `categories`.`id` DESC LIMIT 10 OFFSET 0[0m
+  ↳ app/views/admin/categories/index.html.erb:24
+  Rendered admin/categories/index.html.erb within admin/layouts/admin (Duration: 2.9ms | Allocations: 1552)
+  Rendered admin/layouts/_menu.html.erb (Duration: 0.1ms | Allocations: 36)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 12ms (Views: 10.6ms | ActiveRecord: 0.7ms | Allocations: 9103)
+
+
+Started DELETE "/admin/categories/1" for 127.0.0.1 at 2020-06-04 16:33:32 +0800
+  
+AbstractController::ActionNotFound (The action 'destroy' could not be found for Admin::CategoriesController):
+  
+actionpack (6.0.3.1) lib/abstract_controller/base.rb:131:in `process'
+actionview (6.0.3.1) lib/action_view/rendering.rb:39:in `process'
+actionpack (6.0.3.1) lib/action_controller/metal.rb:190:in `dispatch'
+actionpack (6.0.3.1) lib/action_controller/metal.rb:254:in `dispatch'
+actionpack (6.0.3.1) lib/action_dispatch/routing/route_set.rb:50:in `dispatch'
+actionpack (6.0.3.1) lib/action_dispatch/routing/route_set.rb:33:in `serve'
+actionpack (6.0.3.1) lib/action_dispatch/journey/router.rb:49:in `block in serve'
+actionpack (6.0.3.1) lib/action_dispatch/journey/router.rb:32:in `each'
+actionpack (6.0.3.1) lib/action_dispatch/journey/router.rb:32:in `serve'
+actionpack (6.0.3.1) lib/action_dispatch/routing/route_set.rb:834:in `call'
+rack (2.2.2) lib/rack/tempfile_reaper.rb:15:in `call'
+rack (2.2.2) lib/rack/etag.rb:27:in `call'
+rack (2.2.2) lib/rack/conditional_get.rb:40:in `call'
+rack (2.2.2) lib/rack/head.rb:12:in `call'
+actionpack (6.0.3.1) lib/action_dispatch/http/content_security_policy.rb:18:in `call'
+rack (2.2.2) lib/rack/session/abstract/id.rb:266:in `context'
+rack (2.2.2) lib/rack/session/abstract/id.rb:260:in `call'
+actionpack (6.0.3.1) lib/action_dispatch/middleware/cookies.rb:648:in `call'
+activerecord (6.0.3.1) lib/active_record/migration.rb:567:in `call'
+actionpack (6.0.3.1) lib/action_dispatch/middleware/callbacks.rb:27:in `block in call'
+activesupport (6.0.3.1) lib/active_support/callbacks.rb:101:in `run_callbacks'
+actionpack (6.0.3.1) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (6.0.3.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.3.1) lib/action_dispatch/middleware/actionable_exceptions.rb:17:in `call'
+actionpack (6.0.3.1) lib/action_dispatch/middleware/debug_exceptions.rb:32:in `call'
+web-console (4.0.2) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.0.2) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.0.2) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.0.2) lib/web_console/middleware.rb:17:in `call'
+actionpack (6.0.3.1) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.3.1) lib/rails/rack/logger.rb:37:in `call_app'
+railties (6.0.3.1) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.3.1) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.3.1) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.3.1) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.3.1) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (6.0.3.1) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.3.1) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.2) lib/rack/method_override.rb:24:in `call'
+rack (2.2.2) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.3.1) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.3.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.3.1) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.2.2) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.0.3.1) lib/action_dispatch/middleware/host_authorization.rb:82:in `call'
+webpacker (4.2.2) lib/webpacker/dev_server_proxy.rb:23:in `perform_request'
+rack-proxy (0.6.5) lib/rack/proxy.rb:57:in `call'
+railties (6.0.3.1) lib/rails/engine.rb:527:in `call'
+rack (2.2.2) lib/rack/handler/webrick.rb:95:in `service'
+/home/yfeng/.rvm/rubies/ruby-2.7.0/lib/ruby/2.7.0/webrick/httpserver.rb:140:in `service'
+/home/yfeng/.rvm/rubies/ruby-2.7.0/lib/ruby/2.7.0/webrick/httpserver.rb:96:in `run'
+/home/yfeng/.rvm/rubies/ruby-2.7.0/lib/ruby/2.7.0/webrick/server.rb:307:in `block in start_thread'
