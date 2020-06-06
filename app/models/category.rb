@@ -5,7 +5,7 @@ class Category < ApplicationRecord
     validates :title, uniqueness: { message: "You must input an unique name!" }
 
 
-    has_ancestry
+    has_ancestry orphan_strategy: :destroy
 
     has_many :products, dependent: :destroy
 

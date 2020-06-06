@@ -1772,3 +1772,888 @@ Processing by Admin::CategoriesController#index as HTML
 Completed 200 OK in 28ms (Views: 24.7ms | ActiveRecord: 1.5ms | Allocations: 9127)
 
 
+DEPRECATION WARNING: Initialization autoloaded the constants ActionText::ContentHelper and ActionText::TagHelper.
+
+Being able to do this is deprecated. Autoloading during initialization is going
+to be an error condition in future versions of Rails.
+
+Reloading does not reboot the application, and therefore code executed during
+initialization does not run again. So, if you reload ActionText::ContentHelper, for example,
+the expected changes won't be reflected in that stale Module object.
+
+These autoloaded constants have been unloaded.
+
+Please, check the "Autoloading and Reloading Constants" guide for solutions.
+ (called from <main> at /home/yfeng/rails_online_mall/config/environment.rb:5)
+Started GET "/admin/categories/new" for 127.0.0.1 at 2020-06-06 16:17:43 +0800
+  [1m[35m (0.3ms)[0m  [1m[35mSET NAMES utf8mb4,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+Processing by Admin::CategoriesController#new as HTML
+  Rendering admin/categories/new.html.erb within admin/layouts/admin
+  [1m[36mCategory Load (0.4ms)[0m  [1m[34mSELECT `categories`.* FROM `categories` WHERE `categories`.`ancestry` IS NULL ORDER BY `categories`.`id` DESC[0m
+  ↳ app/views/admin/categories/new.html.erb:26
+  Rendered admin/categories/new.html.erb within admin/layouts/admin (Duration: 7.6ms | Allocations: 1986)
+  Rendered admin/layouts/_menu.html.erb (Duration: 0.3ms | Allocations: 176)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 58ms (Views: 45.5ms | ActiveRecord: 1.4ms | Allocations: 36888)
+
+
+Started POST "/admin/categories" for 127.0.0.1 at 2020-06-06 16:17:46 +0800
+Processing by Admin::CategoriesController#create as HTML
+  Parameters: {"authenticity_token"=>"hZWM/t9BA5z03H6DmP34whepKA0wJ06QZaA0OZ6IiVXryqdF3OWfRPIjosxX7CSey1x/VC+zvGsuMxML3KpHDg==", "category"=>{"ancestry"=>"", "title"=>"1", "weight"=>"01"}, "commit"=>"Create a new category"}
+DEPRECATION WARNING: Uniqueness validator will no longer enforce case sensitive comparison in Rails 6.1. To continue case sensitive comparison on the :title attribute in Category model, pass `case_sensitive: true` option explicitly to the uniqueness validator. (called from create at /home/yfeng/rails_online_mall/app/controllers/admin/categories_controller.rb:25)
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/admin/categories_controller.rb:25:in `create'
+  [1m[36mCategory Exists? (0.5ms)[0m  [1m[34mSELECT 1 AS one FROM `categories` WHERE `categories`.`title` = BINARY '1' LIMIT 1[0m
+  ↳ app/controllers/admin/categories_controller.rb:25:in `create'
+  [1m[36mCategory Create (0.4ms)[0m  [1m[32mINSERT INTO `categories` (`title`, `weight`, `created_at`, `updated_at`) VALUES ('1', 1, '2020-06-06 08:17:46.739149', '2020-06-06 08:17:46.739149')[0m
+  ↳ app/controllers/admin/categories_controller.rb:25:in `create'
+  [1m[35m (141.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/admin/categories_controller.rb:25:in `create'
+Redirected to http://localhost:3000/admin/categories
+Completed 302 Found in 159ms (ActiveRecord: 142.7ms | Allocations: 4805)
+
+
+Started GET "/admin/categories" for 127.0.0.1 at 2020-06-06 16:17:46 +0800
+Processing by Admin::CategoriesController#index as HTML
+  Rendering admin/categories/index.html.erb within admin/layouts/admin
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT COUNT(*) FROM `categories` WHERE `categories`.`ancestry` IS NULL[0m
+  ↳ app/views/admin/categories/index.html.erb:10
+  [1m[36mCategory Load (0.9ms)[0m  [1m[34mSELECT `categories`.* FROM `categories` WHERE `categories`.`ancestry` IS NULL ORDER BY `categories`.`id` DESC LIMIT 10 OFFSET 0[0m
+  ↳ app/views/admin/categories/index.html.erb:24
+  Rendered admin/categories/index.html.erb within admin/layouts/admin (Duration: 14.3ms | Allocations: 2029)
+  Rendered admin/layouts/_menu.html.erb (Duration: 0.3ms | Allocations: 37)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 37ms (Views: 31.5ms | ActiveRecord: 1.7ms | Allocations: 9914)
+
+
+Started GET "/admin/categories?id=2" for 127.0.0.1 at 2020-06-06 16:17:49 +0800
+Processing by Admin::CategoriesController#index as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mCategory Load (0.9ms)[0m  [1m[34mSELECT `categories`.* FROM `categories` WHERE `categories`.`id` = 2 LIMIT 1[0m
+  ↳ app/controllers/admin/categories_controller.rb:11:in `index'
+  Rendering admin/categories/index.html.erb within admin/layouts/admin
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT COUNT(*) FROM `categories` WHERE `categories`.`ancestry` = '2'[0m
+  ↳ app/views/admin/categories/index.html.erb:8
+  [1m[36mCategory Load (0.9ms)[0m  [1m[34mSELECT `categories`.* FROM `categories` WHERE `categories`.`ancestry` = '2' ORDER BY `categories`.`id` DESC LIMIT 10 OFFSET 0[0m
+  ↳ app/views/admin/categories/index.html.erb:24
+  Rendered admin/categories/index.html.erb within admin/layouts/admin (Duration: 8.6ms | Allocations: 1429)
+  Rendered admin/layouts/_menu.html.erb (Duration: 0.2ms | Allocations: 36)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 33ms (Views: 25.2ms | ActiveRecord: 2.7ms | Allocations: 9691)
+
+
+Started GET "/admin/categories/new" for 127.0.0.1 at 2020-06-06 16:17:51 +0800
+Processing by Admin::CategoriesController#new as HTML
+  Rendering admin/categories/new.html.erb within admin/layouts/admin
+  [1m[36mCategory Load (0.9ms)[0m  [1m[34mSELECT `categories`.* FROM `categories` WHERE `categories`.`ancestry` IS NULL ORDER BY `categories`.`id` DESC[0m
+  ↳ app/views/admin/categories/new.html.erb:26
+  Rendered admin/categories/new.html.erb within admin/layouts/admin (Duration: 8.0ms | Allocations: 1142)
+  Rendered admin/layouts/_menu.html.erb (Duration: 0.2ms | Allocations: 36)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 28ms (Views: 24.9ms | ActiveRecord: 0.9ms | Allocations: 8622)
+
+
+Started POST "/admin/categories" for 127.0.0.1 at 2020-06-06 16:17:57 +0800
+Processing by Admin::CategoriesController#create as HTML
+  Parameters: {"authenticity_token"=>"rscioy4scqzbNdg787PoxGzBj3xGYGpRPYIBqDNGvknAmAkYLYjudN3KBHQ8ojSYsDTYJVn0mKp2ESaacWRwEg==", "category"=>{"ancestry"=>"2", "title"=>"213", "weight"=>"011"}, "commit"=>"Create a new category"}
+DEPRECATION WARNING: Uniqueness validator will no longer enforce case sensitive comparison in Rails 6.1. To continue case sensitive comparison on the :title attribute in Category model, pass `case_sensitive: true` option explicitly to the uniqueness validator. (called from create at /home/yfeng/rails_online_mall/app/controllers/admin/categories_controller.rb:25)
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/admin/categories_controller.rb:25:in `create'
+  [1m[36mCategory Exists? (0.5ms)[0m  [1m[34mSELECT 1 AS one FROM `categories` WHERE `categories`.`title` = BINARY '213' LIMIT 1[0m
+  ↳ app/controllers/admin/categories_controller.rb:25:in `create'
+  [1m[36mCategory Create (0.3ms)[0m  [1m[32mINSERT INTO `categories` (`title`, `weight`, `created_at`, `updated_at`, `ancestry`) VALUES ('213', 11, '2020-06-06 08:17:57.782084', '2020-06-06 08:17:57.782084', '2')[0m
+  ↳ app/controllers/admin/categories_controller.rb:25:in `create'
+  [1m[35m (730.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/admin/categories_controller.rb:25:in `create'
+Redirected to http://localhost:3000/admin/categories
+Completed 302 Found in 742ms (ActiveRecord: 731.7ms | Allocations: 4133)
+
+
+Started GET "/admin/categories" for 127.0.0.1 at 2020-06-06 16:17:58 +0800
+Processing by Admin::CategoriesController#index as HTML
+  Rendering admin/categories/index.html.erb within admin/layouts/admin
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM `categories` WHERE `categories`.`ancestry` IS NULL[0m
+  ↳ app/views/admin/categories/index.html.erb:10
+  [1m[36mCategory Load (0.3ms)[0m  [1m[34mSELECT `categories`.* FROM `categories` WHERE `categories`.`ancestry` IS NULL ORDER BY `categories`.`id` DESC LIMIT 10 OFFSET 0[0m
+  ↳ app/views/admin/categories/index.html.erb:24
+  Rendered admin/categories/index.html.erb within admin/layouts/admin (Duration: 5.3ms | Allocations: 1552)
+  Rendered admin/layouts/_menu.html.erb (Duration: 0.2ms | Allocations: 36)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 13ms (Views: 11.6ms | ActiveRecord: 0.6ms | Allocations: 9278)
+
+
+Started GET "/admin/categories?id=2" for 127.0.0.1 at 2020-06-06 16:18:00 +0800
+Processing by Admin::CategoriesController#index as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mCategory Load (0.9ms)[0m  [1m[34mSELECT `categories`.* FROM `categories` WHERE `categories`.`id` = 2 LIMIT 1[0m
+  ↳ app/controllers/admin/categories_controller.rb:11:in `index'
+  Rendering admin/categories/index.html.erb within admin/layouts/admin
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT COUNT(*) FROM `categories` WHERE `categories`.`ancestry` = '2'[0m
+  ↳ app/views/admin/categories/index.html.erb:8
+  [1m[36mCategory Load (1.1ms)[0m  [1m[34mSELECT `categories`.* FROM `categories` WHERE `categories`.`ancestry` = '2' ORDER BY `categories`.`id` DESC LIMIT 10 OFFSET 0[0m
+  ↳ app/views/admin/categories/index.html.erb:24
+  Rendered admin/categories/index.html.erb within admin/layouts/admin (Duration: 11.3ms | Allocations: 1519)
+  Rendered admin/layouts/_menu.html.erb (Duration: 0.2ms | Allocations: 36)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 33ms (Views: 26.0ms | ActiveRecord: 2.8ms | Allocations: 9774)
+
+
+Started GET "/admin/categories/3/edit" for 127.0.0.1 at 2020-06-06 16:18:05 +0800
+Processing by Admin::CategoriesController#edit as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mCategory Load (0.9ms)[0m  [1m[34mSELECT `categories`.* FROM `categories` WHERE `categories`.`id` = 3 LIMIT 1[0m
+  ↳ app/controllers/admin/categories_controller.rb:67:in `find_category'
+  Rendering admin/categories/new.html.erb within admin/layouts/admin
+  [1m[36mCategory Load (1.1ms)[0m  [1m[34mSELECT `categories`.* FROM `categories` WHERE `categories`.`ancestry` IS NULL ORDER BY `categories`.`id` DESC[0m
+  ↳ app/views/admin/categories/new.html.erb:26
+  Rendered admin/categories/new.html.erb within admin/layouts/admin (Duration: 7.4ms | Allocations: 1183)
+  Rendered admin/layouts/_menu.html.erb (Duration: 0.2ms | Allocations: 36)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 33ms (Views: 27.4ms | ActiveRecord: 2.0ms | Allocations: 9078)
+
+
+Started PUT "/admin/categories/3" for 127.0.0.1 at 2020-06-06 16:18:08 +0800
+Processing by Admin::CategoriesController#update as HTML
+  Parameters: {"authenticity_token"=>"eAHIilLElgdZm5qtsl87S7DaXsOUQ4vZLfNWS9WvfD0WXuMxUWAK319kRuJ9TucXbC8JmovXeSJmYHF5l42yZg==", "category"=>{"ancestry"=>"2", "title"=>"2132", "weight"=>"11"}, "commit"=>"Modify a category", "id"=>"3"}
+  [1m[36mCategory Load (0.9ms)[0m  [1m[34mSELECT `categories`.* FROM `categories` WHERE `categories`.`id` = 3 LIMIT 1[0m
+  ↳ app/controllers/admin/categories_controller.rb:67:in `find_category'
+DEPRECATION WARNING: Uniqueness validator will no longer enforce case sensitive comparison in Rails 6.1. To continue case sensitive comparison on the :title attribute in Category model, pass `case_sensitive: true` option explicitly to the uniqueness validator. (called from update at /home/yfeng/rails_online_mall/app/controllers/admin/categories_controller.rb:41)
+  [1m[35m (0.5ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/admin/categories_controller.rb:41:in `update'
+  [1m[36mCategory Exists? (0.7ms)[0m  [1m[34mSELECT 1 AS one FROM `categories` WHERE `categories`.`title` = BINARY '2132' AND `categories`.`id` != 3 LIMIT 1[0m
+  ↳ app/controllers/admin/categories_controller.rb:41:in `update'
+  [1m[36mCategory Update (0.5ms)[0m  [1m[33mUPDATE `categories` SET `categories`.`title` = '2132', `categories`.`updated_at` = '2020-06-06 08:18:08.278975' WHERE `categories`.`id` = 3[0m
+  ↳ app/controllers/admin/categories_controller.rb:41:in `update'
+  [1m[35m (118.8ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/admin/categories_controller.rb:41:in `update'
+Redirected to http://localhost:3000/admin/categories
+Completed 302 Found in 139ms (ActiveRecord: 121.4ms | Allocations: 4822)
+
+
+Started GET "/admin/categories" for 127.0.0.1 at 2020-06-06 16:18:08 +0800
+Processing by Admin::CategoriesController#index as HTML
+  Rendering admin/categories/index.html.erb within admin/layouts/admin
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM `categories` WHERE `categories`.`ancestry` IS NULL[0m
+  ↳ app/views/admin/categories/index.html.erb:10
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT `categories`.* FROM `categories` WHERE `categories`.`ancestry` IS NULL ORDER BY `categories`.`id` DESC LIMIT 10 OFFSET 0[0m
+  ↳ app/views/admin/categories/index.html.erb:24
+  Rendered admin/categories/index.html.erb within admin/layouts/admin (Duration: 2.2ms | Allocations: 1552)
+  Rendered admin/layouts/_menu.html.erb (Duration: 0.1ms | Allocations: 36)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 9ms (Views: 8.6ms | ActiveRecord: 0.4ms | Allocations: 9263)
+
+
+Started GET "/admin/categories?id=2" for 127.0.0.1 at 2020-06-06 16:18:11 +0800
+Processing by Admin::CategoriesController#index as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mCategory Load (0.3ms)[0m  [1m[34mSELECT `categories`.* FROM `categories` WHERE `categories`.`id` = 2 LIMIT 1[0m
+  ↳ app/controllers/admin/categories_controller.rb:11:in `index'
+  Rendering admin/categories/index.html.erb within admin/layouts/admin
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM `categories` WHERE `categories`.`ancestry` = '2'[0m
+  ↳ app/views/admin/categories/index.html.erb:8
+  [1m[36mCategory Load (0.4ms)[0m  [1m[34mSELECT `categories`.* FROM `categories` WHERE `categories`.`ancestry` = '2' ORDER BY `categories`.`id` DESC LIMIT 10 OFFSET 0[0m
+  ↳ app/views/admin/categories/index.html.erb:24
+  Rendered admin/categories/index.html.erb within admin/layouts/admin (Duration: 7.2ms | Allocations: 1519)
+  Rendered admin/layouts/_menu.html.erb (Duration: 0.1ms | Allocations: 36)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 17ms (Views: 15.2ms | ActiveRecord: 1.0ms | Allocations: 9775)
+
+
+Started DELETE "/admin/categories/3" for 127.0.0.1 at 2020-06-06 16:18:14 +0800
+Processing by Admin::CategoriesController#destroy as HTML
+  Parameters: {"authenticity_token"=>"LUdkriyA0AIu1liXq52wiUaMdyTpx35zy65qoWy1UIhDGE8VLyRM2igphNhkjGzVmnkgffZTjIiAPU2TLpee0w==", "id"=>"3"}
+  [1m[36mCategory Load (0.3ms)[0m  [1m[34mSELECT `categories`.* FROM `categories` WHERE `categories`.`id` = 3 LIMIT 1[0m
+  ↳ app/controllers/admin/categories_controller.rb:67:in `find_category'
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/admin/categories_controller.rb:51:in `destroy'
+  [1m[36mCategory Load (0.3ms)[0m  [1m[34mSELECT `categories`.* FROM `categories` WHERE (`categories`.`ancestry` LIKE '2/3/%' OR `categories`.`ancestry` = '2/3')[0m
+  ↳ app/controllers/admin/categories_controller.rb:51:in `destroy'
+  [1m[36mProduct Load (0.3ms)[0m  [1m[34mSELECT `products`.* FROM `products` WHERE `products`.`category_id` = 3[0m
+  ↳ app/controllers/admin/categories_controller.rb:51:in `destroy'
+  [1m[36mCategory Destroy (0.3ms)[0m  [1m[31mDELETE FROM `categories` WHERE `categories`.`id` = 3[0m
+  ↳ app/controllers/admin/categories_controller.rb:51:in `destroy'
+  [1m[35m (520.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/admin/categories_controller.rb:51:in `destroy'
+Redirected to http://localhost:3000/admin/categories
+Completed 302 Found in 540ms (ActiveRecord: 522.5ms | Allocations: 10484)
+
+
+Started GET "/admin/categories" for 127.0.0.1 at 2020-06-06 16:18:14 +0800
+Processing by Admin::CategoriesController#index as HTML
+  Rendering admin/categories/index.html.erb within admin/layouts/admin
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT COUNT(*) FROM `categories` WHERE `categories`.`ancestry` IS NULL[0m
+  ↳ app/views/admin/categories/index.html.erb:10
+  [1m[36mCategory Load (1.1ms)[0m  [1m[34mSELECT `categories`.* FROM `categories` WHERE `categories`.`ancestry` IS NULL ORDER BY `categories`.`id` DESC LIMIT 10 OFFSET 0[0m
+  ↳ app/views/admin/categories/index.html.erb:24
+  Rendered admin/categories/index.html.erb within admin/layouts/admin (Duration: 10.9ms | Allocations: 1553)
+  Rendered admin/layouts/_menu.html.erb (Duration: 0.1ms | Allocations: 36)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 33ms (Views: 29.4ms | ActiveRecord: 1.9ms | Allocations: 9269)
+
+
+Started DELETE "/admin/categories/2" for 127.0.0.1 at 2020-06-06 16:18:19 +0800
+Processing by Admin::CategoriesController#destroy as HTML
+  Parameters: {"authenticity_token"=>"B46ntZQtBB3cP6N7YTJeUEEA/IJu0hiBTzXA+zVZy8Jp0YwOl4mYxdrAfzSuI4IMnfWr23FG6noEpufJd3sFmQ==", "id"=>"2"}
+  [1m[36mCategory Load (0.3ms)[0m  [1m[34mSELECT `categories`.* FROM `categories` WHERE `categories`.`id` = 2 LIMIT 1[0m
+  ↳ app/controllers/admin/categories_controller.rb:67:in `find_category'
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/admin/categories_controller.rb:51:in `destroy'
+  [1m[36mCategory Load (0.3ms)[0m  [1m[34mSELECT `categories`.* FROM `categories` WHERE (`categories`.`ancestry` LIKE '2/%' OR `categories`.`ancestry` = '2')[0m
+  ↳ app/controllers/admin/categories_controller.rb:51:in `destroy'
+  [1m[36mProduct Load (0.2ms)[0m  [1m[34mSELECT `products`.* FROM `products` WHERE `products`.`category_id` = 2[0m
+  ↳ app/controllers/admin/categories_controller.rb:51:in `destroy'
+  [1m[36mCategory Destroy (0.2ms)[0m  [1m[31mDELETE FROM `categories` WHERE `categories`.`id` = 2[0m
+  ↳ app/controllers/admin/categories_controller.rb:51:in `destroy'
+  [1m[35m (617.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/admin/categories_controller.rb:51:in `destroy'
+Redirected to http://localhost:3000/admin/categories
+Completed 302 Found in 625ms (ActiveRecord: 618.9ms | Allocations: 4913)
+
+
+Started GET "/admin/categories" for 127.0.0.1 at 2020-06-06 16:18:19 +0800
+Processing by Admin::CategoriesController#index as HTML
+  Rendering admin/categories/index.html.erb within admin/layouts/admin
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM `categories` WHERE `categories`.`ancestry` IS NULL[0m
+  ↳ app/views/admin/categories/index.html.erb:10
+  [1m[36mCategory Load (0.3ms)[0m  [1m[34mSELECT `categories`.* FROM `categories` WHERE `categories`.`ancestry` IS NULL ORDER BY `categories`.`id` DESC LIMIT 10 OFFSET 0[0m
+  ↳ app/views/admin/categories/index.html.erb:24
+  Rendered admin/categories/index.html.erb within admin/layouts/admin (Duration: 2.3ms | Allocations: 1418)
+  Rendered admin/layouts/_menu.html.erb (Duration: 0.1ms | Allocations: 36)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 13ms (Views: 11.6ms | ActiveRecord: 0.6ms | Allocations: 9135)
+
+
+Started GET "/admin/categories" for 127.0.0.1 at 2020-06-06 16:18:29 +0800
+Processing by Admin::CategoriesController#index as HTML
+  Rendering admin/categories/index.html.erb within admin/layouts/admin
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM `categories` WHERE `categories`.`ancestry` IS NULL[0m
+  ↳ app/views/admin/categories/index.html.erb:10
+  [1m[36mCategory Load (0.3ms)[0m  [1m[34mSELECT `categories`.* FROM `categories` WHERE `categories`.`ancestry` IS NULL ORDER BY `categories`.`id` DESC LIMIT 10 OFFSET 0[0m
+  ↳ app/views/admin/categories/index.html.erb:24
+  Rendered admin/categories/index.html.erb within admin/layouts/admin (Duration: 3.0ms | Allocations: 1419)
+  Rendered admin/layouts/_menu.html.erb (Duration: 0.1ms | Allocations: 36)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 14ms (Views: 13.0ms | ActiveRecord: 0.7ms | Allocations: 9121)
+
+
+Started GET "/admin" for 127.0.0.1 at 2020-06-06 16:18:30 +0800
+Processing by Admin::SessionsController#new as HTML
+  Rendering admin/sessions/new.html.erb within admin/layouts/admin
+  Rendered admin/sessions/new.html.erb within admin/layouts/admin (Duration: 0.2ms | Allocations: 81)
+  Rendered admin/layouts/_menu.html.erb (Duration: 0.1ms | Allocations: 51)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 8ms (Views: 7.3ms | ActiveRecord: 0.0ms | Allocations: 7786)
+
+
+Started GET "/admin/categories" for 127.0.0.1 at 2020-06-06 16:18:31 +0800
+Processing by Admin::CategoriesController#index as HTML
+  Rendering admin/categories/index.html.erb within admin/layouts/admin
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM `categories` WHERE `categories`.`ancestry` IS NULL[0m
+  ↳ app/views/admin/categories/index.html.erb:10
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT `categories`.* FROM `categories` WHERE `categories`.`ancestry` IS NULL ORDER BY `categories`.`id` DESC LIMIT 10 OFFSET 0[0m
+  ↳ app/views/admin/categories/index.html.erb:24
+  Rendered admin/categories/index.html.erb within admin/layouts/admin (Duration: 2.1ms | Allocations: 1424)
+  Rendered admin/layouts/_menu.html.erb (Duration: 0.1ms | Allocations: 38)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 12ms (Views: 11.5ms | ActiveRecord: 0.4ms | Allocations: 9132)
+
+
+Started GET "/admin/categories/new" for 127.0.0.1 at 2020-06-06 16:18:40 +0800
+Processing by Admin::CategoriesController#new as HTML
+  Rendering admin/categories/new.html.erb within admin/layouts/admin
+  [1m[36mCategory Load (0.3ms)[0m  [1m[34mSELECT `categories`.* FROM `categories` WHERE `categories`.`ancestry` IS NULL ORDER BY `categories`.`id` DESC[0m
+  ↳ app/views/admin/categories/new.html.erb:26
+  Rendered admin/categories/new.html.erb within admin/layouts/admin (Duration: 2.2ms | Allocations: 1128)
+  Rendered admin/layouts/_menu.html.erb (Duration: 0.1ms | Allocations: 36)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 11ms (Views: 9.5ms | ActiveRecord: 0.3ms | Allocations: 8477)
+
+
+Started GET "/admin/categories/new" for 127.0.0.1 at 2020-06-06 16:20:37 +0800
+Processing by Admin::CategoriesController#new as HTML
+  Rendering admin/categories/new.html.erb within admin/layouts/admin
+  [1m[36mCategory Load (0.9ms)[0m  [1m[34mSELECT `categories`.* FROM `categories` WHERE `categories`.`ancestry` IS NULL ORDER BY `categories`.`id` DESC[0m
+  ↳ app/views/admin/categories/new.html.erb:26
+  Rendered admin/categories/new.html.erb within admin/layouts/admin (Duration: 13.2ms | Allocations: 1144)
+  Rendered admin/layouts/_menu.html.erb (Duration: 0.1ms | Allocations: 36)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 33ms (Views: 29.3ms | ActiveRecord: 0.9ms | Allocations: 8638)
+
+
+Started POST "/admin/categories" for 127.0.0.1 at 2020-06-06 16:20:43 +0800
+Processing by Admin::CategoriesController#create as HTML
+  Parameters: {"authenticity_token"=>"62ZnARcI2JkF5A7rdIVZN9Drve3bX8V5QuxhMLDsdkKFOUy6FKxEQQMb0qS7lIVrDB7qtMTLN4IJf0YC8s64GQ==", "category"=>{"ancestry"=>"", "title"=>"手机", "weight"=>"1"}, "commit"=>"Create a new category"}
+DEPRECATION WARNING: Uniqueness validator will no longer enforce case sensitive comparison in Rails 6.1. To continue case sensitive comparison on the :title attribute in Category model, pass `case_sensitive: true` option explicitly to the uniqueness validator. (called from create at /home/yfeng/rails_online_mall/app/controllers/admin/categories_controller.rb:25)
+  [1m[35m (0.5ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/admin/categories_controller.rb:25:in `create'
+  [1m[36mCategory Exists? (0.9ms)[0m  [1m[34mSELECT 1 AS one FROM `categories` WHERE `categories`.`title` = BINARY '手机' LIMIT 1[0m
+  ↳ app/controllers/admin/categories_controller.rb:25:in `create'
+  [1m[36mCategory Create (0.7ms)[0m  [1m[32mINSERT INTO `categories` (`title`, `weight`, `created_at`, `updated_at`) VALUES ('手机', 1, '2020-06-06 08:20:43.927214', '2020-06-06 08:20:43.927214')[0m
+  ↳ app/controllers/admin/categories_controller.rb:25:in `create'
+  [1m[35m (111.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/admin/categories_controller.rb:25:in `create'
+Redirected to http://localhost:3000/admin/categories
+Completed 302 Found in 136ms (ActiveRecord: 113.8ms | Allocations: 4121)
+
+
+Started GET "/admin/categories" for 127.0.0.1 at 2020-06-06 16:20:44 +0800
+Processing by Admin::CategoriesController#index as HTML
+  Rendering admin/categories/index.html.erb within admin/layouts/admin
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT COUNT(*) FROM `categories` WHERE `categories`.`ancestry` IS NULL[0m
+  ↳ app/views/admin/categories/index.html.erb:10
+  [1m[36mCategory Load (0.9ms)[0m  [1m[34mSELECT `categories`.* FROM `categories` WHERE `categories`.`ancestry` IS NULL ORDER BY `categories`.`id` DESC LIMIT 10 OFFSET 0[0m
+  ↳ app/views/admin/categories/index.html.erb:24
+  Rendered admin/categories/index.html.erb within admin/layouts/admin (Duration: 11.3ms | Allocations: 1556)
+  Rendered admin/layouts/_menu.html.erb (Duration: 0.1ms | Allocations: 36)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 31ms (Views: 27.0ms | ActiveRecord: 1.8ms | Allocations: 9267)
+
+
+Started GET "/admin/categories/new" for 127.0.0.1 at 2020-06-06 16:20:45 +0800
+Processing by Admin::CategoriesController#new as HTML
+  Rendering admin/categories/new.html.erb within admin/layouts/admin
+  [1m[36mCategory Load (1.0ms)[0m  [1m[34mSELECT `categories`.* FROM `categories` WHERE `categories`.`ancestry` IS NULL ORDER BY `categories`.`id` DESC[0m
+  ↳ app/views/admin/categories/new.html.erb:26
+  Rendered admin/categories/new.html.erb within admin/layouts/admin (Duration: 8.8ms | Allocations: 1158)
+  Rendered admin/layouts/_menu.html.erb (Duration: 0.2ms | Allocations: 36)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 30ms (Views: 26.5ms | ActiveRecord: 1.0ms | Allocations: 8643)
+
+
+Started POST "/admin/categories" for 127.0.0.1 at 2020-06-06 16:20:52 +0800
+Processing by Admin::CategoriesController#create as HTML
+  Parameters: {"authenticity_token"=>"Nw8uadAMK0YkdkeZCFDj8EaW8hR/taLnS8ELYHzstv9ZUAXS06i3niKJm9bHQT+smmOlTWAhUBwAUixSPs54pA==", "category"=>{"ancestry"=>"4", "title"=>"iphone", "weight"=>"2"}, "commit"=>"Create a new category"}
+DEPRECATION WARNING: Uniqueness validator will no longer enforce case sensitive comparison in Rails 6.1. To continue case sensitive comparison on the :title attribute in Category model, pass `case_sensitive: true` option explicitly to the uniqueness validator. (called from create at /home/yfeng/rails_online_mall/app/controllers/admin/categories_controller.rb:25)
+  [1m[35m (0.5ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/admin/categories_controller.rb:25:in `create'
+  [1m[36mCategory Exists? (0.9ms)[0m  [1m[34mSELECT 1 AS one FROM `categories` WHERE `categories`.`title` = BINARY 'iphone' LIMIT 1[0m
+  ↳ app/controllers/admin/categories_controller.rb:25:in `create'
+  [1m[36mCategory Create (0.5ms)[0m  [1m[32mINSERT INTO `categories` (`title`, `weight`, `created_at`, `updated_at`, `ancestry`) VALUES ('iphone', 2, '2020-06-06 08:20:52.402175', '2020-06-06 08:20:52.402175', '4')[0m
+  ↳ app/controllers/admin/categories_controller.rb:25:in `create'
+  [1m[35m (187.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/admin/categories_controller.rb:25:in `create'
+Redirected to http://localhost:3000/admin/categories
+Completed 302 Found in 206ms (ActiveRecord: 189.5ms | Allocations: 4119)
+
+
+Started GET "/admin/categories" for 127.0.0.1 at 2020-06-06 16:20:52 +0800
+Processing by Admin::CategoriesController#index as HTML
+  Rendering admin/categories/index.html.erb within admin/layouts/admin
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT COUNT(*) FROM `categories` WHERE `categories`.`ancestry` IS NULL[0m
+  ↳ app/views/admin/categories/index.html.erb:10
+  [1m[36mCategory Load (1.0ms)[0m  [1m[34mSELECT `categories`.* FROM `categories` WHERE `categories`.`ancestry` IS NULL ORDER BY `categories`.`id` DESC LIMIT 10 OFFSET 0[0m
+  ↳ app/views/admin/categories/index.html.erb:24
+  Rendered admin/categories/index.html.erb within admin/layouts/admin (Duration: 12.4ms | Allocations: 1554)
+  Rendered admin/layouts/_menu.html.erb (Duration: 0.2ms | Allocations: 36)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 39ms (Views: 35.2ms | ActiveRecord: 1.8ms | Allocations: 9246)
+
+
+Started GET "/admin/categories/new" for 127.0.0.1 at 2020-06-06 16:20:53 +0800
+Processing by Admin::CategoriesController#new as HTML
+  Rendering admin/categories/new.html.erb within admin/layouts/admin
+  [1m[36mCategory Load (1.1ms)[0m  [1m[34mSELECT `categories`.* FROM `categories` WHERE `categories`.`ancestry` IS NULL ORDER BY `categories`.`id` DESC[0m
+  ↳ app/views/admin/categories/new.html.erb:26
+  Rendered admin/categories/new.html.erb within admin/layouts/admin (Duration: 7.2ms | Allocations: 1140)
+  Rendered admin/layouts/_menu.html.erb (Duration: 0.2ms | Allocations: 36)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 30ms (Views: 27.5ms | ActiveRecord: 1.1ms | Allocations: 8622)
+
+
+Started POST "/admin/categories" for 127.0.0.1 at 2020-06-06 16:21:03 +0800
+Processing by Admin::CategoriesController#create as HTML
+  Parameters: {"authenticity_token"=>"Khg0ITGz6zeKIIE55r6fFFSmIGXkSnI5XdTf4bSxLUxERx+aMhd374zfXXYpr0NIiFN3PPvegMIWR/jT9pPjFw==", "category"=>{"ancestry"=>"4", "title"=>"huawei", "weight"=>"30"}, "commit"=>"Create a new category"}
+DEPRECATION WARNING: Uniqueness validator will no longer enforce case sensitive comparison in Rails 6.1. To continue case sensitive comparison on the :title attribute in Category model, pass `case_sensitive: true` option explicitly to the uniqueness validator. (called from create at /home/yfeng/rails_online_mall/app/controllers/admin/categories_controller.rb:25)
+  [1m[35m (0.5ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/admin/categories_controller.rb:25:in `create'
+  [1m[36mCategory Exists? (1.0ms)[0m  [1m[34mSELECT 1 AS one FROM `categories` WHERE `categories`.`title` = BINARY 'huawei' LIMIT 1[0m
+  ↳ app/controllers/admin/categories_controller.rb:25:in `create'
+  [1m[36mCategory Create (0.7ms)[0m  [1m[32mINSERT INTO `categories` (`title`, `weight`, `created_at`, `updated_at`, `ancestry`) VALUES ('huawei', 30, '2020-06-06 08:21:03.593083', '2020-06-06 08:21:03.593083', '4')[0m
+  ↳ app/controllers/admin/categories_controller.rb:25:in `create'
+  [1m[35m (101.0ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/admin/categories_controller.rb:25:in `create'
+Redirected to http://localhost:3000/admin/categories
+Completed 302 Found in 125ms (ActiveRecord: 103.2ms | Allocations: 4113)
+
+
+Started GET "/admin/categories" for 127.0.0.1 at 2020-06-06 16:21:03 +0800
+Processing by Admin::CategoriesController#index as HTML
+  Rendering admin/categories/index.html.erb within admin/layouts/admin
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT COUNT(*) FROM `categories` WHERE `categories`.`ancestry` IS NULL[0m
+  ↳ app/views/admin/categories/index.html.erb:10
+  [1m[36mCategory Load (0.6ms)[0m  [1m[34mSELECT `categories`.* FROM `categories` WHERE `categories`.`ancestry` IS NULL ORDER BY `categories`.`id` DESC LIMIT 10 OFFSET 0[0m
+  ↳ app/views/admin/categories/index.html.erb:24
+  Rendered admin/categories/index.html.erb within admin/layouts/admin (Duration: 10.5ms | Allocations: 1554)
+  Rendered admin/layouts/_menu.html.erb (Duration: 0.1ms | Allocations: 36)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 37ms (Views: 34.5ms | ActiveRecord: 1.2ms | Allocations: 9249)
+
+
+Started GET "/admin/categories?id=4" for 127.0.0.1 at 2020-06-06 16:21:05 +0800
+Processing by Admin::CategoriesController#index as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mCategory Load (0.4ms)[0m  [1m[34mSELECT `categories`.* FROM `categories` WHERE `categories`.`id` = 4 LIMIT 1[0m
+  ↳ app/controllers/admin/categories_controller.rb:11:in `index'
+  Rendering admin/categories/index.html.erb within admin/layouts/admin
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM `categories` WHERE `categories`.`ancestry` = '4'[0m
+  ↳ app/views/admin/categories/index.html.erb:8
+  [1m[36mCategory Load (0.5ms)[0m  [1m[34mSELECT `categories`.* FROM `categories` WHERE `categories`.`ancestry` = '4' ORDER BY `categories`.`id` DESC LIMIT 10 OFFSET 0[0m
+  ↳ app/views/admin/categories/index.html.erb:24
+  Rendered admin/categories/index.html.erb within admin/layouts/admin (Duration: 7.0ms | Allocations: 1610)
+  Rendered admin/layouts/_menu.html.erb (Duration: 0.1ms | Allocations: 36)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 28ms (Views: 23.9ms | ActiveRecord: 1.3ms | Allocations: 9728)
+
+
+Started DELETE "/admin/categories/6" for 127.0.0.1 at 2020-06-06 16:21:13 +0800
+Processing by Admin::CategoriesController#destroy as HTML
+  Parameters: {"authenticity_token"=>"PUP57xTSbOiHV8fG8Hw21Daw/6szKdzDjz4cK7yoCYlTHNJUF3bwMIGoG4k/beqI6kWo8iy9LjjErTsZ/orH0g==", "id"=>"6"}
+  [1m[36mCategory Load (0.3ms)[0m  [1m[34mSELECT `categories`.* FROM `categories` WHERE `categories`.`id` = 6 LIMIT 1[0m
+  ↳ app/controllers/admin/categories_controller.rb:67:in `find_category'
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/admin/categories_controller.rb:51:in `destroy'
+  [1m[36mCategory Load (0.6ms)[0m  [1m[34mSELECT `categories`.* FROM `categories` WHERE (`categories`.`ancestry` LIKE '4/6/%' OR `categories`.`ancestry` = '4/6')[0m
+  ↳ app/controllers/admin/categories_controller.rb:51:in `destroy'
+  [1m[36mProduct Load (0.4ms)[0m  [1m[34mSELECT `products`.* FROM `products` WHERE `products`.`category_id` = 6[0m
+  ↳ app/controllers/admin/categories_controller.rb:51:in `destroy'
+  [1m[36mCategory Destroy (0.3ms)[0m  [1m[31mDELETE FROM `categories` WHERE `categories`.`id` = 6[0m
+  ↳ app/controllers/admin/categories_controller.rb:51:in `destroy'
+  [1m[35m (677.8ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/admin/categories_controller.rb:51:in `destroy'
+Redirected to http://localhost:3000/admin/categories
+Completed 302 Found in 688ms (ActiveRecord: 679.5ms | Allocations: 4931)
+
+
+Started GET "/admin/categories" for 127.0.0.1 at 2020-06-06 16:21:14 +0800
+Processing by Admin::CategoriesController#index as HTML
+  Rendering admin/categories/index.html.erb within admin/layouts/admin
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM `categories` WHERE `categories`.`ancestry` IS NULL[0m
+  ↳ app/views/admin/categories/index.html.erb:10
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT `categories`.* FROM `categories` WHERE `categories`.`ancestry` IS NULL ORDER BY `categories`.`id` DESC LIMIT 10 OFFSET 0[0m
+  ↳ app/views/admin/categories/index.html.erb:24
+  Rendered admin/categories/index.html.erb within admin/layouts/admin (Duration: 2.8ms | Allocations: 1554)
+  Rendered admin/layouts/_menu.html.erb (Duration: 0.1ms | Allocations: 36)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 11ms (Views: 9.3ms | ActiveRecord: 0.5ms | Allocations: 9281)
+
+
+Started GET "/admin/categories?id=4" for 127.0.0.1 at 2020-06-06 16:21:15 +0800
+Processing by Admin::CategoriesController#index as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mCategory Load (0.4ms)[0m  [1m[34mSELECT `categories`.* FROM `categories` WHERE `categories`.`id` = 4 LIMIT 1[0m
+  ↳ app/controllers/admin/categories_controller.rb:11:in `index'
+  Rendering admin/categories/index.html.erb within admin/layouts/admin
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM `categories` WHERE `categories`.`ancestry` = '4'[0m
+  ↳ app/views/admin/categories/index.html.erb:8
+  [1m[36mCategory Load (0.4ms)[0m  [1m[34mSELECT `categories`.* FROM `categories` WHERE `categories`.`ancestry` = '4' ORDER BY `categories`.`id` DESC LIMIT 10 OFFSET 0[0m
+  ↳ app/views/admin/categories/index.html.erb:24
+  Rendered admin/categories/index.html.erb within admin/layouts/admin (Duration: 4.9ms | Allocations: 1518)
+  Rendered admin/layouts/_menu.html.erb (Duration: 0.2ms | Allocations: 36)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 20ms (Views: 16.1ms | ActiveRecord: 1.2ms | Allocations: 9702)
+
+
+Started DELETE "/admin/categories/5" for 127.0.0.1 at 2020-06-06 16:21:17 +0800
+Processing by Admin::CategoriesController#destroy as HTML
+  Parameters: {"authenticity_token"=>"VlnfrCIJCpL/eh6f6TyUikqeCA82b9nnn0V4OCvReH44BvQXIa2WSvmFwtAmLUjWlmtfVin7KxzU1l8KafO2JQ==", "id"=>"5"}
+  [1m[36mCategory Load (0.3ms)[0m  [1m[34mSELECT `categories`.* FROM `categories` WHERE `categories`.`id` = 5 LIMIT 1[0m
+  ↳ app/controllers/admin/categories_controller.rb:67:in `find_category'
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/admin/categories_controller.rb:51:in `destroy'
+  [1m[36mCategory Load (0.3ms)[0m  [1m[34mSELECT `categories`.* FROM `categories` WHERE (`categories`.`ancestry` LIKE '4/5/%' OR `categories`.`ancestry` = '4/5')[0m
+  ↳ app/controllers/admin/categories_controller.rb:51:in `destroy'
+  [1m[36mProduct Load (0.3ms)[0m  [1m[34mSELECT `products`.* FROM `products` WHERE `products`.`category_id` = 5[0m
+  ↳ app/controllers/admin/categories_controller.rb:51:in `destroy'
+  [1m[36mCategory Destroy (0.3ms)[0m  [1m[31mDELETE FROM `categories` WHERE `categories`.`id` = 5[0m
+  ↳ app/controllers/admin/categories_controller.rb:51:in `destroy'
+  [1m[35m (845.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/admin/categories_controller.rb:51:in `destroy'
+Redirected to http://localhost:3000/admin/categories
+Completed 302 Found in 855ms (ActiveRecord: 846.5ms | Allocations: 4928)
+
+
+Started GET "/admin/categories" for 127.0.0.1 at 2020-06-06 16:21:18 +0800
+Processing by Admin::CategoriesController#index as HTML
+  Rendering admin/categories/index.html.erb within admin/layouts/admin
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT COUNT(*) FROM `categories` WHERE `categories`.`ancestry` IS NULL[0m
+  ↳ app/views/admin/categories/index.html.erb:10
+  [1m[36mCategory Load (1.1ms)[0m  [1m[34mSELECT `categories`.* FROM `categories` WHERE `categories`.`ancestry` IS NULL ORDER BY `categories`.`id` DESC LIMIT 10 OFFSET 0[0m
+  ↳ app/views/admin/categories/index.html.erb:24
+  Rendered admin/categories/index.html.erb within admin/layouts/admin (Duration: 11.1ms | Allocations: 1553)
+  Rendered admin/layouts/_menu.html.erb (Duration: 0.2ms | Allocations: 36)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 37ms (Views: 33.0ms | ActiveRecord: 2.1ms | Allocations: 9267)
+
+
+Started DELETE "/admin/categories/4" for 127.0.0.1 at 2020-06-06 16:21:22 +0800
+Processing by Admin::CategoriesController#destroy as HTML
+  Parameters: {"authenticity_token"=>"D9jmFcc2Slq0BcleCNq7B2dOO2ZGUUgqjb9HoaAx8TFhh82uxJLWgrL6FRHHy2dbu7tsP1nFutHGLGCT4hM/ag==", "id"=>"4"}
+  [1m[36mCategory Load (0.3ms)[0m  [1m[34mSELECT `categories`.* FROM `categories` WHERE `categories`.`id` = 4 LIMIT 1[0m
+  ↳ app/controllers/admin/categories_controller.rb:67:in `find_category'
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/admin/categories_controller.rb:51:in `destroy'
+  [1m[36mCategory Load (0.6ms)[0m  [1m[34mSELECT `categories`.* FROM `categories` WHERE (`categories`.`ancestry` LIKE '4/%' OR `categories`.`ancestry` = '4')[0m
+  ↳ app/controllers/admin/categories_controller.rb:51:in `destroy'
+  [1m[36mProduct Load (0.6ms)[0m  [1m[34mSELECT `products`.* FROM `products` WHERE `products`.`category_id` = 4[0m
+  ↳ app/controllers/admin/categories_controller.rb:51:in `destroy'
+  [1m[36mCategory Destroy (0.3ms)[0m  [1m[31mDELETE FROM `categories` WHERE `categories`.`id` = 4[0m
+  ↳ app/controllers/admin/categories_controller.rb:51:in `destroy'
+  [1m[35m (44.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/admin/categories_controller.rb:51:in `destroy'
+Redirected to http://localhost:3000/admin/categories
+Completed 302 Found in 58ms (ActiveRecord: 46.5ms | Allocations: 4903)
+
+
+Started GET "/admin/categories" for 127.0.0.1 at 2020-06-06 16:21:22 +0800
+Processing by Admin::CategoriesController#index as HTML
+  Rendering admin/categories/index.html.erb within admin/layouts/admin
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT COUNT(*) FROM `categories` WHERE `categories`.`ancestry` IS NULL[0m
+  ↳ app/views/admin/categories/index.html.erb:10
+  [1m[36mCategory Load (0.8ms)[0m  [1m[34mSELECT `categories`.* FROM `categories` WHERE `categories`.`ancestry` IS NULL ORDER BY `categories`.`id` DESC LIMIT 10 OFFSET 0[0m
+  ↳ app/views/admin/categories/index.html.erb:24
+  Rendered admin/categories/index.html.erb within admin/layouts/admin (Duration: 7.7ms | Allocations: 1420)
+  Rendered admin/layouts/_menu.html.erb (Duration: 0.2ms | Allocations: 36)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 28ms (Views: 24.1ms | ActiveRecord: 1.4ms | Allocations: 9151)
+
+
+Started GET "/admin/categories/new" for 127.0.0.1 at 2020-06-06 16:22:47 +0800
+Processing by Admin::CategoriesController#new as HTML
+  Rendering admin/categories/new.html.erb within admin/layouts/admin
+  [1m[36mCategory Load (0.3ms)[0m  [1m[34mSELECT `categories`.* FROM `categories` WHERE `categories`.`ancestry` IS NULL ORDER BY `categories`.`id` DESC[0m
+  ↳ app/views/admin/categories/new.html.erb:26
+  Rendered admin/categories/new.html.erb within admin/layouts/admin (Duration: 2.0ms | Allocations: 1135)
+  Rendered admin/layouts/_menu.html.erb (Duration: 0.1ms | Allocations: 36)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 737ms (Views: 735.8ms | ActiveRecord: 0.3ms | Allocations: 151043)
+
+
+Started GET "/admin/categories/new" for 127.0.0.1 at 2020-06-06 16:22:56 +0800
+Processing by Admin::CategoriesController#new as HTML
+  Rendering admin/categories/new.html.erb within admin/layouts/admin
+  [1m[36mCategory Load (0.3ms)[0m  [1m[34mSELECT `categories`.* FROM `categories` WHERE `categories`.`ancestry` IS NULL ORDER BY `categories`.`id` DESC[0m
+  ↳ app/views/admin/categories/new.html.erb:26
+  Rendered admin/categories/new.html.erb within admin/layouts/admin (Duration: 1.9ms | Allocations: 1127)
+  Rendered admin/layouts/_menu.html.erb (Duration: 0.1ms | Allocations: 36)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 348ms (Views: 347.0ms | ActiveRecord: 0.3ms | Allocations: 149293)
+
+
+Started GET "/admin/categories/new" for 127.0.0.1 at 2020-06-06 16:23:02 +0800
+Processing by Admin::CategoriesController#new as HTML
+  Rendering admin/categories/new.html.erb within admin/layouts/admin
+  [1m[36mCategory Load (0.3ms)[0m  [1m[34mSELECT `categories`.* FROM `categories` WHERE `categories`.`ancestry` IS NULL ORDER BY `categories`.`id` DESC[0m
+  ↳ app/views/admin/categories/new.html.erb:26
+  Rendered admin/categories/new.html.erb within admin/layouts/admin (Duration: 2.2ms | Allocations: 1133)
+  Rendered admin/layouts/_menu.html.erb (Duration: 0.1ms | Allocations: 36)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 342ms (Views: 340.6ms | ActiveRecord: 0.3ms | Allocations: 148886)
+
+
+Started GET "/admin/categories/new" for 127.0.0.1 at 2020-06-06 16:23:06 +0800
+Processing by Admin::CategoriesController#new as HTML
+  Rendering admin/categories/new.html.erb within admin/layouts/admin
+  [1m[36mCategory Load (0.7ms)[0m  [1m[34mSELECT `categories`.* FROM `categories` WHERE `categories`.`ancestry` IS NULL ORDER BY `categories`.`id` DESC[0m
+  ↳ app/views/admin/categories/new.html.erb:26
+  Rendered admin/categories/new.html.erb within admin/layouts/admin (Duration: 3.1ms | Allocations: 1133)
+  Rendered admin/layouts/_menu.html.erb (Duration: 0.1ms | Allocations: 36)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 17ms (Views: 15.6ms | ActiveRecord: 0.7ms | Allocations: 8482)
+
+
+Started GET "/admin/categories/new" for 127.0.0.1 at 2020-06-06 16:23:12 +0800
+Processing by Admin::CategoriesController#new as HTML
+  Rendering admin/categories/new.html.erb within admin/layouts/admin
+  [1m[36mCategory Load (0.3ms)[0m  [1m[34mSELECT `categories`.* FROM `categories` WHERE `categories`.`ancestry` IS NULL ORDER BY `categories`.`id` DESC[0m
+  ↳ app/views/admin/categories/new.html.erb:26
+  Rendered admin/categories/new.html.erb within admin/layouts/admin (Duration: 3.3ms | Allocations: 1135)
+  Rendered admin/layouts/_menu.html.erb (Duration: 0.1ms | Allocations: 36)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 21ms (Views: 20.0ms | ActiveRecord: 0.3ms | Allocations: 8523)
+
+
+Started GET "/admin/categories/new" for 127.0.0.1 at 2020-06-06 16:23:46 +0800
+Processing by Admin::CategoriesController#new as HTML
+  Rendering admin/categories/new.html.erb within admin/layouts/admin
+  [1m[36mCategory Load (0.9ms)[0m  [1m[34mSELECT `categories`.* FROM `categories` WHERE `categories`.`ancestry` IS NULL ORDER BY `categories`.`id` DESC[0m
+  ↳ app/views/admin/categories/new.html.erb:26
+  Rendered admin/categories/new.html.erb within admin/layouts/admin (Duration: 10.3ms | Allocations: 1147)
+  Rendered admin/layouts/_menu.html.erb (Duration: 0.1ms | Allocations: 36)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 35ms (Views: 32.3ms | ActiveRecord: 0.9ms | Allocations: 8506)
+
+
+Started POST "/admin/categories" for 127.0.0.1 at 2020-06-06 16:23:51 +0800
+Processing by Admin::CategoriesController#create as HTML
+  Parameters: {"authenticity_token"=>"PPUFiKuVipTX3+Mgp62hDT+v4HGeXevFcX+KF2p7Ls5Sqi4zqDEWTNEgP29ovH1R41q3KIHJGT467K0lKFnglQ==", "category"=>{"ancestry"=>"", "title"=>"1", "weight"=>"1"}, "commit"=>"Create a new category"}
+DEPRECATION WARNING: Uniqueness validator will no longer enforce case sensitive comparison in Rails 6.1. To continue case sensitive comparison on the :title attribute in Category model, pass `case_sensitive: true` option explicitly to the uniqueness validator. (called from create at /home/yfeng/rails_online_mall/app/controllers/admin/categories_controller.rb:25)
+  [1m[35m (0.5ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/admin/categories_controller.rb:25:in `create'
+  [1m[36mCategory Exists? (0.9ms)[0m  [1m[34mSELECT 1 AS one FROM `categories` WHERE `categories`.`title` = BINARY '1' LIMIT 1[0m
+  ↳ app/controllers/admin/categories_controller.rb:25:in `create'
+  [1m[36mCategory Create (0.6ms)[0m  [1m[32mINSERT INTO `categories` (`title`, `weight`, `created_at`, `updated_at`) VALUES ('1', 1, '2020-06-06 08:23:51.277337', '2020-06-06 08:23:51.277337')[0m
+  ↳ app/controllers/admin/categories_controller.rb:25:in `create'
+  [1m[35m (438.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/admin/categories_controller.rb:25:in `create'
+Redirected to http://localhost:3000/admin/categories
+Completed 302 Found in 463ms (ActiveRecord: 440.7ms | Allocations: 4128)
+
+
+Started GET "/admin/categories" for 127.0.0.1 at 2020-06-06 16:23:51 +0800
+Processing by Admin::CategoriesController#index as HTML
+  Rendering admin/categories/index.html.erb within admin/layouts/admin
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT COUNT(*) FROM `categories` WHERE `categories`.`ancestry` IS NULL[0m
+  ↳ app/views/admin/categories/index.html.erb:10
+  [1m[36mCategory Load (0.8ms)[0m  [1m[34mSELECT `categories`.* FROM `categories` WHERE `categories`.`ancestry` IS NULL ORDER BY `categories`.`id` DESC LIMIT 10 OFFSET 0[0m
+  ↳ app/views/admin/categories/index.html.erb:24
+  Rendered admin/categories/index.html.erb within admin/layouts/admin (Duration: 11.4ms | Allocations: 1554)
+  Rendered admin/layouts/_menu.html.erb (Duration: 0.1ms | Allocations: 36)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 30ms (Views: 27.2ms | ActiveRecord: 1.6ms | Allocations: 9120)
+
+
+Started GET "/admin/categories/new" for 127.0.0.1 at 2020-06-06 16:23:52 +0800
+Processing by Admin::CategoriesController#new as HTML
+  Rendering admin/categories/new.html.erb within admin/layouts/admin
+Started GET "/admin/categories/new" for 127.0.0.1 at 2020-06-06 16:23:52 +0800
+  [1m[35m (0.7ms)[0m  [1m[35mSET NAMES utf8mb4,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+Processing by Admin::CategoriesController#new as HTML
+  Rendering admin/categories/new.html.erb within admin/layouts/admin
+  [1m[36mCategory Load (467.5ms)[0m  [1m[34mSELECT `categories`.* FROM `categories` WHERE `categories`.`ancestry` IS NULL ORDER BY `categories`.`id` DESC[0m
+  [1m[36mCategory Load (629.5ms)[0m  [1m[34mSELECT `categories`.* FROM `categories` WHERE `categories`.`ancestry` IS NULL ORDER BY `categories`.`id` DESC[0m
+  ↳ app/views/admin/categories/new.html.erb:26
+  ↳ app/views/admin/categories/new.html.erb:26
+  Rendered admin/categories/new.html.erb within admin/layouts/admin (Duration: 478.0ms | Allocations: 1703)
+  Rendered admin/categories/new.html.erb within admin/layouts/admin (Duration: 641.3ms | Allocations: 5167)
+  Rendered admin/layouts/_menu.html.erb (Duration: 0.1ms | Allocations: 36)
+  Rendered admin/layouts/_menu.html.erb (Duration: 0.1ms | Allocations: 36)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 679ms (Views: 48.7ms | ActiveRecord: 629.5ms | Allocations: 18863)
+
+
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 522ms (Views: 53.3ms | ActiveRecord: 467.5ms | Allocations: 17355)
+
+
+Started POST "/admin/categories" for 127.0.0.1 at 2020-06-06 16:23:59 +0800
+Processing by Admin::CategoriesController#create as HTML
+  Parameters: {"authenticity_token"=>"7xDXKgkYsZG80te8+chZh8nE6NW0SoyRgd1eU9ONPyiBT/yRCrwtSbotC/M22YXbFTG/jKvefmrKTnlhka/xcw==", "category"=>{"ancestry"=>"7", "title"=>"2", "weight"=>"01"}, "commit"=>"Create a new category"}
+DEPRECATION WARNING: Uniqueness validator will no longer enforce case sensitive comparison in Rails 6.1. To continue case sensitive comparison on the :title attribute in Category model, pass `case_sensitive: true` option explicitly to the uniqueness validator. (called from create at /home/yfeng/rails_online_mall/app/controllers/admin/categories_controller.rb:25)
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/admin/categories_controller.rb:25:in `create'
+  [1m[36mCategory Exists? (0.4ms)[0m  [1m[34mSELECT 1 AS one FROM `categories` WHERE `categories`.`title` = BINARY '2' LIMIT 1[0m
+  ↳ app/controllers/admin/categories_controller.rb:25:in `create'
+  [1m[36mCategory Create (0.4ms)[0m  [1m[32mINSERT INTO `categories` (`title`, `weight`, `created_at`, `updated_at`, `ancestry`) VALUES ('2', 1, '2020-06-06 08:23:59.077254', '2020-06-06 08:23:59.077254', '7')[0m
+  ↳ app/controllers/admin/categories_controller.rb:25:in `create'
+  [1m[35m (1029.9ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/admin/categories_controller.rb:25:in `create'
+Redirected to http://localhost:3000/admin/categories
+Completed 302 Found in 1044ms (ActiveRecord: 1031.1ms | Allocations: 4121)
+
+
+Started GET "/admin/categories" for 127.0.0.1 at 2020-06-06 16:24:00 +0800
+Processing by Admin::CategoriesController#index as HTML
+  Rendering admin/categories/index.html.erb within admin/layouts/admin
+  [1m[35m (1.3ms)[0m  [1m[34mSELECT COUNT(*) FROM `categories` WHERE `categories`.`ancestry` IS NULL[0m
+  ↳ app/views/admin/categories/index.html.erb:10
+  [1m[36mCategory Load (0.8ms)[0m  [1m[34mSELECT `categories`.* FROM `categories` WHERE `categories`.`ancestry` IS NULL ORDER BY `categories`.`id` DESC LIMIT 10 OFFSET 0[0m
+  ↳ app/views/admin/categories/index.html.erb:24
+  Rendered admin/categories/index.html.erb within admin/layouts/admin (Duration: 9.4ms | Allocations: 1554)
+  Rendered admin/layouts/_menu.html.erb (Duration: 0.3ms | Allocations: 36)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 30ms (Views: 25.6ms | ActiveRecord: 2.1ms | Allocations: 9133)
+
+
+Started DELETE "/admin/categories/7" for 127.0.0.1 at 2020-06-06 16:24:02 +0800
+Processing by Admin::CategoriesController#destroy as HTML
+  Parameters: {"authenticity_token"=>"xhtChkCMjcDeRHd65C7NNrut3nSsCosg6V6zYmmJ1GqoRGk9QygRGNi7qzUrPxFqZ1iJLbOeeduizZRQK6saMQ==", "id"=>"7"}
+  [1m[36mCategory Load (0.4ms)[0m  [1m[34mSELECT `categories`.* FROM `categories` WHERE `categories`.`id` = 7 LIMIT 1[0m
+  ↳ app/controllers/admin/categories_controller.rb:67:in `find_category'
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/admin/categories_controller.rb:51:in `destroy'
+  [1m[36mCategory Load (0.3ms)[0m  [1m[34mSELECT `categories`.* FROM `categories` WHERE (`categories`.`ancestry` LIKE '7/%' OR `categories`.`ancestry` = '7')[0m
+  ↳ app/controllers/admin/categories_controller.rb:51:in `destroy'
+  [1m[36mProduct Load (0.3ms)[0m  [1m[34mSELECT `products`.* FROM `products` WHERE `products`.`category_id` = 8[0m
+  ↳ app/controllers/admin/categories_controller.rb:51:in `destroy'
+  [1m[36mCategory Destroy (76.9ms)[0m  [1m[31mDELETE FROM `categories` WHERE `categories`.`id` = 8[0m
+  ↳ app/controllers/admin/categories_controller.rb:51:in `destroy'
+  [1m[36mProduct Load (1.1ms)[0m  [1m[34mSELECT `products`.* FROM `products` WHERE `products`.`category_id` = 7[0m
+  ↳ app/controllers/admin/categories_controller.rb:51:in `destroy'
+  [1m[36mCategory Destroy (0.7ms)[0m  [1m[31mDELETE FROM `categories` WHERE `categories`.`id` = 7[0m
+  ↳ app/controllers/admin/categories_controller.rb:51:in `destroy'
+  [1m[35m (57.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/admin/categories_controller.rb:51:in `destroy'
+Redirected to http://localhost:3000/admin/categories
+Completed 302 Found in 155ms (ActiveRecord: 137.3ms | Allocations: 7008)
+
+
+Started GET "/admin/categories" for 127.0.0.1 at 2020-06-06 16:24:03 +0800
+Processing by Admin::CategoriesController#index as HTML
+  Rendering admin/categories/index.html.erb within admin/layouts/admin
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT COUNT(*) FROM `categories` WHERE `categories`.`ancestry` IS NULL[0m
+  ↳ app/views/admin/categories/index.html.erb:10
+  [1m[36mCategory Load (0.9ms)[0m  [1m[34mSELECT `categories`.* FROM `categories` WHERE `categories`.`ancestry` IS NULL ORDER BY `categories`.`id` DESC LIMIT 10 OFFSET 0[0m
+  ↳ app/views/admin/categories/index.html.erb:24
+  Rendered admin/categories/index.html.erb within admin/layouts/admin (Duration: 10.4ms | Allocations: 1419)
+  Rendered admin/layouts/_menu.html.erb (Duration: 0.3ms | Allocations: 36)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 34ms (Views: 30.2ms | ActiveRecord: 1.8ms | Allocations: 9008)
+
+
+Started GET "/admin/categories/new" for 127.0.0.1 at 2020-06-06 16:24:04 +0800
+Processing by Admin::CategoriesController#new as HTML
+  Rendering admin/categories/new.html.erb within admin/layouts/admin
+  [1m[36mCategory Load (0.4ms)[0m  [1m[34mSELECT `categories`.* FROM `categories` WHERE `categories`.`ancestry` IS NULL ORDER BY `categories`.`id` DESC[0m
+  ↳ app/views/admin/categories/new.html.erb:26
+  Rendered admin/categories/new.html.erb within admin/layouts/admin (Duration: 2.5ms | Allocations: 1125)
+  Rendered admin/layouts/_menu.html.erb (Duration: 0.1ms | Allocations: 36)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 11ms (Views: 9.9ms | ActiveRecord: 0.4ms | Allocations: 8473)
+
+
+Started GET "/admin/categories" for 127.0.0.1 at 2020-06-06 16:24:22 +0800
+Processing by Admin::CategoriesController#index as HTML
+  Rendering admin/categories/index.html.erb within admin/layouts/admin
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM `categories` WHERE `categories`.`ancestry` IS NULL[0m
+  ↳ app/views/admin/categories/index.html.erb:10
+  [1m[36mCategory Load (0.3ms)[0m  [1m[34mSELECT `categories`.* FROM `categories` WHERE `categories`.`ancestry` IS NULL ORDER BY `categories`.`id` DESC LIMIT 10 OFFSET 0[0m
+  ↳ app/views/admin/categories/index.html.erb:24
+  Rendered admin/categories/index.html.erb within admin/layouts/admin (Duration: 2.8ms | Allocations: 1425)
+  Rendered admin/layouts/_menu.html.erb (Duration: 0.1ms | Allocations: 39)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 19ms (Views: 12.2ms | ActiveRecord: 1.1ms | Allocations: 12271)
+
+
+Started GET "/admin/categories/new" for 127.0.0.1 at 2020-06-06 16:24:24 +0800
+Processing by Admin::CategoriesController#new as HTML
+  Rendering admin/categories/new.html.erb within admin/layouts/admin
+  [1m[36mCategory Load (0.6ms)[0m  [1m[34mSELECT `categories`.* FROM `categories` WHERE `categories`.`ancestry` IS NULL ORDER BY `categories`.`id` DESC[0m
+  ↳ app/views/admin/categories/new.html.erb:26
+  Rendered admin/categories/new.html.erb within admin/layouts/admin (Duration: 5.1ms | Allocations: 1179)
+  Rendered admin/layouts/_menu.html.erb (Duration: 0.2ms | Allocations: 36)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 48ms (Views: 19.1ms | ActiveRecord: 2.7ms | Allocations: 11981)
+
+
+Started POST "/admin/categories" for 127.0.0.1 at 2020-06-06 16:24:29 +0800
+Processing by Admin::CategoriesController#create as HTML
+  Parameters: {"authenticity_token"=>"2fGLKK3oScnfTRPPh667rAx/9rU8Bsjl5l5DYHh04mu3rqCTrkzVEdmyz4BIv2fw0Iqh7COSOh6tzWRSOlYsMA==", "category"=>{"ancestry"=>"", "title"=>"1", "weight"=>"1"}, "commit"=>"Create a new category"}
+DEPRECATION WARNING: Uniqueness validator will no longer enforce case sensitive comparison in Rails 6.1. To continue case sensitive comparison on the :title attribute in Category model, pass `case_sensitive: true` option explicitly to the uniqueness validator. (called from create at /home/yfeng/rails_online_mall/app/controllers/admin/categories_controller.rb:25)
+  [1m[35m (0.5ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/admin/categories_controller.rb:25:in `create'
+  [1m[36mCategory Exists? (1.0ms)[0m  [1m[34mSELECT 1 AS one FROM `categories` WHERE `categories`.`title` = BINARY '1' LIMIT 1[0m
+  ↳ app/controllers/admin/categories_controller.rb:25:in `create'
+  [1m[36mCategory Create (0.5ms)[0m  [1m[32mINSERT INTO `categories` (`title`, `weight`, `created_at`, `updated_at`) VALUES ('1', 1, '2020-06-06 08:24:29.512780', '2020-06-06 08:24:29.512780')[0m
+  ↳ app/controllers/admin/categories_controller.rb:25:in `create'
+  [1m[35m (115.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/admin/categories_controller.rb:25:in `create'
+Redirected to http://localhost:3000/admin/categories
+Completed 302 Found in 136ms (ActiveRecord: 117.2ms | Allocations: 4327)
+
+
+Started GET "/admin/categories" for 127.0.0.1 at 2020-06-06 16:24:29 +0800
+Processing by Admin::CategoriesController#index as HTML
+  Rendering admin/categories/index.html.erb within admin/layouts/admin
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT COUNT(*) FROM `categories` WHERE `categories`.`ancestry` IS NULL[0m
+  ↳ app/views/admin/categories/index.html.erb:10
+  [1m[36mCategory Load (0.5ms)[0m  [1m[34mSELECT `categories`.* FROM `categories` WHERE `categories`.`ancestry` IS NULL ORDER BY `categories`.`id` DESC LIMIT 10 OFFSET 0[0m
+  ↳ app/views/admin/categories/index.html.erb:24
+  Rendered admin/categories/index.html.erb within admin/layouts/admin (Duration: 7.1ms | Allocations: 1567)
+  Rendered admin/layouts/_menu.html.erb (Duration: 0.1ms | Allocations: 36)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 23ms (Views: 18.9ms | ActiveRecord: 1.1ms | Allocations: 9141)
+
+
+Started GET "/admin/categories/new" for 127.0.0.1 at 2020-06-06 16:24:30 +0800
+Processing by Admin::CategoriesController#new as HTML
+  Rendering admin/categories/new.html.erb within admin/layouts/admin
+  [1m[36mCategory Load (0.8ms)[0m  [1m[34mSELECT `categories`.* FROM `categories` WHERE `categories`.`ancestry` IS NULL ORDER BY `categories`.`id` DESC[0m
+  ↳ app/views/admin/categories/new.html.erb:26
+  Rendered admin/categories/new.html.erb within admin/layouts/admin (Duration: 6.5ms | Allocations: 1141)
+  Rendered admin/layouts/_menu.html.erb (Duration: 0.3ms | Allocations: 36)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 25ms (Views: 22.8ms | ActiveRecord: 0.8ms | Allocations: 8489)
+
+
+Started POST "/admin/categories" for 127.0.0.1 at 2020-06-06 16:24:36 +0800
+Processing by Admin::CategoriesController#create as HTML
+  Parameters: {"authenticity_token"=>"TjNe/5qRhSgeu1HJlLwIRr3I/0DK/KtaupbyN/X/cekgbHVEmTUZ8BhEjYZbrdQaYT2oGdVoWaHxBdUFt92/sg==", "category"=>{"ancestry"=>"9", "title"=>"2", "weight"=>"011"}, "commit"=>"Create a new category"}
+DEPRECATION WARNING: Uniqueness validator will no longer enforce case sensitive comparison in Rails 6.1. To continue case sensitive comparison on the :title attribute in Category model, pass `case_sensitive: true` option explicitly to the uniqueness validator. (called from create at /home/yfeng/rails_online_mall/app/controllers/admin/categories_controller.rb:25)
+  [1m[35m (0.5ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/admin/categories_controller.rb:25:in `create'
+  [1m[36mCategory Exists? (0.9ms)[0m  [1m[34mSELECT 1 AS one FROM `categories` WHERE `categories`.`title` = BINARY '2' LIMIT 1[0m
+  ↳ app/controllers/admin/categories_controller.rb:25:in `create'
+  [1m[36mCategory Create (0.6ms)[0m  [1m[32mINSERT INTO `categories` (`title`, `weight`, `created_at`, `updated_at`, `ancestry`) VALUES ('2', 11, '2020-06-06 08:24:36.170743', '2020-06-06 08:24:36.170743', '9')[0m
+  ↳ app/controllers/admin/categories_controller.rb:25:in `create'
+  [1m[35m (169.8ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/admin/categories_controller.rb:25:in `create'
+Redirected to http://localhost:3000/admin/categories
+Completed 302 Found in 188ms (ActiveRecord: 171.7ms | Allocations: 4130)
+
+
+Started GET "/admin/categories" for 127.0.0.1 at 2020-06-06 16:24:36 +0800
+Processing by Admin::CategoriesController#index as HTML
+  Rendering admin/categories/index.html.erb within admin/layouts/admin
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT COUNT(*) FROM `categories` WHERE `categories`.`ancestry` IS NULL[0m
+  ↳ app/views/admin/categories/index.html.erb:10
+  [1m[36mCategory Load (0.7ms)[0m  [1m[34mSELECT `categories`.* FROM `categories` WHERE `categories`.`ancestry` IS NULL ORDER BY `categories`.`id` DESC LIMIT 10 OFFSET 0[0m
+  ↳ app/views/admin/categories/index.html.erb:24
+  Rendered admin/categories/index.html.erb within admin/layouts/admin (Duration: 9.1ms | Allocations: 1553)
+  Rendered admin/layouts/_menu.html.erb (Duration: 0.2ms | Allocations: 36)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 32ms (Views: 28.8ms | ActiveRecord: 1.6ms | Allocations: 9133)
+
+
+Started GET "/admin/categories?id=9" for 127.0.0.1 at 2020-06-06 16:24:38 +0800
+Processing by Admin::CategoriesController#index as HTML
+  Parameters: {"id"=>"9"}
+  [1m[36mCategory Load (1.0ms)[0m  [1m[34mSELECT `categories`.* FROM `categories` WHERE `categories`.`id` = 9 LIMIT 1[0m
+  ↳ app/controllers/admin/categories_controller.rb:11:in `index'
+  Rendering admin/categories/index.html.erb within admin/layouts/admin
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM `categories` WHERE `categories`.`ancestry` = '9'[0m
+  ↳ app/views/admin/categories/index.html.erb:8
+  [1m[36mCategory Load (0.4ms)[0m  [1m[34mSELECT `categories`.* FROM `categories` WHERE `categories`.`ancestry` = '9' ORDER BY `categories`.`id` DESC LIMIT 10 OFFSET 0[0m
+  ↳ app/views/admin/categories/index.html.erb:24
+  Rendered admin/categories/index.html.erb within admin/layouts/admin (Duration: 3.7ms | Allocations: 1518)
+  Rendered admin/layouts/_menu.html.erb (Duration: 0.2ms | Allocations: 36)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 19ms (Views: 11.2ms | ActiveRecord: 1.8ms | Allocations: 9775)
+
+
+Started DELETE "/admin/categories/9" for 127.0.0.1 at 2020-06-06 16:24:41 +0800
+Processing by Admin::CategoriesController#destroy as HTML
+  Parameters: {"authenticity_token"=>"Nxt6MX+dZWSd4awGzWMPLo0BU/sibQPkuQv7y8jL8GhZRFGKfDn5vJsecEkCctNyUfQEoj358R/ymNz5iuk+Mw==", "id"=>"9"}
+  [1m[36mCategory Load (0.3ms)[0m  [1m[34mSELECT `categories`.* FROM `categories` WHERE `categories`.`id` = 9 LIMIT 1[0m
+  ↳ app/controllers/admin/categories_controller.rb:67:in `find_category'
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/admin/categories_controller.rb:51:in `destroy'
+  [1m[36mCategory Load (0.3ms)[0m  [1m[34mSELECT `categories`.* FROM `categories` WHERE (`categories`.`ancestry` LIKE '9/%' OR `categories`.`ancestry` = '9')[0m
+  ↳ app/controllers/admin/categories_controller.rb:51:in `destroy'
+  [1m[36mProduct Load (0.4ms)[0m  [1m[34mSELECT `products`.* FROM `products` WHERE `products`.`category_id` = 10[0m
+  ↳ app/controllers/admin/categories_controller.rb:51:in `destroy'
+  [1m[36mCategory Destroy (0.3ms)[0m  [1m[31mDELETE FROM `categories` WHERE `categories`.`id` = 10[0m
+  ↳ app/controllers/admin/categories_controller.rb:51:in `destroy'
+  [1m[36mProduct Load (0.3ms)[0m  [1m[34mSELECT `products`.* FROM `products` WHERE `products`.`category_id` = 9[0m
+  ↳ app/controllers/admin/categories_controller.rb:51:in `destroy'
+  [1m[36mCategory Destroy (0.3ms)[0m  [1m[31mDELETE FROM `categories` WHERE `categories`.`id` = 9[0m
+  ↳ app/controllers/admin/categories_controller.rb:51:in `destroy'
+  [1m[35m (130.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/admin/categories_controller.rb:51:in `destroy'
+Redirected to http://localhost:3000/admin/categories
+Completed 302 Found in 148ms (ActiveRecord: 133.3ms | Allocations: 8832)
+
+
+Started GET "/admin/categories" for 127.0.0.1 at 2020-06-06 16:24:41 +0800
+Processing by Admin::CategoriesController#index as HTML
+  Rendering admin/categories/index.html.erb within admin/layouts/admin
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT COUNT(*) FROM `categories` WHERE `categories`.`ancestry` IS NULL[0m
+  ↳ app/views/admin/categories/index.html.erb:10
+  [1m[36mCategory Load (1.0ms)[0m  [1m[34mSELECT `categories`.* FROM `categories` WHERE `categories`.`ancestry` IS NULL ORDER BY `categories`.`id` DESC LIMIT 10 OFFSET 0[0m
+  ↳ app/views/admin/categories/index.html.erb:24
+  Rendered admin/categories/index.html.erb within admin/layouts/admin (Duration: 9.1ms | Allocations: 1418)
+  Rendered admin/layouts/_menu.html.erb (Duration: 0.2ms | Allocations: 36)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 30ms (Views: 25.6ms | ActiveRecord: 1.8ms | Allocations: 8996)
+
+
