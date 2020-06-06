@@ -2657,3 +2657,17 @@ Processing by Admin::CategoriesController#index as HTML
 Completed 200 OK in 30ms (Views: 25.6ms | ActiveRecord: 1.8ms | Allocations: 8996)
 
 
+DEPRECATION WARNING: Initialization autoloaded the constants ActionText::ContentHelper and ActionText::TagHelper.
+
+Being able to do this is deprecated. Autoloading during initialization is going
+to be an error condition in future versions of Rails.
+
+Reloading does not reboot the application, and therefore code executed during
+initialization does not run again. So, if you reload ActionText::ContentHelper, for example,
+the expected changes won't be reflected in that stale Module object.
+
+These autoloaded constants have been unloaded.
+
+Please, check the "Autoloading and Reloading Constants" guide for solutions.
+ (called from <main> at /home/yfeng/rails_online_mall/config/environment.rb:5)
+  [1m[35m (0.7ms)[0m  [1m[35mSET NAMES utf8mb4,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
