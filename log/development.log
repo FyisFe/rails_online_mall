@@ -4716,3 +4716,998 @@ Processing by Admin::ProductImagesController#index as HTML
 Completed 200 OK in 421ms (Views: 301.3ms | ActiveRecord: 5.8ms | Allocations: 41323)
 
 
+DEPRECATION WARNING: Initialization autoloaded the constants ActionText::ContentHelper and ActionText::TagHelper.
+
+Being able to do this is deprecated. Autoloading during initialization is going
+to be an error condition in future versions of Rails.
+
+Reloading does not reboot the application, and therefore code executed during
+initialization does not run again. So, if you reload ActionText::ContentHelper, for example,
+the expected changes won't be reflected in that stale Module object.
+
+These autoloaded constants have been unloaded.
+
+Please, check the "Autoloading and Reloading Constants" guide for solutions.
+ (called from <main> at /home/yfeng/rails_online_mall/config/environment.rb:5)
+Started GET "/admin/products/2/product_images" for 127.0.0.1 at 2020-06-10 12:13:58 +0800
+  [1m[35m (0.3ms)[0m  [1m[35mSET NAMES utf8mb4,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+Processing by Admin::ProductImagesController#index as HTML
+  Parameters: {"product_id"=>"2"}
+  [1m[36mProduct Load (0.3ms)[0m  [1m[34mSELECT `products`.* FROM `products` WHERE `products`.`id` = 2 LIMIT 1[0m
+  ↳ app/controllers/admin/product_images_controller.rb:42:in `find_product'
+  Rendering admin/product_images/index.html.erb within admin/layouts/admin
+  [1m[36mProductImage Load (0.2ms)[0m  [1m[34mSELECT `product_images`.* FROM `product_images` WHERE `product_images`.`product_id` = 2[0m
+  ↳ app/views/admin/product_images/index.html.erb:23
+  Rendered admin/product_images/index.html.erb within admin/layouts/admin (Duration: 7.9ms | Allocations: 2742)
+  Rendered admin/layouts/_menu.html.erb (Duration: 0.3ms | Allocations: 205)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 64ms (Views: 44.0ms | ActiveRecord: 1.9ms | Allocations: 43485)
+
+
+Started POST "/admin/products/2/product_images" for 127.0.0.1 at 2020-06-10 12:14:42 +0800
+Processing by Admin::ProductImagesController#create as HTML
+  Parameters: {"authenticity_token"=>"5fOCpqy+XlPe7eZix1mtBswP6s60zchfZ3ZeHjcYNqNJprAbj27BeYgWrIcB8+f1MGDVJx5GyH6acyRXRpTJvw==", "images"=>[#<ActionDispatch::Http::UploadedFile:0x00007fd3f0863460 @tempfile=#<Tempfile:/tmp/RackMultipart20200610-3835-1at9ixn.jpg>, @original_filename="akrales_190913_3628_0277.19.jpg", @content_type="image/jpeg", @headers="Content-Disposition: form-data; name=\"images[]\"; filename=\"akrales_190913_3628_0277.19.jpg\"\r\nContent-Type: image/jpeg\r\n">], "commit"=>"Upload", "product_id"=>"2"}
+  [1m[36mProduct Load (0.4ms)[0m  [1m[34mSELECT `products`.* FROM `products` WHERE `products`.`id` = 2 LIMIT 1[0m
+  ↳ app/controllers/admin/product_images_controller.rb:42:in `find_product'
+Command :: file -b --mime '/tmp/324e4d38ccea07f18660dc98508985fe20200610-3835-oeaiym.jpg'
+Command :: identify -format '%wx%h,%[exif:orientation]' '/tmp/324e4d38ccea07f18660dc98508985fe20200610-3835-1h746nf.jpg[0]' 2>/dev/null
+[paperclip] An error was received while processing: #<Paperclip::Errors::NotIdentifiedByImageMagickError: Paperclip::Errors::NotIdentifiedByImageMagickError>
+Command :: identify -format '%wx%h,%[exif:orientation]' '/tmp/324e4d38ccea07f18660dc98508985fe20200610-3835-1h746nf.jpg[0]' 2>/dev/null
+[paperclip] An error was received while processing: #<Paperclip::Errors::NotIdentifiedByImageMagickError: Paperclip::Errors::NotIdentifiedByImageMagickError>
+Command :: identify -format '%wx%h,%[exif:orientation]' '/tmp/324e4d38ccea07f18660dc98508985fe20200610-3835-1h746nf.jpg[0]' 2>/dev/null
+[paperclip] An error was received while processing: #<Paperclip::Errors::NotIdentifiedByImageMagickError: Paperclip::Errors::NotIdentifiedByImageMagickError>
+Command :: file -b --mime '/tmp/324e4d38ccea07f18660dc98508985fe20200610-3835-3e4xa2.jpg'
+Redirected to 
+Completed 500 Internal Server Error in 1114ms (ActiveRecord: 0.8ms | Allocations: 17475)
+
+
+  
+NoMethodError (undefined method `back_url' for #<Admin::ProductImagesController:0x00007fd3f08639d8>):
+  
+app/controllers/admin/product_images_controller.rb:14:in `create'
+Started GET "/admin/products/2/product_images" for 127.0.0.1 at 2020-06-10 12:15:45 +0800
+Processing by Admin::ProductImagesController#index as HTML
+  Parameters: {"product_id"=>"2"}
+  [1m[36mProduct Load (0.3ms)[0m  [1m[34mSELECT `products`.* FROM `products` WHERE `products`.`id` = 2 LIMIT 1[0m
+  ↳ app/controllers/admin/product_images_controller.rb:42:in `find_product'
+  Rendering admin/product_images/index.html.erb within admin/layouts/admin
+  [1m[36mProductImage Load (0.3ms)[0m  [1m[34mSELECT `product_images`.* FROM `product_images` WHERE `product_images`.`product_id` = 2[0m
+  ↳ app/views/admin/product_images/index.html.erb:23
+  Rendered admin/product_images/index.html.erb within admin/layouts/admin (Duration: 2.2ms | Allocations: 1113)
+  Rendered admin/layouts/_menu.html.erb (Duration: 0.1ms | Allocations: 46)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 12ms (Views: 10.0ms | ActiveRecord: 0.7ms | Allocations: 9213)
+
+
+Started POST "/admin/products/2/product_images" for 127.0.0.1 at 2020-06-10 12:16:24 +0800
+Processing by Admin::ProductImagesController#create as HTML
+  Parameters: {"authenticity_token"=>"BiI0tNWU0VUwcptLOop78D3dVi5fxny33LPbuA5OsCiqdwYJ9kROf2aJ0a78IDEDwbJpx/VNfJYhtqHxf8JPNA==", "images"=>[#<ActionDispatch::Http::UploadedFile:0x000055eb333e5188 @tempfile=#<Tempfile:/tmp/RackMultipart20200610-3835-8v0w62.jpg>, @original_filename="akrales_190913_3628_0277.19.jpg", @content_type="image/jpeg", @headers="Content-Disposition: form-data; name=\"images[]\"; filename=\"akrales_190913_3628_0277.19.jpg\"\r\nContent-Type: image/jpeg\r\n">, #<ActionDispatch::Http::UploadedFile:0x000055eb333e5138 @tempfile=#<Tempfile:/tmp/RackMultipart20200610-3835-2w3g6u.jpg>, @original_filename="H930DS-Aurora-Black-128GB_Desk1_171009.jpg", @content_type="image/jpeg", @headers="Content-Disposition: form-data; name=\"images[]\"; filename=\"H930DS-Aurora-Black-128GB_Desk1_171009.jpg\"\r\nContent-Type: image/jpeg\r\n">], "commit"=>"Upload", "product_id"=>"2"}
+  [1m[36mProduct Load (0.3ms)[0m  [1m[34mSELECT `products`.* FROM `products` WHERE `products`.`id` = 2 LIMIT 1[0m
+  ↳ app/controllers/admin/product_images_controller.rb:42:in `find_product'
+Command :: file -b --mime '/tmp/324e4d38ccea07f18660dc98508985fe20200610-3835-c9bcht.jpg'
+Command :: identify -format '%wx%h,%[exif:orientation]' '/tmp/324e4d38ccea07f18660dc98508985fe20200610-3835-1y6zkdp.jpg[0]' 2>/dev/null
+[paperclip] An error was received while processing: #<Paperclip::Errors::NotIdentifiedByImageMagickError: Paperclip::Errors::NotIdentifiedByImageMagickError>
+Command :: identify -format '%wx%h,%[exif:orientation]' '/tmp/324e4d38ccea07f18660dc98508985fe20200610-3835-1y6zkdp.jpg[0]' 2>/dev/null
+[paperclip] An error was received while processing: #<Paperclip::Errors::NotIdentifiedByImageMagickError: Paperclip::Errors::NotIdentifiedByImageMagickError>
+Command :: identify -format '%wx%h,%[exif:orientation]' '/tmp/324e4d38ccea07f18660dc98508985fe20200610-3835-1y6zkdp.jpg[0]' 2>/dev/null
+[paperclip] An error was received while processing: #<Paperclip::Errors::NotIdentifiedByImageMagickError: Paperclip::Errors::NotIdentifiedByImageMagickError>
+Command :: file -b --mime '/tmp/324e4d38ccea07f18660dc98508985fe20200610-3835-1tvis1d.jpg'
+Command :: file -b --mime '/tmp/7c4f077ac06003be2ed63ef4482e0daf20200610-3835-lydot0.jpg'
+Command :: identify -format '%wx%h,%[exif:orientation]' '/tmp/7c4f077ac06003be2ed63ef4482e0daf20200610-3835-19x5ruq.jpg[0]' 2>/dev/null
+Command :: identify -format %m '/tmp/7c4f077ac06003be2ed63ef4482e0daf20200610-3835-19x5ruq.jpg[0]'
+Command :: convert '/tmp/7c4f077ac06003be2ed63ef4482e0daf20200610-3835-19x5ruq.jpg[0]' -auto-orient -resize "60^" '/tmp/767a4e353a16161add16c303fea75ca720200610-3835-1i312y3'
+Command :: identify -format '%wx%h,%[exif:orientation]' '/tmp/7c4f077ac06003be2ed63ef4482e0daf20200610-3835-19x5ruq.jpg[0]' 2>/dev/null
+Command :: identify -format %m '/tmp/7c4f077ac06003be2ed63ef4482e0daf20200610-3835-19x5ruq.jpg[0]'
+Command :: convert '/tmp/7c4f077ac06003be2ed63ef4482e0daf20200610-3835-19x5ruq.jpg[0]' -auto-orient -resize "200^" '/tmp/767a4e353a16161add16c303fea75ca720200610-3835-1bnk2sc'
+Command :: identify -format '%wx%h,%[exif:orientation]' '/tmp/7c4f077ac06003be2ed63ef4482e0daf20200610-3835-19x5ruq.jpg[0]' 2>/dev/null
+Command :: identify -format %m '/tmp/7c4f077ac06003be2ed63ef4482e0daf20200610-3835-19x5ruq.jpg[0]'
+Command :: convert '/tmp/7c4f077ac06003be2ed63ef4482e0daf20200610-3835-19x5ruq.jpg[0]' -auto-orient -resize "960" '/tmp/767a4e353a16161add16c303fea75ca720200610-3835-109aalz'
+Command :: file -b --mime '/tmp/7c4f077ac06003be2ed63ef4482e0daf20200610-3835-wz2v5q.jpg'
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/admin/product_images_controller.rb:11:in `block in create'
+  [1m[36mProductImage Create (0.2ms)[0m  [1m[32mINSERT INTO `product_images` (`product_id`, `image_file_name`, `image_content_type`, `image_file_size`, `image_updated_at`, `created_at`, `updated_at`) VALUES (2, 'H930DS-Aurora-Black-128GB_Desk1_171009.jpg', 'image/jpeg', 45131, '2020-06-10 04:16:24', '2020-06-10 04:16:24.723041', '2020-06-10 04:16:24.723041')[0m
+  ↳ app/controllers/admin/product_images_controller.rb:11:in `block in create'
+  [1m[35m (61.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/admin/product_images_controller.rb:11:in `block in create'
+Redirected to 
+Completed 500 Internal Server Error in 436ms (ActiveRecord: 62.4ms | Allocations: 26495)
+
+
+  
+NoMethodError (undefined method `back_url' for #<Admin::ProductImagesController:0x000055eb333e5930>):
+  
+app/controllers/admin/product_images_controller.rb:14:in `create'
+Started POST "/admin/products/2/product_images" for 127.0.0.1 at 2020-06-10 12:21:08 +0800
+Processing by Admin::ProductImagesController#create as HTML
+  Parameters: {"authenticity_token"=>"BiI0tNWU0VUwcptLOop78D3dVi5fxny33LPbuA5OsCiqdwYJ9kROf2aJ0a78IDEDwbJpx/VNfJYhtqHxf8JPNA==", "images"=>[#<ActionDispatch::Http::UploadedFile:0x00007fd3e8022790 @tempfile=#<Tempfile:/tmp/RackMultipart20200610-3835-14gtuip.jpg>, @original_filename="akrales_190913_3628_0277.19.jpg", @content_type="image/jpeg", @headers="Content-Disposition: form-data; name=\"images[]\"; filename=\"akrales_190913_3628_0277.19.jpg\"\r\nContent-Type: image/jpeg\r\n">], "commit"=>"Upload", "product_id"=>"2"}
+  [1m[36mProduct Load (0.8ms)[0m  [1m[34mSELECT `products`.* FROM `products` WHERE `products`.`id` = 2 LIMIT 1[0m
+  ↳ app/controllers/admin/product_images_controller.rb:42:in `find_product'
+Command :: file -b --mime '/tmp/324e4d38ccea07f18660dc98508985fe20200610-3835-xvwleu.jpg'
+Command :: identify -format '%wx%h,%[exif:orientation]' '/tmp/324e4d38ccea07f18660dc98508985fe20200610-3835-6idu1m.jpg[0]' 2>/dev/null
+[paperclip] An error was received while processing: #<Paperclip::Errors::NotIdentifiedByImageMagickError: Paperclip::Errors::NotIdentifiedByImageMagickError>
+Command :: identify -format '%wx%h,%[exif:orientation]' '/tmp/324e4d38ccea07f18660dc98508985fe20200610-3835-6idu1m.jpg[0]' 2>/dev/null
+[paperclip] An error was received while processing: #<Paperclip::Errors::NotIdentifiedByImageMagickError: Paperclip::Errors::NotIdentifiedByImageMagickError>
+Command :: identify -format '%wx%h,%[exif:orientation]' '/tmp/324e4d38ccea07f18660dc98508985fe20200610-3835-6idu1m.jpg[0]' 2>/dev/null
+[paperclip] An error was received while processing: #<Paperclip::Errors::NotIdentifiedByImageMagickError: Paperclip::Errors::NotIdentifiedByImageMagickError>
+Command :: file -b --mime '/tmp/324e4d38ccea07f18660dc98508985fe20200610-3835-1mmzhh4.jpg'
+Redirected to 
+Completed 500 Internal Server Error in 76ms (ActiveRecord: 0.8ms | Allocations: 11256)
+
+
+  
+NoMethodError (undefined method `back_url' for #<Admin::ProductImagesController:0x00007fd3e8022ce0>):
+  
+app/controllers/admin/product_images_controller.rb:14:in `create'
+Started POST "/admin/products/2/product_images" for 127.0.0.1 at 2020-06-10 12:22:11 +0800
+Processing by Admin::ProductImagesController#create as HTML
+  Parameters: {"authenticity_token"=>"BiI0tNWU0VUwcptLOop78D3dVi5fxny33LPbuA5OsCiqdwYJ9kROf2aJ0a78IDEDwbJpx/VNfJYhtqHxf8JPNA==", "images"=>[#<ActionDispatch::Http::UploadedFile:0x00007fd3dc00a908 @tempfile=#<Tempfile:/tmp/RackMultipart20200610-3835-17ew7wo.jpg>, @original_filename="akrales_190913_3628_0277.19.jpg", @content_type="image/jpeg", @headers="Content-Disposition: form-data; name=\"images[]\"; filename=\"akrales_190913_3628_0277.19.jpg\"\r\nContent-Type: image/jpeg\r\n">], "commit"=>"Upload", "product_id"=>"2"}
+  [1m[36mProduct Load (0.3ms)[0m  [1m[34mSELECT `products`.* FROM `products` WHERE `products`.`id` = 2 LIMIT 1[0m
+  ↳ app/controllers/admin/product_images_controller.rb:42:in `find_product'
+Command :: file -b --mime '/tmp/324e4d38ccea07f18660dc98508985fe20200610-3835-1cnm60h.jpg'
+Command :: identify -format '%wx%h,%[exif:orientation]' '/tmp/324e4d38ccea07f18660dc98508985fe20200610-3835-m5g16g.jpg[0]' 2>/dev/null
+[paperclip] An error was received while processing: #<Paperclip::Errors::NotIdentifiedByImageMagickError: Paperclip::Errors::NotIdentifiedByImageMagickError>
+Command :: identify -format '%wx%h,%[exif:orientation]' '/tmp/324e4d38ccea07f18660dc98508985fe20200610-3835-m5g16g.jpg[0]' 2>/dev/null
+[paperclip] An error was received while processing: #<Paperclip::Errors::NotIdentifiedByImageMagickError: Paperclip::Errors::NotIdentifiedByImageMagickError>
+Command :: identify -format '%wx%h,%[exif:orientation]' '/tmp/324e4d38ccea07f18660dc98508985fe20200610-3835-m5g16g.jpg[0]' 2>/dev/null
+[paperclip] An error was received while processing: #<Paperclip::Errors::NotIdentifiedByImageMagickError: Paperclip::Errors::NotIdentifiedByImageMagickError>
+Command :: file -b --mime '/tmp/324e4d38ccea07f18660dc98508985fe20200610-3835-p9o6dw.jpg'
+Redirected to 
+Completed 500 Internal Server Error in 41ms (ActiveRecord: 0.3ms | Allocations: 11258)
+
+
+  
+NoMethodError (undefined method `back_url' for #<Admin::ProductImagesController:0x00007fd3dc00ae58>):
+  
+app/controllers/admin/product_images_controller.rb:14:in `create'
+Started POST "/admin/products/2/product_images" for 127.0.0.1 at 2020-06-10 12:23:08 +0800
+Processing by Admin::ProductImagesController#create as HTML
+  Parameters: {"authenticity_token"=>"BiI0tNWU0VUwcptLOop78D3dVi5fxny33LPbuA5OsCiqdwYJ9kROf2aJ0a78IDEDwbJpx/VNfJYhtqHxf8JPNA==", "images"=>[#<ActionDispatch::Http::UploadedFile:0x00007fd3f0422590 @tempfile=#<Tempfile:/tmp/RackMultipart20200610-3835-fv18ap.jpg>, @original_filename="akrales_190913_3628_0277.19.jpg", @content_type="image/jpeg", @headers="Content-Disposition: form-data; name=\"images[]\"; filename=\"akrales_190913_3628_0277.19.jpg\"\r\nContent-Type: image/jpeg\r\n">], "commit"=>"Upload", "product_id"=>"2"}
+  [1m[36mProduct Load (0.2ms)[0m  [1m[34mSELECT `products`.* FROM `products` WHERE `products`.`id` = 2 LIMIT 1[0m
+  ↳ app/controllers/admin/product_images_controller.rb:42:in `find_product'
+Command :: file -b --mime '/tmp/324e4d38ccea07f18660dc98508985fe20200610-3835-1dpdm63.jpg'
+Command :: identify -format '%wx%h,%[exif:orientation]' '/tmp/324e4d38ccea07f18660dc98508985fe20200610-3835-fvpjzs.jpg[0]' 2>/dev/null
+[paperclip] An error was received while processing: #<Paperclip::Errors::NotIdentifiedByImageMagickError: Paperclip::Errors::NotIdentifiedByImageMagickError>
+Command :: identify -format '%wx%h,%[exif:orientation]' '/tmp/324e4d38ccea07f18660dc98508985fe20200610-3835-fvpjzs.jpg[0]' 2>/dev/null
+[paperclip] An error was received while processing: #<Paperclip::Errors::NotIdentifiedByImageMagickError: Paperclip::Errors::NotIdentifiedByImageMagickError>
+Command :: identify -format '%wx%h,%[exif:orientation]' '/tmp/324e4d38ccea07f18660dc98508985fe20200610-3835-fvpjzs.jpg[0]' 2>/dev/null
+[paperclip] An error was received while processing: #<Paperclip::Errors::NotIdentifiedByImageMagickError: Paperclip::Errors::NotIdentifiedByImageMagickError>
+Command :: file -b --mime '/tmp/324e4d38ccea07f18660dc98508985fe20200610-3835-gm7mcn.jpg'
+No template found for Admin::ProductImagesController#create, rendering head :no_content
+Completed 204 No Content in 57ms (ActiveRecord: 2.1ms | Allocations: 21966)
+
+
+Started GET "/admin/products/2/product_images" for 127.0.0.1 at 2020-06-10 12:23:14 +0800
+Processing by Admin::ProductImagesController#index as HTML
+  Parameters: {"product_id"=>"2"}
+  [1m[36mProduct Load (0.3ms)[0m  [1m[34mSELECT `products`.* FROM `products` WHERE `products`.`id` = 2 LIMIT 1[0m
+  ↳ app/controllers/admin/product_images_controller.rb:42:in `find_product'
+  Rendering admin/product_images/index.html.erb within admin/layouts/admin
+  [1m[36mProductImage Load (0.4ms)[0m  [1m[34mSELECT `product_images`.* FROM `product_images` WHERE `product_images`.`product_id` = 2[0m
+  ↳ app/views/admin/product_images/index.html.erb:23
+  Rendered admin/product_images/index.html.erb within admin/layouts/admin (Duration: 4.4ms | Allocations: 1736)
+  Rendered admin/layouts/_menu.html.erb (Duration: 0.1ms | Allocations: 51)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 16ms (Views: 13.2ms | ActiveRecord: 0.7ms | Allocations: 9919)
+
+
+Started GET "/admin/products/2/product_images" for 127.0.0.1 at 2020-06-10 12:23:32 +0800
+Processing by Admin::ProductImagesController#index as HTML
+  Parameters: {"product_id"=>"2"}
+  [1m[36mProduct Load (0.2ms)[0m  [1m[34mSELECT `products`.* FROM `products` WHERE `products`.`id` = 2 LIMIT 1[0m
+  ↳ app/controllers/admin/product_images_controller.rb:42:in `find_product'
+  Rendering admin/product_images/index.html.erb within admin/layouts/admin
+  [1m[36mProductImage Load (0.3ms)[0m  [1m[34mSELECT `product_images`.* FROM `product_images` WHERE `product_images`.`product_id` = 2[0m
+  ↳ app/views/admin/product_images/index.html.erb:23
+  Rendered admin/product_images/index.html.erb within admin/layouts/admin (Duration: 10.7ms | Allocations: 6926)
+  Rendered admin/layouts/_menu.html.erb (Duration: 0.1ms | Allocations: 51)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 35ms (Views: 17.9ms | ActiveRecord: 2.3ms | Allocations: 24267)
+
+
+Started DELETE "/admin/products/2/product_images/1" for 127.0.0.1 at 2020-06-10 12:23:35 +0800
+Processing by Admin::ProductImagesController#destroy as HTML
+  Parameters: {"authenticity_token"=>"+96BBvP+2brgoUkks/Fvnz0O8y090X7z9Jsj/EMq2xRXi7O70C5GkLZaA8F1WyVswWHMxJdaftIJnlm1MqYkCA==", "product_id"=>"2", "id"=>"1"}
+  [1m[36mProduct Load (0.3ms)[0m  [1m[34mSELECT `products`.* FROM `products` WHERE `products`.`id` = 2 LIMIT 1[0m
+  ↳ app/controllers/admin/product_images_controller.rb:42:in `find_product'
+  [1m[36mProductImage Load (0.3ms)[0m  [1m[34mSELECT `product_images`.* FROM `product_images` WHERE `product_images`.`product_id` = 2 AND `product_images`.`id` = 1 LIMIT 1[0m
+  ↳ app/controllers/admin/product_images_controller.rb:18:in `destroy'
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/admin/product_images_controller.rb:19:in `destroy'
+  [1m[36mProductImage Destroy (0.4ms)[0m  [1m[31mDELETE FROM `product_images` WHERE `product_images`.`id` = 1[0m
+  ↳ app/controllers/admin/product_images_controller.rb:19:in `destroy'
+  [1m[35m (86.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/admin/product_images_controller.rb:19:in `destroy'
+[paperclip] deleting /home/yfeng/rails_online_mall/public/system/product_images/images/000/000/001/original/H930DS-Aurora-Black-128GB_Desk1_171009.jpg
+[paperclip] deleting /home/yfeng/rails_online_mall/public/system/product_images/images/000/000/001/small/H930DS-Aurora-Black-128GB_Desk1_171009.jpg
+[paperclip] deleting /home/yfeng/rails_online_mall/public/system/product_images/images/000/000/001/middle/H930DS-Aurora-Black-128GB_Desk1_171009.jpg
+[paperclip] deleting /home/yfeng/rails_online_mall/public/system/product_images/images/000/000/001/big/H930DS-Aurora-Black-128GB_Desk1_171009.jpg
+Redirected to 
+Completed 500 Internal Server Error in 103ms (ActiveRecord: 87.2ms | Allocations: 12090)
+
+
+  
+NoMethodError (undefined method `back_url' for #<Admin::ProductImagesController:0x00007fd3f05c4ad8>):
+  
+app/controllers/admin/product_images_controller.rb:25:in `destroy'
+Started POST "/admin/products/2/product_images" for 127.0.0.1 at 2020-06-10 12:25:12 +0800
+Processing by Admin::ProductImagesController#create as HTML
+  Parameters: {"authenticity_token"=>"+96BBvP+2brgoUkks/Fvnz0O8y090X7z9Jsj/EMq2xRXi7O70C5GkLZaA8F1WyVswWHMxJdaftIJnlm1MqYkCA==", "images"=>[#<ActionDispatch::Http::UploadedFile:0x00007fd3d404a6c8 @tempfile=#<Tempfile:/tmp/RackMultipart20200610-3835-6fdxme.jpg>, @original_filename="akrales_190913_3628_0277.19.jpg", @content_type="image/jpeg", @headers="Content-Disposition: form-data; name=\"images[]\"; filename=\"akrales_190913_3628_0277.19.jpg\"\r\nContent-Type: image/jpeg\r\n">], "commit"=>"Upload", "product_id"=>"2"}
+  [1m[36mProduct Load (0.9ms)[0m  [1m[34mSELECT `products`.* FROM `products` WHERE `products`.`id` = 2 LIMIT 1[0m
+  ↳ app/controllers/admin/product_images_controller.rb:42:in `find_product'
+Command :: file -b --mime '/tmp/324e4d38ccea07f18660dc98508985fe20200610-3835-15wtiv9.jpg'
+Command :: identify -format '%wx%h,%[exif:orientation]' '/tmp/324e4d38ccea07f18660dc98508985fe20200610-3835-1111jbw.jpg[0]' 2>/dev/null
+[paperclip] An error was received while processing: #<Paperclip::Errors::NotIdentifiedByImageMagickError: Paperclip::Errors::NotIdentifiedByImageMagickError>
+Command :: identify -format '%wx%h,%[exif:orientation]' '/tmp/324e4d38ccea07f18660dc98508985fe20200610-3835-1111jbw.jpg[0]' 2>/dev/null
+[paperclip] An error was received while processing: #<Paperclip::Errors::NotIdentifiedByImageMagickError: Paperclip::Errors::NotIdentifiedByImageMagickError>
+Command :: identify -format '%wx%h,%[exif:orientation]' '/tmp/324e4d38ccea07f18660dc98508985fe20200610-3835-1111jbw.jpg[0]' 2>/dev/null
+[paperclip] An error was received while processing: #<Paperclip::Errors::NotIdentifiedByImageMagickError: Paperclip::Errors::NotIdentifiedByImageMagickError>
+Command :: file -b --mime '/tmp/324e4d38ccea07f18660dc98508985fe20200610-3835-dqxtoq.jpg'
+Redirected to 
+Completed 500 Internal Server Error in 99ms (ActiveRecord: 0.9ms | Allocations: 11393)
+
+
+  
+NoMethodError (undefined method `back_url' for #<Admin::ProductImagesController:0x00007fd3d404ac18>):
+  
+app/controllers/admin/product_images_controller.rb:14:in `create'
+Started POST "/admin/products/2/product_images" for 127.0.0.1 at 2020-06-10 12:26:39 +0800
+Processing by Admin::ProductImagesController#create as HTML
+  Parameters: {"authenticity_token"=>"+96BBvP+2brgoUkks/Fvnz0O8y090X7z9Jsj/EMq2xRXi7O70C5GkLZaA8F1WyVswWHMxJdaftIJnlm1MqYkCA==", "images"=>[#<ActionDispatch::Http::UploadedFile:0x00007fd3f0108698 @tempfile=#<Tempfile:/tmp/RackMultipart20200610-3835-fkiyr8.jpg>, @original_filename="akrales_190913_3628_0277.19.jpg", @content_type="image/jpeg", @headers="Content-Disposition: form-data; name=\"images[]\"; filename=\"akrales_190913_3628_0277.19.jpg\"\r\nContent-Type: image/jpeg\r\n">], "commit"=>"Upload", "product_id"=>"2"}
+  [1m[36mProduct Load (0.3ms)[0m  [1m[34mSELECT `products`.* FROM `products` WHERE `products`.`id` = 2 LIMIT 1[0m
+  ↳ app/controllers/admin/product_images_controller.rb:42:in `find_product'
+Command :: file -b --mime '/tmp/324e4d38ccea07f18660dc98508985fe20200610-3835-nt8snw.jpg'
+Command :: identify -format '%wx%h,%[exif:orientation]' '/tmp/324e4d38ccea07f18660dc98508985fe20200610-3835-1jjhhk2.jpg[0]' 2>/dev/null
+[paperclip] An error was received while processing: #<Paperclip::Errors::NotIdentifiedByImageMagickError: Paperclip::Errors::NotIdentifiedByImageMagickError>
+Command :: identify -format '%wx%h,%[exif:orientation]' '/tmp/324e4d38ccea07f18660dc98508985fe20200610-3835-1jjhhk2.jpg[0]' 2>/dev/null
+[paperclip] An error was received while processing: #<Paperclip::Errors::NotIdentifiedByImageMagickError: Paperclip::Errors::NotIdentifiedByImageMagickError>
+Command :: identify -format '%wx%h,%[exif:orientation]' '/tmp/324e4d38ccea07f18660dc98508985fe20200610-3835-1jjhhk2.jpg[0]' 2>/dev/null
+[paperclip] An error was received while processing: #<Paperclip::Errors::NotIdentifiedByImageMagickError: Paperclip::Errors::NotIdentifiedByImageMagickError>
+Command :: file -b --mime '/tmp/324e4d38ccea07f18660dc98508985fe20200610-3835-dddphp.jpg'
+Redirected to http://localhost:3000/admin/products/2/product_images
+Completed 302 Found in 57ms (ActiveRecord: 1.9ms | Allocations: 20533)
+
+
+Started GET "/admin/products/2/product_images" for 127.0.0.1 at 2020-06-10 12:26:39 +0800
+Processing by Admin::ProductImagesController#index as HTML
+  Parameters: {"product_id"=>"2"}
+  [1m[36mProduct Load (0.4ms)[0m  [1m[34mSELECT `products`.* FROM `products` WHERE `products`.`id` = 2 LIMIT 1[0m
+  ↳ app/controllers/admin/product_images_controller.rb:42:in `find_product'
+  Rendering admin/product_images/index.html.erb within admin/layouts/admin
+  [1m[36mProductImage Load (0.3ms)[0m  [1m[34mSELECT `product_images`.* FROM `product_images` WHERE `product_images`.`product_id` = 2[0m
+  ↳ app/views/admin/product_images/index.html.erb:23
+  Rendered admin/product_images/index.html.erb within admin/layouts/admin (Duration: 3.0ms | Allocations: 1288)
+  Rendered admin/layouts/_menu.html.erb (Duration: 0.1ms | Allocations: 52)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 15ms (Views: 12.6ms | ActiveRecord: 0.7ms | Allocations: 9468)
+
+
+Started POST "/admin/products/2/product_images" for 127.0.0.1 at 2020-06-10 12:26:48 +0800
+Processing by Admin::ProductImagesController#create as HTML
+  Parameters: {"authenticity_token"=>"HdhqIjo7w4/BFXaREJkPEZhldYIrqss7cHS96INxSeuxjVifGetcpZfuPHTWM0XiZApKa4EhyxqNcceh8v229w==", "images"=>[#<ActionDispatch::Http::UploadedFile:0x000055eb32792638 @tempfile=#<Tempfile:/tmp/RackMultipart20200610-3835-lqgp0e.jpg>, @original_filename="akrales_190913_3628_0277.19.jpg", @content_type="image/jpeg", @headers="Content-Disposition: form-data; name=\"images[]\"; filename=\"akrales_190913_3628_0277.19.jpg\"\r\nContent-Type: image/jpeg\r\n">], "commit"=>"Upload", "product_id"=>"2"}
+  [1m[36mProduct Load (0.8ms)[0m  [1m[34mSELECT `products`.* FROM `products` WHERE `products`.`id` = 2 LIMIT 1[0m
+  ↳ app/controllers/admin/product_images_controller.rb:42:in `find_product'
+Command :: file -b --mime '/tmp/324e4d38ccea07f18660dc98508985fe20200610-3835-1dcpcur.jpg'
+Command :: identify -format '%wx%h,%[exif:orientation]' '/tmp/324e4d38ccea07f18660dc98508985fe20200610-3835-6l688.jpg[0]' 2>/dev/null
+[paperclip] An error was received while processing: #<Paperclip::Errors::NotIdentifiedByImageMagickError: Paperclip::Errors::NotIdentifiedByImageMagickError>
+Command :: identify -format '%wx%h,%[exif:orientation]' '/tmp/324e4d38ccea07f18660dc98508985fe20200610-3835-6l688.jpg[0]' 2>/dev/null
+[paperclip] An error was received while processing: #<Paperclip::Errors::NotIdentifiedByImageMagickError: Paperclip::Errors::NotIdentifiedByImageMagickError>
+Command :: identify -format '%wx%h,%[exif:orientation]' '/tmp/324e4d38ccea07f18660dc98508985fe20200610-3835-6l688.jpg[0]' 2>/dev/null
+[paperclip] An error was received while processing: #<Paperclip::Errors::NotIdentifiedByImageMagickError: Paperclip::Errors::NotIdentifiedByImageMagickError>
+Command :: file -b --mime '/tmp/324e4d38ccea07f18660dc98508985fe20200610-3835-1hm9k65.jpg'
+Redirected to http://localhost:3000/admin/products/2/product_images
+Completed 302 Found in 80ms (ActiveRecord: 0.8ms | Allocations: 6040)
+
+
+Started GET "/admin/products/2/product_images" for 127.0.0.1 at 2020-06-10 12:26:48 +0800
+Processing by Admin::ProductImagesController#index as HTML
+  Parameters: {"product_id"=>"2"}
+  [1m[36mProduct Load (0.3ms)[0m  [1m[34mSELECT `products`.* FROM `products` WHERE `products`.`id` = 2 LIMIT 1[0m
+  ↳ app/controllers/admin/product_images_controller.rb:42:in `find_product'
+  Rendering admin/product_images/index.html.erb within admin/layouts/admin
+  [1m[36mProductImage Load (0.4ms)[0m  [1m[34mSELECT `product_images`.* FROM `product_images` WHERE `product_images`.`product_id` = 2[0m
+  ↳ app/views/admin/product_images/index.html.erb:23
+  Rendered admin/product_images/index.html.erb within admin/layouts/admin (Duration: 2.7ms | Allocations: 1093)
+  Rendered admin/layouts/_menu.html.erb (Duration: 0.2ms | Allocations: 46)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 14ms (Views: 12.1ms | ActiveRecord: 0.7ms | Allocations: 9112)
+
+
+Started GET "/admin/products" for 127.0.0.1 at 2020-06-10 12:27:07 +0800
+Processing by Admin::ProductsController#index as HTML
+  Rendering admin/products/index.html.erb within admin/layouts/admin
+  [1m[35m (13.3ms)[0m  [1m[34mSELECT COUNT(*) FROM `products`[0m
+  ↳ app/views/admin/products/index.html.erb:7
+  [1m[36mProduct Load (1.2ms)[0m  [1m[34mSELECT `products`.* FROM `products` ORDER BY id desc LIMIT 10 OFFSET 0[0m
+  ↳ app/views/admin/products/index.html.erb:24
+  Rendered admin/products/index.html.erb within admin/layouts/admin (Duration: 26.8ms | Allocations: 1976)
+  Rendered admin/layouts/_menu.html.erb (Duration: 0.4ms | Allocations: 49)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 58ms (Views: 40.6ms | ActiveRecord: 14.4ms | Allocations: 9805)
+
+
+Started GET "/admin/products/2/product_images" for 127.0.0.1 at 2020-06-10 12:27:08 +0800
+Processing by Admin::ProductImagesController#index as HTML
+  Parameters: {"product_id"=>"2"}
+  [1m[36mProduct Load (1.0ms)[0m  [1m[34mSELECT `products`.* FROM `products` WHERE `products`.`id` = 2 LIMIT 1[0m
+  ↳ app/controllers/admin/product_images_controller.rb:42:in `find_product'
+  Rendering admin/product_images/index.html.erb within admin/layouts/admin
+  [1m[36mProductImage Load (0.9ms)[0m  [1m[34mSELECT `product_images`.* FROM `product_images` WHERE `product_images`.`product_id` = 2[0m
+  ↳ app/views/admin/product_images/index.html.erb:23
+  Rendered admin/product_images/index.html.erb within admin/layouts/admin (Duration: 7.5ms | Allocations: 1101)
+  Rendered admin/layouts/_menu.html.erb (Duration: 0.2ms | Allocations: 50)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 29ms (Views: 21.4ms | ActiveRecord: 1.9ms | Allocations: 8988)
+
+
+Started POST "/admin/products/2/product_images" for 127.0.0.1 at 2020-06-10 12:27:19 +0800
+Processing by Admin::ProductImagesController#create as HTML
+  Parameters: {"authenticity_token"=>"xZrbBPsHRA8d+c6aMABYBZaxw/ga9n6yz3bTNMIVPthpz+m52NfbJUsChH/2qhL2at78EbB9fpMyc6l9s5nBxA==", "images"=>[#<ActionDispatch::Http::UploadedFile:0x000055eb334240b8 @tempfile=#<Tempfile:/tmp/RackMultipart20200610-3835-1pitqow.jpg>, @original_filename="akrales_190913_3628_0277.19.jpg", @content_type="image/jpeg", @headers="Content-Disposition: form-data; name=\"images[]\"; filename=\"akrales_190913_3628_0277.19.jpg\"\r\nContent-Type: image/jpeg\r\n">, #<ActionDispatch::Http::UploadedFile:0x000055eb33424068 @tempfile=#<Tempfile:/tmp/RackMultipart20200610-3835-111h0t3.jpg>, @original_filename="H930DS-Aurora-Black-128GB_Desk1_171009.jpg", @content_type="image/jpeg", @headers="Content-Disposition: form-data; name=\"images[]\"; filename=\"H930DS-Aurora-Black-128GB_Desk1_171009.jpg\"\r\nContent-Type: image/jpeg\r\n">], "commit"=>"Upload", "product_id"=>"2"}
+  [1m[36mProduct Load (0.2ms)[0m  [1m[34mSELECT `products`.* FROM `products` WHERE `products`.`id` = 2 LIMIT 1[0m
+  ↳ app/controllers/admin/product_images_controller.rb:41:in `find_product'
+Command :: file -b --mime '/tmp/324e4d38ccea07f18660dc98508985fe20200610-3835-p6wsun.jpg'
+Command :: identify -format '%wx%h,%[exif:orientation]' '/tmp/324e4d38ccea07f18660dc98508985fe20200610-3835-yhi3lo.jpg[0]' 2>/dev/null
+[paperclip] An error was received while processing: #<Paperclip::Errors::NotIdentifiedByImageMagickError: Paperclip::Errors::NotIdentifiedByImageMagickError>
+Command :: identify -format '%wx%h,%[exif:orientation]' '/tmp/324e4d38ccea07f18660dc98508985fe20200610-3835-yhi3lo.jpg[0]' 2>/dev/null
+[paperclip] An error was received while processing: #<Paperclip::Errors::NotIdentifiedByImageMagickError: Paperclip::Errors::NotIdentifiedByImageMagickError>
+Command :: identify -format '%wx%h,%[exif:orientation]' '/tmp/324e4d38ccea07f18660dc98508985fe20200610-3835-yhi3lo.jpg[0]' 2>/dev/null
+[paperclip] An error was received while processing: #<Paperclip::Errors::NotIdentifiedByImageMagickError: Paperclip::Errors::NotIdentifiedByImageMagickError>
+Command :: file -b --mime '/tmp/324e4d38ccea07f18660dc98508985fe20200610-3835-nyapq3.jpg'
+Command :: file -b --mime '/tmp/7c4f077ac06003be2ed63ef4482e0daf20200610-3835-1yf0mx3.jpg'
+Command :: identify -format '%wx%h,%[exif:orientation]' '/tmp/7c4f077ac06003be2ed63ef4482e0daf20200610-3835-1bglkb1.jpg[0]' 2>/dev/null
+Command :: identify -format %m '/tmp/7c4f077ac06003be2ed63ef4482e0daf20200610-3835-1bglkb1.jpg[0]'
+Command :: convert '/tmp/7c4f077ac06003be2ed63ef4482e0daf20200610-3835-1bglkb1.jpg[0]' -auto-orient -resize "60^" '/tmp/af74f919f440d57fc93c1a6fa7bff69020200610-3835-11oi2n3'
+Command :: identify -format '%wx%h,%[exif:orientation]' '/tmp/7c4f077ac06003be2ed63ef4482e0daf20200610-3835-1bglkb1.jpg[0]' 2>/dev/null
+Command :: identify -format %m '/tmp/7c4f077ac06003be2ed63ef4482e0daf20200610-3835-1bglkb1.jpg[0]'
+Command :: convert '/tmp/7c4f077ac06003be2ed63ef4482e0daf20200610-3835-1bglkb1.jpg[0]' -auto-orient -resize "200^" '/tmp/af74f919f440d57fc93c1a6fa7bff69020200610-3835-2d65e6'
+Command :: identify -format '%wx%h,%[exif:orientation]' '/tmp/7c4f077ac06003be2ed63ef4482e0daf20200610-3835-1bglkb1.jpg[0]' 2>/dev/null
+Command :: identify -format %m '/tmp/7c4f077ac06003be2ed63ef4482e0daf20200610-3835-1bglkb1.jpg[0]'
+Command :: convert '/tmp/7c4f077ac06003be2ed63ef4482e0daf20200610-3835-1bglkb1.jpg[0]' -auto-orient -resize "960" '/tmp/af74f919f440d57fc93c1a6fa7bff69020200610-3835-1v5vna5'
+Command :: file -b --mime '/tmp/7c4f077ac06003be2ed63ef4482e0daf20200610-3835-1hql4k7.jpg'
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/admin/product_images_controller.rb:11:in `block in create'
+  [1m[36mProductImage Create (0.6ms)[0m  [1m[32mINSERT INTO `product_images` (`product_id`, `image_file_name`, `image_content_type`, `image_file_size`, `image_updated_at`, `created_at`, `updated_at`) VALUES (2, 'H930DS-Aurora-Black-128GB_Desk1_171009.jpg', 'image/jpeg', 45131, '2020-06-10 04:27:19', '2020-06-10 04:27:19.299286', '2020-06-10 04:27:19.299286')[0m
+  ↳ app/controllers/admin/product_images_controller.rb:11:in `block in create'
+  [1m[35m (38.9ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/admin/product_images_controller.rb:11:in `block in create'
+No template found for Admin::ProductImagesController#create, rendering head :no_content
+Completed 204 No Content in 242ms (ActiveRecord: 41.8ms | Allocations: 35431)
+
+
+Started GET "/admin/products/2/product_images" for 127.0.0.1 at 2020-06-10 12:27:20 +0800
+Processing by Admin::ProductImagesController#index as HTML
+  Parameters: {"product_id"=>"2"}
+  [1m[36mProduct Load (0.9ms)[0m  [1m[34mSELECT `products`.* FROM `products` WHERE `products`.`id` = 2 LIMIT 1[0m
+  ↳ app/controllers/admin/product_images_controller.rb:41:in `find_product'
+  Rendering admin/product_images/index.html.erb within admin/layouts/admin
+  [1m[36mProductImage Load (0.8ms)[0m  [1m[34mSELECT `product_images`.* FROM `product_images` WHERE `product_images`.`product_id` = 2[0m
+  ↳ app/views/admin/product_images/index.html.erb:23
+  Rendered admin/product_images/index.html.erb within admin/layouts/admin (Duration: 10.4ms | Allocations: 1691)
+  Rendered admin/layouts/_menu.html.erb (Duration: 0.2ms | Allocations: 51)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 32ms (Views: 24.1ms | ActiveRecord: 1.7ms | Allocations: 9868)
+
+
+Started GET "/admin/products/2/product_images" for 127.0.0.1 at 2020-06-10 12:27:30 +0800
+Processing by Admin::ProductImagesController#index as HTML
+  Parameters: {"product_id"=>"2"}
+  [1m[36mProduct Load (0.3ms)[0m  [1m[34mSELECT `products`.* FROM `products` WHERE `products`.`id` = 2 LIMIT 1[0m
+  ↳ app/controllers/admin/product_images_controller.rb:41:in `find_product'
+  Rendering admin/product_images/index.html.erb within admin/layouts/admin
+  [1m[36mProductImage Load (0.4ms)[0m  [1m[34mSELECT `product_images`.* FROM `product_images` WHERE `product_images`.`product_id` = 2[0m
+  ↳ app/views/admin/product_images/index.html.erb:23
+  Rendered admin/product_images/index.html.erb within admin/layouts/admin (Duration: 2.6ms | Allocations: 1501)
+  Rendered admin/layouts/_menu.html.erb (Duration: 0.1ms | Allocations: 46)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 11ms (Views: 9.5ms | ActiveRecord: 0.7ms | Allocations: 9384)
+
+
+Started DELETE "/admin/products/2/product_images/2" for 127.0.0.1 at 2020-06-10 12:27:42 +0800
+Processing by Admin::ProductImagesController#destroy as HTML
+  Parameters: {"authenticity_token"=>"R8Hy7lGN/GQw1illQ4O6t4vwtldynWn0jTWeIo2jwB3rlMBTcl1jTmYtY4CFKfBEd5+JvtgWadVwMORr/C8/AQ==", "product_id"=>"2", "id"=>"2"}
+  [1m[36mProduct Load (0.3ms)[0m  [1m[34mSELECT `products`.* FROM `products` WHERE `products`.`id` = 2 LIMIT 1[0m
+  ↳ app/controllers/admin/product_images_controller.rb:41:in `find_product'
+  [1m[36mProductImage Load (0.4ms)[0m  [1m[34mSELECT `product_images`.* FROM `product_images` WHERE `product_images`.`product_id` = 2 AND `product_images`.`id` = 2 LIMIT 1[0m
+  ↳ app/controllers/admin/product_images_controller.rb:17:in `destroy'
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/admin/product_images_controller.rb:18:in `destroy'
+  [1m[36mProductImage Destroy (0.3ms)[0m  [1m[31mDELETE FROM `product_images` WHERE `product_images`.`id` = 2[0m
+  ↳ app/controllers/admin/product_images_controller.rb:18:in `destroy'
+  [1m[35m (71.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/admin/product_images_controller.rb:18:in `destroy'
+[paperclip] deleting /home/yfeng/rails_online_mall/public/system/product_images/images/000/000/002/original/H930DS-Aurora-Black-128GB_Desk1_171009.jpg
+[paperclip] deleting /home/yfeng/rails_online_mall/public/system/product_images/images/000/000/002/small/H930DS-Aurora-Black-128GB_Desk1_171009.jpg
+[paperclip] deleting /home/yfeng/rails_online_mall/public/system/product_images/images/000/000/002/middle/H930DS-Aurora-Black-128GB_Desk1_171009.jpg
+[paperclip] deleting /home/yfeng/rails_online_mall/public/system/product_images/images/000/000/002/big/H930DS-Aurora-Black-128GB_Desk1_171009.jpg
+Redirected to http://localhost:3000/admin/products/2/product_images
+Completed 302 Found in 111ms (ActiveRecord: 74.2ms | Allocations: 21259)
+
+
+Started GET "/admin/products/2/product_images" for 127.0.0.1 at 2020-06-10 12:27:42 +0800
+Processing by Admin::ProductImagesController#index as HTML
+  Parameters: {"product_id"=>"2"}
+  [1m[36mProduct Load (0.2ms)[0m  [1m[34mSELECT `products`.* FROM `products` WHERE `products`.`id` = 2 LIMIT 1[0m
+  ↳ app/controllers/admin/product_images_controller.rb:41:in `find_product'
+  Rendering admin/product_images/index.html.erb within admin/layouts/admin
+  [1m[36mProductImage Load (0.2ms)[0m  [1m[34mSELECT `product_images`.* FROM `product_images` WHERE `product_images`.`product_id` = 2[0m
+  ↳ app/views/admin/product_images/index.html.erb:23
+  Rendered admin/product_images/index.html.erb within admin/layouts/admin (Duration: 1.8ms | Allocations: 1308)
+  Rendered admin/layouts/_menu.html.erb (Duration: 0.2ms | Allocations: 52)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 11ms (Views: 9.7ms | ActiveRecord: 0.5ms | Allocations: 9494)
+
+
+Started POST "/admin/products/2/product_images" for 127.0.0.1 at 2020-06-10 12:27:48 +0800
+Processing by Admin::ProductImagesController#create as HTML
+  Parameters: {"authenticity_token"=>"A+phIVFhdOKEmSaUdSqO4u+D8epGawDYcIrLGHUdN2Wvv1OccrHryNJibHGzgMQRE+zOA+zgAPmNj7FRBJHIeQ==", "images"=>[#<ActionDispatch::Http::UploadedFile:0x00007fd3f0640cf0 @tempfile=#<Tempfile:/tmp/RackMultipart20200610-3835-6ml488.jpg>, @original_filename="H930DS-Aurora-Black-128GB_Desk1_171009.jpg", @content_type="image/jpeg", @headers="Content-Disposition: form-data; name=\"images[]\"; filename=\"H930DS-Aurora-Black-128GB_Desk1_171009.jpg\"\r\nContent-Type: image/jpeg\r\n">], "commit"=>"Upload", "product_id"=>"2"}
+  [1m[36mProduct Load (0.8ms)[0m  [1m[34mSELECT `products`.* FROM `products` WHERE `products`.`id` = 2 LIMIT 1[0m
+  ↳ app/controllers/admin/product_images_controller.rb:41:in `find_product'
+Command :: file -b --mime '/tmp/7c4f077ac06003be2ed63ef4482e0daf20200610-3835-vq0n6m.jpg'
+Command :: identify -format '%wx%h,%[exif:orientation]' '/tmp/7c4f077ac06003be2ed63ef4482e0daf20200610-3835-ymw0bo.jpg[0]' 2>/dev/null
+Command :: identify -format %m '/tmp/7c4f077ac06003be2ed63ef4482e0daf20200610-3835-ymw0bo.jpg[0]'
+Command :: convert '/tmp/7c4f077ac06003be2ed63ef4482e0daf20200610-3835-ymw0bo.jpg[0]' -auto-orient -resize "60^" '/tmp/f06a770b53f0190d8dd4ae9669e4e4f820200610-3835-y93cyy'
+Command :: identify -format '%wx%h,%[exif:orientation]' '/tmp/7c4f077ac06003be2ed63ef4482e0daf20200610-3835-ymw0bo.jpg[0]' 2>/dev/null
+Command :: identify -format %m '/tmp/7c4f077ac06003be2ed63ef4482e0daf20200610-3835-ymw0bo.jpg[0]'
+Command :: convert '/tmp/7c4f077ac06003be2ed63ef4482e0daf20200610-3835-ymw0bo.jpg[0]' -auto-orient -resize "200^" '/tmp/f06a770b53f0190d8dd4ae9669e4e4f820200610-3835-1hh1xng'
+Command :: identify -format '%wx%h,%[exif:orientation]' '/tmp/7c4f077ac06003be2ed63ef4482e0daf20200610-3835-ymw0bo.jpg[0]' 2>/dev/null
+Command :: identify -format %m '/tmp/7c4f077ac06003be2ed63ef4482e0daf20200610-3835-ymw0bo.jpg[0]'
+Command :: convert '/tmp/7c4f077ac06003be2ed63ef4482e0daf20200610-3835-ymw0bo.jpg[0]' -auto-orient -resize "960" '/tmp/f06a770b53f0190d8dd4ae9669e4e4f820200610-3835-1o7u94p'
+Command :: file -b --mime '/tmp/7c4f077ac06003be2ed63ef4482e0daf20200610-3835-18737p0.jpg'
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/admin/product_images_controller.rb:11:in `block in create'
+  [1m[36mProductImage Create (0.3ms)[0m  [1m[32mINSERT INTO `product_images` (`product_id`, `image_file_name`, `image_content_type`, `image_file_size`, `image_updated_at`, `created_at`, `updated_at`) VALUES (2, 'H930DS-Aurora-Black-128GB_Desk1_171009.jpg', 'image/jpeg', 45131, '2020-06-10 04:27:48', '2020-06-10 04:27:48.412164', '2020-06-10 04:27:48.412164')[0m
+  ↳ app/controllers/admin/product_images_controller.rb:11:in `block in create'
+  [1m[35m (43.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/admin/product_images_controller.rb:11:in `block in create'
+Redirected to http://localhost:3000/admin/products/2/product_images
+Completed 302 Found in 203ms (ActiveRecord: 44.6ms | Allocations: 16050)
+
+
+Started GET "/admin/products/2/product_images" for 127.0.0.1 at 2020-06-10 12:27:48 +0800
+Processing by Admin::ProductImagesController#index as HTML
+  Parameters: {"product_id"=>"2"}
+  [1m[36mProduct Load (0.4ms)[0m  [1m[34mSELECT `products`.* FROM `products` WHERE `products`.`id` = 2 LIMIT 1[0m
+  ↳ app/controllers/admin/product_images_controller.rb:41:in `find_product'
+  Rendering admin/product_images/index.html.erb within admin/layouts/admin
+  [1m[36mProductImage Load (0.4ms)[0m  [1m[34mSELECT `product_images`.* FROM `product_images` WHERE `product_images`.`product_id` = 2[0m
+  ↳ app/views/admin/product_images/index.html.erb:23
+  Rendered admin/product_images/index.html.erb within admin/layouts/admin (Duration: 4.1ms | Allocations: 1505)
+  Rendered admin/layouts/_menu.html.erb (Duration: 0.2ms | Allocations: 46)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 18ms (Views: 15.6ms | ActiveRecord: 0.9ms | Allocations: 9518)
+
+
+Started PUT "/admin/products/2/product_images/3" for 127.0.0.1 at 2020-06-10 12:28:42 +0800
+Processing by Admin::ProductImagesController#update as HTML
+  Parameters: {"authenticity_token"=>"OxQXSF+IRavpHtYKmPdMdiVcfnZbzuJgSJ3nKptvJDaXQSX1fFjagb/lnO9eXQaF2TNBn/FF4kG1mJ1j6uPbKg==", "weight"=>"12", "commit"=>"Update", "product_id"=>"2", "id"=>"3"}
+  [1m[36mProduct Load (0.2ms)[0m  [1m[34mSELECT `products`.* FROM `products` WHERE `products`.`id` = 2 LIMIT 1[0m
+  ↳ app/controllers/admin/product_images_controller.rb:41:in `find_product'
+  [1m[36mProductImage Load (0.3ms)[0m  [1m[34mSELECT `product_images`.* FROM `product_images` WHERE `product_images`.`product_id` = 2 AND `product_images`.`id` = 3 LIMIT 1[0m
+  ↳ app/controllers/admin/product_images_controller.rb:28:in `update'
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/admin/product_images_controller.rb:30:in `update'
+  [1m[36mProductImage Update (0.3ms)[0m  [1m[33mUPDATE `product_images` SET `product_images`.`weight` = 12, `product_images`.`updated_at` = '2020-06-10 04:28:42.224426' WHERE `product_images`.`id` = 3[0m
+  ↳ app/controllers/admin/product_images_controller.rb:30:in `update'
+  [1m[35m (33.0ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/admin/product_images_controller.rb:30:in `update'
+Redirected to http://localhost:3000/admin/products/2/product_images
+Completed 302 Found in 66ms (ActiveRecord: 36.0ms | Allocations: 19208)
+
+
+Started GET "/admin/products/2/product_images" for 127.0.0.1 at 2020-06-10 12:28:42 +0800
+Processing by Admin::ProductImagesController#index as HTML
+  Parameters: {"product_id"=>"2"}
+  [1m[36mProduct Load (0.3ms)[0m  [1m[34mSELECT `products`.* FROM `products` WHERE `products`.`id` = 2 LIMIT 1[0m
+  ↳ app/controllers/admin/product_images_controller.rb:41:in `find_product'
+  Rendering admin/product_images/index.html.erb within admin/layouts/admin
+  [1m[36mProductImage Load (0.4ms)[0m  [1m[34mSELECT `product_images`.* FROM `product_images` WHERE `product_images`.`product_id` = 2[0m
+  ↳ app/views/admin/product_images/index.html.erb:23
+  Rendered admin/product_images/index.html.erb within admin/layouts/admin (Duration: 3.8ms | Allocations: 1716)
+  Rendered admin/layouts/_menu.html.erb (Duration: 0.1ms | Allocations: 51)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 15ms (Views: 12.8ms | ActiveRecord: 0.7ms | Allocations: 10247)
+
+
+Started DELETE "/admin/products/2/product_images/3" for 127.0.0.1 at 2020-06-10 12:28:44 +0800
+Processing by Admin::ProductImagesController#destroy as HTML
+  Parameters: {"authenticity_token"=>"emPh9MxhrAWI4E7Zw3PXgUEGnaEgV55F4JtaXIwO9O7WNtNJ77EzL94bBDwF2Z1yvWmiSIrcnmQdniAV/YIL8g==", "product_id"=>"2", "id"=>"3"}
+  [1m[36mProduct Load (0.3ms)[0m  [1m[34mSELECT `products`.* FROM `products` WHERE `products`.`id` = 2 LIMIT 1[0m
+  ↳ app/controllers/admin/product_images_controller.rb:41:in `find_product'
+  [1m[36mProductImage Load (0.3ms)[0m  [1m[34mSELECT `product_images`.* FROM `product_images` WHERE `product_images`.`product_id` = 2 AND `product_images`.`id` = 3 LIMIT 1[0m
+  ↳ app/controllers/admin/product_images_controller.rb:17:in `destroy'
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/admin/product_images_controller.rb:18:in `destroy'
+  [1m[36mProductImage Destroy (0.2ms)[0m  [1m[31mDELETE FROM `product_images` WHERE `product_images`.`id` = 3[0m
+  ↳ app/controllers/admin/product_images_controller.rb:18:in `destroy'
+  [1m[35m (72.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/admin/product_images_controller.rb:18:in `destroy'
+[paperclip] deleting /home/yfeng/rails_online_mall/public/system/product_images/images/000/000/003/original/H930DS-Aurora-Black-128GB_Desk1_171009.jpg
+[paperclip] deleting /home/yfeng/rails_online_mall/public/system/product_images/images/000/000/003/small/H930DS-Aurora-Black-128GB_Desk1_171009.jpg
+[paperclip] deleting /home/yfeng/rails_online_mall/public/system/product_images/images/000/000/003/middle/H930DS-Aurora-Black-128GB_Desk1_171009.jpg
+[paperclip] deleting /home/yfeng/rails_online_mall/public/system/product_images/images/000/000/003/big/H930DS-Aurora-Black-128GB_Desk1_171009.jpg
+Redirected to http://localhost:3000/admin/products/2/product_images
+Completed 302 Found in 83ms (ActiveRecord: 73.3ms | Allocations: 6912)
+
+
+Started GET "/admin/products/2/product_images" for 127.0.0.1 at 2020-06-10 12:28:45 +0800
+Processing by Admin::ProductImagesController#index as HTML
+  Parameters: {"product_id"=>"2"}
+  [1m[36mProduct Load (0.2ms)[0m  [1m[34mSELECT `products`.* FROM `products` WHERE `products`.`id` = 2 LIMIT 1[0m
+  ↳ app/controllers/admin/product_images_controller.rb:41:in `find_product'
+  Rendering admin/product_images/index.html.erb within admin/layouts/admin
+  [1m[36mProductImage Load (0.2ms)[0m  [1m[34mSELECT `product_images`.* FROM `product_images` WHERE `product_images`.`product_id` = 2[0m
+  ↳ app/views/admin/product_images/index.html.erb:23
+  Rendered admin/product_images/index.html.erb within admin/layouts/admin (Duration: 1.5ms | Allocations: 1104)
+  Rendered admin/layouts/_menu.html.erb (Duration: 0.1ms | Allocations: 46)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 10ms (Views: 8.3ms | ActiveRecord: 0.4ms | Allocations: 9121)
+
+
+Started POST "/admin/products/2/product_images" for 127.0.0.1 at 2020-06-10 12:28:52 +0800
+Processing by Admin::ProductImagesController#create as HTML
+  Parameters: {"authenticity_token"=>"a74YeCtkMD78nl0cO97UW2FcLs1jzEDT5Q9KUR4RYmrH6yrFCLSvFKplF/n9dJ6onTMRJMlHQPIYCjAYb52ddg==", "images"=>[#<ActionDispatch::Http::UploadedFile:0x00007fd3f80317f8 @tempfile=#<Tempfile:/tmp/RackMultipart20200610-3835-10cs7xu.jpg>, @original_filename="akrales_190913_3628_0277.19.jpg", @content_type="image/jpeg", @headers="Content-Disposition: form-data; name=\"images[]\"; filename=\"akrales_190913_3628_0277.19.jpg\"\r\nContent-Type: image/jpeg\r\n">], "commit"=>"Upload", "product_id"=>"2"}
+  [1m[36mProduct Load (1.0ms)[0m  [1m[34mSELECT `products`.* FROM `products` WHERE `products`.`id` = 2 LIMIT 1[0m
+  ↳ app/controllers/admin/product_images_controller.rb:41:in `find_product'
+Command :: file -b --mime '/tmp/324e4d38ccea07f18660dc98508985fe20200610-3835-1gq36i5.jpg'
+Command :: identify -format '%wx%h,%[exif:orientation]' '/tmp/324e4d38ccea07f18660dc98508985fe20200610-3835-8hk2ow.jpg[0]' 2>/dev/null
+[paperclip] An error was received while processing: #<Paperclip::Errors::NotIdentifiedByImageMagickError: Paperclip::Errors::NotIdentifiedByImageMagickError>
+Command :: identify -format '%wx%h,%[exif:orientation]' '/tmp/324e4d38ccea07f18660dc98508985fe20200610-3835-8hk2ow.jpg[0]' 2>/dev/null
+[paperclip] An error was received while processing: #<Paperclip::Errors::NotIdentifiedByImageMagickError: Paperclip::Errors::NotIdentifiedByImageMagickError>
+Command :: identify -format '%wx%h,%[exif:orientation]' '/tmp/324e4d38ccea07f18660dc98508985fe20200610-3835-8hk2ow.jpg[0]' 2>/dev/null
+[paperclip] An error was received while processing: #<Paperclip::Errors::NotIdentifiedByImageMagickError: Paperclip::Errors::NotIdentifiedByImageMagickError>
+Command :: file -b --mime '/tmp/324e4d38ccea07f18660dc98508985fe20200610-3835-rd8dbx.jpg'
+Redirected to http://localhost:3000/admin/products/2/product_images
+Completed 302 Found in 56ms (ActiveRecord: 1.0ms | Allocations: 6125)
+
+
+Started GET "/admin/products/2/product_images" for 127.0.0.1 at 2020-06-10 12:28:53 +0800
+Processing by Admin::ProductImagesController#index as HTML
+  Parameters: {"product_id"=>"2"}
+  [1m[36mProduct Load (0.5ms)[0m  [1m[34mSELECT `products`.* FROM `products` WHERE `products`.`id` = 2 LIMIT 1[0m
+  ↳ app/controllers/admin/product_images_controller.rb:41:in `find_product'
+  Rendering admin/product_images/index.html.erb within admin/layouts/admin
+  [1m[36mProductImage Load (0.5ms)[0m  [1m[34mSELECT `product_images`.* FROM `product_images` WHERE `product_images`.`product_id` = 2[0m
+  ↳ app/views/admin/product_images/index.html.erb:23
+  Rendered admin/product_images/index.html.erb within admin/layouts/admin (Duration: 3.0ms | Allocations: 1095)
+  Rendered admin/layouts/_menu.html.erb (Duration: 0.1ms | Allocations: 46)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 14ms (Views: 11.6ms | ActiveRecord: 1.0ms | Allocations: 8979)
+
+
+Started POST "/admin/products/2/product_images" for 127.0.0.1 at 2020-06-10 12:29:23 +0800
+Processing by Admin::ProductImagesController#create as HTML
+  Parameters: {"authenticity_token"=>"Ib1LWgtK/e6yxWPBvQVDZCoharRP6f1imYXPyD+gnzWN6HnnKJpixOQ+KSR7rwmX1k5VXeVi/UNkgLWBTixgKQ==", "commit"=>"Upload", "product_id"=>"2"}
+  [1m[36mProduct Load (1.1ms)[0m  [1m[34mSELECT `products`.* FROM `products` WHERE `products`.`id` = 2 LIMIT 1[0m
+  ↳ app/controllers/admin/product_images_controller.rb:41:in `find_product'
+Completed 500 Internal Server Error in 10ms (ActiveRecord: 1.1ms | Allocations: 1706)
+
+
+  
+NoMethodError (undefined method `each' for nil:NilClass):
+  
+app/controllers/admin/product_images_controller.rb:10:in `create'
+Started POST "/admin/products/2/product_images" for 127.0.0.1 at 2020-06-10 12:29:27 +0800
+Processing by Admin::ProductImagesController#create as HTML
+  Parameters: {"authenticity_token"=>"Ib1LWgtK/e6yxWPBvQVDZCoharRP6f1imYXPyD+gnzWN6HnnKJpixOQ+KSR7rwmX1k5VXeVi/UNkgLWBTixgKQ==", "commit"=>"Upload", "product_id"=>"2"}
+  [1m[36mProduct Load (0.4ms)[0m  [1m[34mSELECT `products`.* FROM `products` WHERE `products`.`id` = 2 LIMIT 1[0m
+  ↳ app/controllers/admin/product_images_controller.rb:41:in `find_product'
+Completed 500 Internal Server Error in 3ms (ActiveRecord: 0.4ms | Allocations: 1690)
+
+
+  
+NoMethodError (undefined method `each' for nil:NilClass):
+  
+app/controllers/admin/product_images_controller.rb:10:in `create'
+Started POST "/admin/products/2/product_images" for 127.0.0.1 at 2020-06-10 12:29:44 +0800
+Processing by Admin::ProductImagesController#create as HTML
+  Parameters: {"authenticity_token"=>"Ib1LWgtK/e6yxWPBvQVDZCoharRP6f1imYXPyD+gnzWN6HnnKJpixOQ+KSR7rwmX1k5VXeVi/UNkgLWBTixgKQ==", "images"=>[#<ActionDispatch::Http::UploadedFile:0x000055eb33383c30 @tempfile=#<Tempfile:/tmp/RackMultipart20200610-3835-17stc9j.jpg>, @original_filename="akrales_190913_3628_0277.19.jpg", @content_type="image/jpeg", @headers="Content-Disposition: form-data; name=\"images[]\"; filename=\"akrales_190913_3628_0277.19.jpg\"\r\nContent-Type: image/jpeg\r\n">, #<ActionDispatch::Http::UploadedFile:0x000055eb33383a50 @tempfile=#<Tempfile:/tmp/RackMultipart20200610-3835-hjoyv6.jpg>, @original_filename="H930DS-Aurora-Black-128GB_Desk1_171009.jpg", @content_type="image/jpeg", @headers="Content-Disposition: form-data; name=\"images[]\"; filename=\"H930DS-Aurora-Black-128GB_Desk1_171009.jpg\"\r\nContent-Type: image/jpeg\r\n">], "commit"=>"Upload", "product_id"=>"2"}
+  [1m[36mProduct Load (0.4ms)[0m  [1m[34mSELECT `products`.* FROM `products` WHERE `products`.`id` = 2 LIMIT 1[0m
+  ↳ app/controllers/admin/product_images_controller.rb:41:in `find_product'
+Command :: file -b --mime '/tmp/324e4d38ccea07f18660dc98508985fe20200610-3835-1gnewuv.jpg'
+Command :: identify -format '%wx%h,%[exif:orientation]' '/tmp/324e4d38ccea07f18660dc98508985fe20200610-3835-1nb3ry4.jpg[0]' 2>/dev/null
+Command :: identify -format %m '/tmp/324e4d38ccea07f18660dc98508985fe20200610-3835-1nb3ry4.jpg[0]'
+Command :: convert '/tmp/324e4d38ccea07f18660dc98508985fe20200610-3835-1nb3ry4.jpg[0]' -auto-orient -resize "60^" '/tmp/de18070c5ef1ff097364ab427a6c829720200610-3835-1cfqbyj'
+Command :: identify -format '%wx%h,%[exif:orientation]' '/tmp/324e4d38ccea07f18660dc98508985fe20200610-3835-1nb3ry4.jpg[0]' 2>/dev/null
+Command :: identify -format %m '/tmp/324e4d38ccea07f18660dc98508985fe20200610-3835-1nb3ry4.jpg[0]'
+Command :: convert '/tmp/324e4d38ccea07f18660dc98508985fe20200610-3835-1nb3ry4.jpg[0]' -auto-orient -resize "200^" '/tmp/de18070c5ef1ff097364ab427a6c829720200610-3835-1d52p20'
+Command :: identify -format '%wx%h,%[exif:orientation]' '/tmp/324e4d38ccea07f18660dc98508985fe20200610-3835-1nb3ry4.jpg[0]' 2>/dev/null
+Command :: identify -format %m '/tmp/324e4d38ccea07f18660dc98508985fe20200610-3835-1nb3ry4.jpg[0]'
+Command :: convert '/tmp/324e4d38ccea07f18660dc98508985fe20200610-3835-1nb3ry4.jpg[0]' -auto-orient -resize "960" '/tmp/de18070c5ef1ff097364ab427a6c829720200610-3835-oezeq'
+Command :: file -b --mime '/tmp/324e4d38ccea07f18660dc98508985fe20200610-3835-2uxxdw.jpg'
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/admin/product_images_controller.rb:11:in `block in create'
+  [1m[36mProductImage Create (0.3ms)[0m  [1m[32mINSERT INTO `product_images` (`product_id`, `image_file_name`, `image_content_type`, `image_file_size`, `image_updated_at`, `created_at`, `updated_at`) VALUES (2, 'akrales_190913_3628_0277.19.jpg', 'image/jpeg', 90067, '2020-06-10 04:29:44', '2020-06-10 04:29:44.495382', '2020-06-10 04:29:44.495382')[0m
+  ↳ app/controllers/admin/product_images_controller.rb:11:in `block in create'
+  [1m[35m (42.9ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/admin/product_images_controller.rb:11:in `block in create'
+Command :: file -b --mime '/tmp/7c4f077ac06003be2ed63ef4482e0daf20200610-3835-19810hs.jpg'
+Command :: identify -format '%wx%h,%[exif:orientation]' '/tmp/7c4f077ac06003be2ed63ef4482e0daf20200610-3835-ysodes.jpg[0]' 2>/dev/null
+Command :: identify -format %m '/tmp/7c4f077ac06003be2ed63ef4482e0daf20200610-3835-ysodes.jpg[0]'
+Command :: convert '/tmp/7c4f077ac06003be2ed63ef4482e0daf20200610-3835-ysodes.jpg[0]' -auto-orient -resize "60^" '/tmp/6fce94384b9d21dcf988ed7563e76dff20200610-3835-munpoj'
+Command :: identify -format '%wx%h,%[exif:orientation]' '/tmp/7c4f077ac06003be2ed63ef4482e0daf20200610-3835-ysodes.jpg[0]' 2>/dev/null
+Command :: identify -format %m '/tmp/7c4f077ac06003be2ed63ef4482e0daf20200610-3835-ysodes.jpg[0]'
+Command :: convert '/tmp/7c4f077ac06003be2ed63ef4482e0daf20200610-3835-ysodes.jpg[0]' -auto-orient -resize "200^" '/tmp/6fce94384b9d21dcf988ed7563e76dff20200610-3835-26ow9k'
+Command :: identify -format '%wx%h,%[exif:orientation]' '/tmp/7c4f077ac06003be2ed63ef4482e0daf20200610-3835-ysodes.jpg[0]' 2>/dev/null
+Command :: identify -format %m '/tmp/7c4f077ac06003be2ed63ef4482e0daf20200610-3835-ysodes.jpg[0]'
+Command :: convert '/tmp/7c4f077ac06003be2ed63ef4482e0daf20200610-3835-ysodes.jpg[0]' -auto-orient -resize "960" '/tmp/6fce94384b9d21dcf988ed7563e76dff20200610-3835-ysln53'
+Command :: file -b --mime '/tmp/7c4f077ac06003be2ed63ef4482e0daf20200610-3835-14on096.jpg'
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/admin/product_images_controller.rb:11:in `block in create'
+  [1m[36mProductImage Create (0.2ms)[0m  [1m[32mINSERT INTO `product_images` (`product_id`, `image_file_name`, `image_content_type`, `image_file_size`, `image_updated_at`, `created_at`, `updated_at`) VALUES (2, 'H930DS-Aurora-Black-128GB_Desk1_171009.jpg', 'image/jpeg', 45131, '2020-06-10 04:29:44', '2020-06-10 04:29:44.692765', '2020-06-10 04:29:44.692765')[0m
+  ↳ app/controllers/admin/product_images_controller.rb:11:in `block in create'
+  [1m[35m (65.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/admin/product_images_controller.rb:11:in `block in create'
+Redirected to http://localhost:3000/admin/products/2/product_images
+Completed 302 Found in 1457ms (ActiveRecord: 109.5ms | Allocations: 32536)
+
+
+Started GET "/admin/products/2/product_images" for 127.0.0.1 at 2020-06-10 12:29:45 +0800
+Processing by Admin::ProductImagesController#index as HTML
+  Parameters: {"product_id"=>"2"}
+  [1m[36mProduct Load (0.4ms)[0m  [1m[34mSELECT `products`.* FROM `products` WHERE `products`.`id` = 2 LIMIT 1[0m
+  ↳ app/controllers/admin/product_images_controller.rb:41:in `find_product'
+  Rendering admin/product_images/index.html.erb within admin/layouts/admin
+  [1m[36mProductImage Load (0.4ms)[0m  [1m[34mSELECT `product_images`.* FROM `product_images` WHERE `product_images`.`product_id` = 2[0m
+  ↳ app/views/admin/product_images/index.html.erb:23
+  Rendered admin/product_images/index.html.erb within admin/layouts/admin (Duration: 4.0ms | Allocations: 1883)
+  Rendered admin/layouts/_menu.html.erb (Duration: 0.1ms | Allocations: 46)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 15ms (Views: 12.0ms | ActiveRecord: 0.9ms | Allocations: 9900)
+
+
+Started DELETE "/admin/products/2/product_images/4" for 127.0.0.1 at 2020-06-10 12:29:50 +0800
+Processing by Admin::ProductImagesController#destroy as HTML
+  Parameters: {"authenticity_token"=>"KLgfXQ30M1Zdldkk5b/c7dG7xocxEJY+soC48cCn2r+E7S3gLiSsfAtuk8EjFZYeLdT5bpublh9PhcK4sSslow==", "product_id"=>"2", "id"=>"4"}
+  [1m[36mProduct Load (0.3ms)[0m  [1m[34mSELECT `products`.* FROM `products` WHERE `products`.`id` = 2 LIMIT 1[0m
+  ↳ app/controllers/admin/product_images_controller.rb:41:in `find_product'
+  [1m[36mProductImage Load (0.5ms)[0m  [1m[34mSELECT `product_images`.* FROM `product_images` WHERE `product_images`.`product_id` = 2 AND `product_images`.`id` = 4 LIMIT 1[0m
+  ↳ app/controllers/admin/product_images_controller.rb:17:in `destroy'
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/admin/product_images_controller.rb:18:in `destroy'
+  [1m[36mProductImage Destroy (0.3ms)[0m  [1m[31mDELETE FROM `product_images` WHERE `product_images`.`id` = 4[0m
+  ↳ app/controllers/admin/product_images_controller.rb:18:in `destroy'
+  [1m[35m (117.0ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/admin/product_images_controller.rb:18:in `destroy'
+[paperclip] deleting /home/yfeng/rails_online_mall/public/system/product_images/images/000/000/004/original/akrales_190913_3628_0277.19.jpg
+[paperclip] deleting /home/yfeng/rails_online_mall/public/system/product_images/images/000/000/004/small/akrales_190913_3628_0277.19.jpg
+[paperclip] deleting /home/yfeng/rails_online_mall/public/system/product_images/images/000/000/004/middle/akrales_190913_3628_0277.19.jpg
+[paperclip] deleting /home/yfeng/rails_online_mall/public/system/product_images/images/000/000/004/big/akrales_190913_3628_0277.19.jpg
+Redirected to http://localhost:3000/admin/products/2/product_images
+Completed 302 Found in 132ms (ActiveRecord: 118.2ms | Allocations: 6855)
+
+
+Started GET "/admin/products/2/product_images" for 127.0.0.1 at 2020-06-10 12:29:50 +0800
+Processing by Admin::ProductImagesController#index as HTML
+  Parameters: {"product_id"=>"2"}
+  [1m[36mProduct Load (0.5ms)[0m  [1m[34mSELECT `products`.* FROM `products` WHERE `products`.`id` = 2 LIMIT 1[0m
+  ↳ app/controllers/admin/product_images_controller.rb:41:in `find_product'
+  Rendering admin/product_images/index.html.erb within admin/layouts/admin
+  [1m[36mProductImage Load (0.5ms)[0m  [1m[34mSELECT `product_images`.* FROM `product_images` WHERE `product_images`.`product_id` = 2[0m
+  ↳ app/views/admin/product_images/index.html.erb:23
+  Rendered admin/product_images/index.html.erb within admin/layouts/admin (Duration: 4.7ms | Allocations: 1508)
+  Rendered admin/layouts/_menu.html.erb (Duration: 0.1ms | Allocations: 46)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 19ms (Views: 16.0ms | ActiveRecord: 1.0ms | Allocations: 9394)
+
+
+Started DELETE "/admin/products/2/product_images/5" for 127.0.0.1 at 2020-06-10 12:29:52 +0800
+Processing by Admin::ProductImagesController#destroy as HTML
+  Parameters: {"authenticity_token"=>"UZDRZQGepB8i960pRsOTTbzTBOO8a37hDLbJzPvJiAT9xePYIk47NXQM58yAadm+QLw7ChbgfsDxs7OFikV3GA==", "product_id"=>"2", "id"=>"5"}
+  [1m[36mProduct Load (0.8ms)[0m  [1m[34mSELECT `products`.* FROM `products` WHERE `products`.`id` = 2 LIMIT 1[0m
+  ↳ app/controllers/admin/product_images_controller.rb:41:in `find_product'
+  [1m[36mProductImage Load (0.6ms)[0m  [1m[34mSELECT `product_images`.* FROM `product_images` WHERE `product_images`.`product_id` = 2 AND `product_images`.`id` = 5 LIMIT 1[0m
+  ↳ app/controllers/admin/product_images_controller.rb:17:in `destroy'
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/admin/product_images_controller.rb:18:in `destroy'
+  [1m[36mProductImage Destroy (0.4ms)[0m  [1m[31mDELETE FROM `product_images` WHERE `product_images`.`id` = 5[0m
+  ↳ app/controllers/admin/product_images_controller.rb:18:in `destroy'
+  [1m[35m (45.8ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/admin/product_images_controller.rb:18:in `destroy'
+[paperclip] deleting /home/yfeng/rails_online_mall/public/system/product_images/images/000/000/005/original/H930DS-Aurora-Black-128GB_Desk1_171009.jpg
+[paperclip] deleting /home/yfeng/rails_online_mall/public/system/product_images/images/000/000/005/small/H930DS-Aurora-Black-128GB_Desk1_171009.jpg
+[paperclip] deleting /home/yfeng/rails_online_mall/public/system/product_images/images/000/000/005/middle/H930DS-Aurora-Black-128GB_Desk1_171009.jpg
+[paperclip] deleting /home/yfeng/rails_online_mall/public/system/product_images/images/000/000/005/big/H930DS-Aurora-Black-128GB_Desk1_171009.jpg
+Redirected to http://localhost:3000/admin/products/2/product_images
+Completed 302 Found in 65ms (ActiveRecord: 47.8ms | Allocations: 6815)
+
+
+Started GET "/admin/products/2/product_images" for 127.0.0.1 at 2020-06-10 12:29:52 +0800
+Processing by Admin::ProductImagesController#index as HTML
+  Parameters: {"product_id"=>"2"}
+  [1m[36mProduct Load (0.8ms)[0m  [1m[34mSELECT `products`.* FROM `products` WHERE `products`.`id` = 2 LIMIT 1[0m
+  ↳ app/controllers/admin/product_images_controller.rb:41:in `find_product'
+  Rendering admin/product_images/index.html.erb within admin/layouts/admin
+  [1m[36mProductImage Load (0.5ms)[0m  [1m[34mSELECT `product_images`.* FROM `product_images` WHERE `product_images`.`product_id` = 2[0m
+  ↳ app/views/admin/product_images/index.html.erb:23
+  Rendered admin/product_images/index.html.erb within admin/layouts/admin (Duration: 4.4ms | Allocations: 1118)
+  Rendered admin/layouts/_menu.html.erb (Duration: 0.2ms | Allocations: 46)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 23ms (Views: 16.8ms | ActiveRecord: 1.3ms | Allocations: 9006)
+
+
+DEPRECATION WARNING: Initialization autoloaded the constants ActionText::ContentHelper and ActionText::TagHelper.
+
+Being able to do this is deprecated. Autoloading during initialization is going
+to be an error condition in future versions of Rails.
+
+Reloading does not reboot the application, and therefore code executed during
+initialization does not run again. So, if you reload ActionText::ContentHelper, for example,
+the expected changes won't be reflected in that stale Module object.
+
+These autoloaded constants have been unloaded.
+
+Please, check the "Autoloading and Reloading Constants" guide for solutions.
+ (called from <main> at /home/yfeng/rails_online_mall/config/environment.rb:5)
+Started GET "/admin/products/2/product_images" for 127.0.0.1 at 2020-06-10 15:19:56 +0800
+  [1m[35m (0.3ms)[0m  [1m[35mSET NAMES utf8mb4,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+Processing by Admin::ProductImagesController#index as HTML
+  Parameters: {"product_id"=>"2"}
+  [1m[36mProduct Load (0.3ms)[0m  [1m[34mSELECT `products`.* FROM `products` WHERE `products`.`id` = 2 LIMIT 1[0m
+  ↳ app/controllers/admin/product_images_controller.rb:41:in `find_product'
+  Rendering admin/product_images/index.html.erb within admin/layouts/admin
+  [1m[36mProductImage Load (87.4ms)[0m  [1m[34mSELECT `product_images`.* FROM `product_images` WHERE `product_images`.`product_id` = 2 ORDER BY `product_images`.`weight` DESC[0m
+  ↳ app/views/admin/product_images/index.html.erb:23
+  Rendered admin/product_images/index.html.erb within admin/layouts/admin (Duration: 95.4ms | Allocations: 2260)
+  Rendered admin/layouts/_menu.html.erb (Duration: 0.4ms | Allocations: 205)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 174ms (Views: 65.7ms | ActiveRecord: 89.2ms | Allocations: 43401)
+
+
+Started POST "/admin/products/2/product_images" for 127.0.0.1 at 2020-06-10 15:19:57 +0800
+Processing by Admin::ProductImagesController#create as HTML
+  Parameters: {"authenticity_token"=>"0mwdbWON9Spyj5WfQ74p7dabS8PgC8HnK/QMZodkBj9+OS/QQF1qACR033qFFGMeKvR0KkqAwcbW8XYv9uj5Iw==", "commit"=>"Upload", "product_id"=>"2"}
+  [1m[36mProduct Load (0.5ms)[0m  [1m[34mSELECT `products`.* FROM `products` WHERE `products`.`id` = 2 LIMIT 1[0m
+  ↳ app/controllers/admin/product_images_controller.rb:41:in `find_product'
+Completed 500 Internal Server Error in 4ms (ActiveRecord: 0.5ms | Allocations: 1698)
+
+
+  
+NoMethodError (undefined method `each' for nil:NilClass):
+  
+app/controllers/admin/product_images_controller.rb:10:in `create'
+Started POST "/admin/products/2/product_images" for 127.0.0.1 at 2020-06-10 15:20:04 +0800
+Processing by Admin::ProductImagesController#create as HTML
+  Parameters: {"authenticity_token"=>"0mwdbWON9Spyj5WfQ74p7dabS8PgC8HnK/QMZodkBj9+OS/QQF1qACR033qFFGMeKvR0KkqAwcbW8XYv9uj5Iw==", "images"=>[#<ActionDispatch::Http::UploadedFile:0x00007effc46ae5d0 @tempfile=#<Tempfile:/tmp/RackMultipart20200610-7721-rtga42.jpg>, @original_filename="akrales_190913_3628_0277.19.jpg", @content_type="image/jpeg", @headers="Content-Disposition: form-data; name=\"images[]\"; filename=\"akrales_190913_3628_0277.19.jpg\"\r\nContent-Type: image/jpeg\r\n">, #<ActionDispatch::Http::UploadedFile:0x00007effc46ae580 @tempfile=#<Tempfile:/tmp/RackMultipart20200610-7721-1vpvez9.jpg>, @original_filename="H930DS-Aurora-Black-128GB_Desk1_171009.jpg", @content_type="image/jpeg", @headers="Content-Disposition: form-data; name=\"images[]\"; filename=\"H930DS-Aurora-Black-128GB_Desk1_171009.jpg\"\r\nContent-Type: image/jpeg\r\n">], "commit"=>"Upload", "product_id"=>"2"}
+  [1m[36mProduct Load (1.3ms)[0m  [1m[34mSELECT `products`.* FROM `products` WHERE `products`.`id` = 2 LIMIT 1[0m
+  ↳ app/controllers/admin/product_images_controller.rb:41:in `find_product'
+Command :: file -b --mime '/tmp/324e4d38ccea07f18660dc98508985fe20200610-7721-1r9zw17.jpg'
+Command :: identify -format '%wx%h,%[exif:orientation]' '/tmp/324e4d38ccea07f18660dc98508985fe20200610-7721-1khndju.jpg[0]' 2>/dev/null
+Command :: identify -format %m '/tmp/324e4d38ccea07f18660dc98508985fe20200610-7721-1khndju.jpg[0]'
+Command :: convert '/tmp/324e4d38ccea07f18660dc98508985fe20200610-7721-1khndju.jpg[0]' -auto-orient -resize "60^" '/tmp/cc938f342064b1180d7699f5b6c6f28720200610-7721-16nmh0s'
+Command :: identify -format '%wx%h,%[exif:orientation]' '/tmp/324e4d38ccea07f18660dc98508985fe20200610-7721-1khndju.jpg[0]' 2>/dev/null
+Command :: identify -format %m '/tmp/324e4d38ccea07f18660dc98508985fe20200610-7721-1khndju.jpg[0]'
+Command :: convert '/tmp/324e4d38ccea07f18660dc98508985fe20200610-7721-1khndju.jpg[0]' -auto-orient -resize "200^" '/tmp/cc938f342064b1180d7699f5b6c6f28720200610-7721-1onkqn7'
+Command :: identify -format '%wx%h,%[exif:orientation]' '/tmp/324e4d38ccea07f18660dc98508985fe20200610-7721-1khndju.jpg[0]' 2>/dev/null
+Command :: identify -format %m '/tmp/324e4d38ccea07f18660dc98508985fe20200610-7721-1khndju.jpg[0]'
+Command :: convert '/tmp/324e4d38ccea07f18660dc98508985fe20200610-7721-1khndju.jpg[0]' -auto-orient -resize "960" '/tmp/cc938f342064b1180d7699f5b6c6f28720200610-7721-1obsjw9'
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/admin/product_images_controller.rb:11:in `block in create'
+  [1m[36mProduct Load (0.2ms)[0m  [1m[34mSELECT `products`.* FROM `products` WHERE `products`.`id` = 2 LIMIT 1[0m
+  ↳ app/controllers/admin/product_images_controller.rb:11:in `block in create'
+Command :: file -b --mime '/tmp/324e4d38ccea07f18660dc98508985fe20200610-7721-15nu0p3.jpg'
+  [1m[36mProductImage Create (0.3ms)[0m  [1m[32mINSERT INTO `product_images` (`product_id`, `image_file_name`, `image_content_type`, `image_file_size`, `image_updated_at`, `created_at`, `updated_at`) VALUES (2, 'akrales_190913_3628_0277.19.jpg', 'image/jpeg', 90067, '2020-06-10 07:20:04', '2020-06-10 07:20:04.673575', '2020-06-10 07:20:04.673575')[0m
+  ↳ app/controllers/admin/product_images_controller.rb:11:in `block in create'
+  [1m[35m (42.0ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/admin/product_images_controller.rb:11:in `block in create'
+Command :: file -b --mime '/tmp/7c4f077ac06003be2ed63ef4482e0daf20200610-7721-ceuui7.jpg'
+Command :: identify -format '%wx%h,%[exif:orientation]' '/tmp/7c4f077ac06003be2ed63ef4482e0daf20200610-7721-1gri7ir.jpg[0]' 2>/dev/null
+Command :: identify -format %m '/tmp/7c4f077ac06003be2ed63ef4482e0daf20200610-7721-1gri7ir.jpg[0]'
+Command :: convert '/tmp/7c4f077ac06003be2ed63ef4482e0daf20200610-7721-1gri7ir.jpg[0]' -auto-orient -resize "60^" '/tmp/f81b4fe97675e1685c752b483a37bbe020200610-7721-1npc6j5'
+Command :: identify -format '%wx%h,%[exif:orientation]' '/tmp/7c4f077ac06003be2ed63ef4482e0daf20200610-7721-1gri7ir.jpg[0]' 2>/dev/null
+Command :: identify -format %m '/tmp/7c4f077ac06003be2ed63ef4482e0daf20200610-7721-1gri7ir.jpg[0]'
+Command :: convert '/tmp/7c4f077ac06003be2ed63ef4482e0daf20200610-7721-1gri7ir.jpg[0]' -auto-orient -resize "200^" '/tmp/f81b4fe97675e1685c752b483a37bbe020200610-7721-p48xcw'
+Command :: identify -format '%wx%h,%[exif:orientation]' '/tmp/7c4f077ac06003be2ed63ef4482e0daf20200610-7721-1gri7ir.jpg[0]' 2>/dev/null
+Command :: identify -format %m '/tmp/7c4f077ac06003be2ed63ef4482e0daf20200610-7721-1gri7ir.jpg[0]'
+Command :: convert '/tmp/7c4f077ac06003be2ed63ef4482e0daf20200610-7721-1gri7ir.jpg[0]' -auto-orient -resize "960" '/tmp/f81b4fe97675e1685c752b483a37bbe020200610-7721-13s90ek'
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/admin/product_images_controller.rb:11:in `block in create'
+  [1m[36mProduct Load (0.3ms)[0m  [1m[34mSELECT `products`.* FROM `products` WHERE `products`.`id` = 2 LIMIT 1[0m
+  ↳ app/controllers/admin/product_images_controller.rb:11:in `block in create'
+Command :: file -b --mime '/tmp/7c4f077ac06003be2ed63ef4482e0daf20200610-7721-15rhbp5.jpg'
+  [1m[36mProductImage Create (0.3ms)[0m  [1m[32mINSERT INTO `product_images` (`product_id`, `image_file_name`, `image_content_type`, `image_file_size`, `image_updated_at`, `created_at`, `updated_at`) VALUES (2, 'H930DS-Aurora-Black-128GB_Desk1_171009.jpg', 'image/jpeg', 45131, '2020-06-10 07:20:04', '2020-06-10 07:20:04.886592', '2020-06-10 07:20:04.886592')[0m
+  ↳ app/controllers/admin/product_images_controller.rb:11:in `block in create'
+  [1m[35m (63.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/admin/product_images_controller.rb:11:in `block in create'
+Redirected to http://localhost:3000/admin/products/2/product_images
+Completed 302 Found in 503ms (ActiveRecord: 108.7ms | Allocations: 42436)
+
+
+Started GET "/admin/products/2/product_images" for 127.0.0.1 at 2020-06-10 15:20:04 +0800
+Processing by Admin::ProductImagesController#index as HTML
+  Parameters: {"product_id"=>"2"}
+  [1m[36mProduct Load (0.9ms)[0m  [1m[34mSELECT `products`.* FROM `products` WHERE `products`.`id` = 2 LIMIT 1[0m
+  ↳ app/controllers/admin/product_images_controller.rb:41:in `find_product'
+  Rendering admin/product_images/index.html.erb within admin/layouts/admin
+  [1m[36mProductImage Load (1.0ms)[0m  [1m[34mSELECT `product_images`.* FROM `product_images` WHERE `product_images`.`product_id` = 2 ORDER BY `product_images`.`weight` DESC[0m
+  ↳ app/views/admin/product_images/index.html.erb:23
+  Rendered admin/product_images/index.html.erb within admin/layouts/admin (Duration: 12.0ms | Allocations: 2092)
+  Rendered admin/layouts/_menu.html.erb (Duration: 0.2ms | Allocations: 46)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 34ms (Views: 25.6ms | ActiveRecord: 2.0ms | Allocations: 10175)
+
+
+Started PUT "/admin/products/2/product_images/6" for 127.0.0.1 at 2020-06-10 15:20:09 +0800
+Processing by Admin::ProductImagesController#update as HTML
+  Parameters: {"authenticity_token"=>"dqn5jiCXT+29MKGKpGCgGtJO45yqVB1Ijo4TJBvgxrza/MszA0fQx+vL629iyurpLiHcdQDfHWlzi2ltamw5oA==", "weight"=>"3", "commit"=>"Update", "product_id"=>"2", "id"=>"6"}
+  [1m[36mProduct Load (0.8ms)[0m  [1m[34mSELECT `products`.* FROM `products` WHERE `products`.`id` = 2 LIMIT 1[0m
+  ↳ app/controllers/admin/product_images_controller.rb:41:in `find_product'
+  [1m[36mProductImage Load (0.9ms)[0m  [1m[34mSELECT `product_images`.* FROM `product_images` WHERE `product_images`.`product_id` = 2 AND `product_images`.`id` = 6 ORDER BY `product_images`.`weight` DESC LIMIT 1[0m
+  ↳ app/controllers/admin/product_images_controller.rb:28:in `update'
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/admin/product_images_controller.rb:30:in `update'
+  [1m[36mProduct Load (0.6ms)[0m  [1m[34mSELECT `products`.* FROM `products` WHERE `products`.`id` = 2 LIMIT 1[0m
+  ↳ app/controllers/admin/product_images_controller.rb:30:in `update'
+  [1m[36mProductImage Update (0.4ms)[0m  [1m[33mUPDATE `product_images` SET `product_images`.`weight` = 3, `product_images`.`updated_at` = '2020-06-10 07:20:09.659321' WHERE `product_images`.`id` = 6[0m
+  ↳ app/controllers/admin/product_images_controller.rb:30:in `update'
+  [1m[35m (69.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/admin/product_images_controller.rb:30:in `update'
+Redirected to http://localhost:3000/admin/products/2/product_images
+Completed 302 Found in 94ms (ActiveRecord: 72.3ms | Allocations: 5686)
+
+
+Started GET "/admin/products/2/product_images" for 127.0.0.1 at 2020-06-10 15:20:09 +0800
+Processing by Admin::ProductImagesController#index as HTML
+  Parameters: {"product_id"=>"2"}
+  [1m[36mProduct Load (0.7ms)[0m  [1m[34mSELECT `products`.* FROM `products` WHERE `products`.`id` = 2 LIMIT 1[0m
+  ↳ app/controllers/admin/product_images_controller.rb:41:in `find_product'
+  Rendering admin/product_images/index.html.erb within admin/layouts/admin
+  [1m[36mProductImage Load (0.7ms)[0m  [1m[34mSELECT `product_images`.* FROM `product_images` WHERE `product_images`.`product_id` = 2 ORDER BY `product_images`.`weight` DESC[0m
+  ↳ app/views/admin/product_images/index.html.erb:23
+  Rendered admin/product_images/index.html.erb within admin/layouts/admin (Duration: 6.6ms | Allocations: 2071)
+  Rendered admin/layouts/_menu.html.erb (Duration: 0.1ms | Allocations: 46)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 22ms (Views: 16.6ms | ActiveRecord: 1.4ms | Allocations: 9999)
+
+
+Started PUT "/admin/products/2/product_images/7" for 127.0.0.1 at 2020-06-10 15:20:10 +0800
+Processing by Admin::ProductImagesController#update as HTML
+  Parameters: {"authenticity_token"=>"7v7CwdGrjUBA4ECN+dzqS7o/lLqZM8Dffvck6TNWLfVCq/B88nsSahYbCmg/dqC4RlCrUzO4wP6D8l6gQtrS6Q==", "weight"=>"0", "commit"=>"Update", "product_id"=>"2", "id"=>"7"}
+  [1m[36mProduct Load (1.0ms)[0m  [1m[34mSELECT `products`.* FROM `products` WHERE `products`.`id` = 2 LIMIT 1[0m
+  ↳ app/controllers/admin/product_images_controller.rb:41:in `find_product'
+  [1m[36mProductImage Load (0.9ms)[0m  [1m[34mSELECT `product_images`.* FROM `product_images` WHERE `product_images`.`product_id` = 2 AND `product_images`.`id` = 7 ORDER BY `product_images`.`weight` DESC LIMIT 1[0m
+  ↳ app/controllers/admin/product_images_controller.rb:28:in `update'
+  [1m[35m (0.6ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/admin/product_images_controller.rb:30:in `update'
+  [1m[36mProduct Load (1.0ms)[0m  [1m[34mSELECT `products`.* FROM `products` WHERE `products`.`id` = 2 LIMIT 1[0m
+  ↳ app/controllers/admin/product_images_controller.rb:30:in `update'
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/admin/product_images_controller.rb:30:in `update'
+Redirected to http://localhost:3000/admin/products/2/product_images
+Completed 302 Found in 28ms (ActiveRecord: 3.8ms | Allocations: 4807)
+
+
+Started GET "/admin/products/2/product_images" for 127.0.0.1 at 2020-06-10 15:20:10 +0800
+Processing by Admin::ProductImagesController#index as HTML
+  Parameters: {"product_id"=>"2"}
+  [1m[36mProduct Load (0.4ms)[0m  [1m[34mSELECT `products`.* FROM `products` WHERE `products`.`id` = 2 LIMIT 1[0m
+  ↳ app/controllers/admin/product_images_controller.rb:41:in `find_product'
+  Rendering admin/product_images/index.html.erb within admin/layouts/admin
+  [1m[36mProductImage Load (0.4ms)[0m  [1m[34mSELECT `product_images`.* FROM `product_images` WHERE `product_images`.`product_id` = 2 ORDER BY `product_images`.`weight` DESC[0m
+  ↳ app/views/admin/product_images/index.html.erb:23
+  Rendered admin/product_images/index.html.erb within admin/layouts/admin (Duration: 4.1ms | Allocations: 2079)
+  Rendered admin/layouts/_menu.html.erb (Duration: 0.1ms | Allocations: 46)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 16ms (Views: 12.9ms | ActiveRecord: 0.9ms | Allocations: 10007)
+
+
+Started PUT "/admin/products/2/product_images/7" for 127.0.0.1 at 2020-06-10 15:20:13 +0800
+Processing by Admin::ProductImagesController#update as HTML
+  Parameters: {"authenticity_token"=>"wDscj5xRmH+SdEO3UVoqXyf9MWIb7WSETjqJhQgkAdtsbi4yv4EHVcSPCVKX8GCs25IOi7FmZKWzP/PMeaj+xw==", "weight"=>"5", "commit"=>"Update", "product_id"=>"2", "id"=>"7"}
+  [1m[36mProduct Load (1.0ms)[0m  [1m[34mSELECT `products`.* FROM `products` WHERE `products`.`id` = 2 LIMIT 1[0m
+  ↳ app/controllers/admin/product_images_controller.rb:41:in `find_product'
+  [1m[36mProductImage Load (0.9ms)[0m  [1m[34mSELECT `product_images`.* FROM `product_images` WHERE `product_images`.`product_id` = 2 AND `product_images`.`id` = 7 ORDER BY `product_images`.`weight` DESC LIMIT 1[0m
+  ↳ app/controllers/admin/product_images_controller.rb:28:in `update'
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/admin/product_images_controller.rb:30:in `update'
+  [1m[36mProduct Load (0.7ms)[0m  [1m[34mSELECT `products`.* FROM `products` WHERE `products`.`id` = 2 LIMIT 1[0m
+  ↳ app/controllers/admin/product_images_controller.rb:30:in `update'
+  [1m[36mProductImage Update (0.4ms)[0m  [1m[33mUPDATE `product_images` SET `product_images`.`weight` = 5, `product_images`.`updated_at` = '2020-06-10 07:20:13.114314' WHERE `product_images`.`id` = 7[0m
+  ↳ app/controllers/admin/product_images_controller.rb:30:in `update'
+  [1m[35m (63.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/admin/product_images_controller.rb:30:in `update'
+Redirected to http://localhost:3000/admin/products/2/product_images
+Completed 302 Found in 95ms (ActiveRecord: 66.7ms | Allocations: 5647)
+
+
+Started GET "/admin/products/2/product_images" for 127.0.0.1 at 2020-06-10 15:20:13 +0800
+Processing by Admin::ProductImagesController#index as HTML
+  Parameters: {"product_id"=>"2"}
+  [1m[36mProduct Load (1.2ms)[0m  [1m[34mSELECT `products`.* FROM `products` WHERE `products`.`id` = 2 LIMIT 1[0m
+  ↳ app/controllers/admin/product_images_controller.rb:41:in `find_product'
+  Rendering admin/product_images/index.html.erb within admin/layouts/admin
+  [1m[36mProductImage Load (0.9ms)[0m  [1m[34mSELECT `product_images`.* FROM `product_images` WHERE `product_images`.`product_id` = 2 ORDER BY `product_images`.`weight` DESC[0m
+  ↳ app/views/admin/product_images/index.html.erb:23
+  Rendered admin/product_images/index.html.erb within admin/layouts/admin (Duration: 9.6ms | Allocations: 2070)
+  Rendered admin/layouts/_menu.html.erb (Duration: 0.1ms | Allocations: 46)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 30ms (Views: 21.5ms | ActiveRecord: 2.0ms | Allocations: 10133)
+
+
+DEPRECATION WARNING: Initialization autoloaded the constants ActionText::ContentHelper and ActionText::TagHelper.
+
+Being able to do this is deprecated. Autoloading during initialization is going
+to be an error condition in future versions of Rails.
+
+Reloading does not reboot the application, and therefore code executed during
+initialization does not run again. So, if you reload ActionText::ContentHelper, for example,
+the expected changes won't be reflected in that stale Module object.
+
+These autoloaded constants have been unloaded.
+
+Please, check the "Autoloading and Reloading Constants" guide for solutions.
+ (called from <main> at /home/yfeng/rails_online_mall/config/environment.rb:5)
+DEPRECATION WARNING: Initialization autoloaded the constants ActionText::ContentHelper and ActionText::TagHelper.
+
+Being able to do this is deprecated. Autoloading during initialization is going
+to be an error condition in future versions of Rails.
+
+Reloading does not reboot the application, and therefore code executed during
+initialization does not run again. So, if you reload ActionText::ContentHelper, for example,
+the expected changes won't be reflected in that stale Module object.
+
+These autoloaded constants have been unloaded.
+
+Please, check the "Autoloading and Reloading Constants" guide for solutions.
+ (called from <main> at /home/yfeng/rails_online_mall/config/environment.rb:5)
+  [1m[35m (0.4ms)[0m  [1m[35mSET NAMES utf8mb4,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[35m (0.2ms)[0m  [1m[35mSET NAMES utf8mb4,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT GET_LOCK('8556283219670278575', 0)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+Migrating to AddProductImagesIndex (20200610072036)
+  [1m[35m (301.3ms)[0m  [1m[35mCREATE  INDEX `index_product_images_on_product_id_and_weight`  ON `product_images` (`product_id`, `weight`) [0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mprimary::SchemaMigration Create (0.2ms)[0m  [1m[32mINSERT INTO `schema_migrations` (`version`) VALUES ('20200610072036')[0m
+  [1m[35m (40.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.3ms)[0m  [1m[34mSELECT `ar_internal_metadata`.* FROM `ar_internal_metadata` WHERE `ar_internal_metadata`.`key` = 'environment' LIMIT 1[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT RELEASE_LOCK('8556283219670278575')[0m
+  [1m[35m (0.3ms)[0m  [1m[35mSET NAMES utf8mb4,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+DEPRECATION WARNING: Initialization autoloaded the constants ActionText::ContentHelper and ActionText::TagHelper.
+
+Being able to do this is deprecated. Autoloading during initialization is going
+to be an error condition in future versions of Rails.
+
+Reloading does not reboot the application, and therefore code executed during
+initialization does not run again. So, if you reload ActionText::ContentHelper, for example,
+the expected changes won't be reflected in that stale Module object.
+
+These autoloaded constants have been unloaded.
+
+Please, check the "Autoloading and Reloading Constants" guide for solutions.
+ (called from <main> at /home/yfeng/rails_online_mall/config/environment.rb:5)
+Started PUT "/admin/products/2/product_images/6" for 127.0.0.1 at 2020-06-10 15:21:49 +0800
+  [1m[35m (0.5ms)[0m  [1m[35mSET NAMES utf8mb4,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+Processing by Admin::ProductImagesController#update as HTML
+  Parameters: {"authenticity_token"=>"BeNNSQBBq+rAofx2ByotPoiZeJ1pIi0AQ/tBRTUiXeuptn/0I5E0wJZatpPBgGfNdPZHdMOpLSG+/jsMRK6i9w==", "weight"=>"32", "commit"=>"Update", "product_id"=>"2", "id"=>"6"}
+  [1m[36mProduct Load (0.4ms)[0m  [1m[34mSELECT `products`.* FROM `products` WHERE `products`.`id` = 2 LIMIT 1[0m
+  ↳ app/controllers/admin/product_images_controller.rb:41:in `find_product'
+  [1m[36mProductImage Load (0.4ms)[0m  [1m[34mSELECT `product_images`.* FROM `product_images` WHERE `product_images`.`product_id` = 2 AND `product_images`.`id` = 6 ORDER BY `product_images`.`weight` DESC LIMIT 1[0m
+  ↳ app/controllers/admin/product_images_controller.rb:28:in `update'
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/admin/product_images_controller.rb:30:in `update'
+  [1m[36mProduct Load (0.4ms)[0m  [1m[34mSELECT `products`.* FROM `products` WHERE `products`.`id` = 2 LIMIT 1[0m
+  ↳ app/controllers/admin/product_images_controller.rb:30:in `update'
+  [1m[36mProductImage Update (0.4ms)[0m  [1m[33mUPDATE `product_images` SET `product_images`.`weight` = 32, `product_images`.`updated_at` = '2020-06-10 07:21:49.807400' WHERE `product_images`.`id` = 6[0m
+  ↳ app/controllers/admin/product_images_controller.rb:30:in `update'
+  [1m[35m (52.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/admin/product_images_controller.rb:30:in `update'
+Redirected to http://localhost:3000/admin/products/2/product_images
+Completed 302 Found in 98ms (ActiveRecord: 56.2ms | Allocations: 23926)
+
+
+Started GET "/admin/products/2/product_images" for 127.0.0.1 at 2020-06-10 15:21:49 +0800
+Processing by Admin::ProductImagesController#index as HTML
+  Parameters: {"product_id"=>"2"}
+  [1m[36mProduct Load (0.6ms)[0m  [1m[34mSELECT `products`.* FROM `products` WHERE `products`.`id` = 2 LIMIT 1[0m
+  ↳ app/controllers/admin/product_images_controller.rb:41:in `find_product'
+  Rendering admin/product_images/index.html.erb within admin/layouts/admin
+  [1m[36mProductImage Load (0.4ms)[0m  [1m[34mSELECT `product_images`.* FROM `product_images` WHERE `product_images`.`product_id` = 2 ORDER BY `product_images`.`weight` DESC[0m
+  ↳ app/views/admin/product_images/index.html.erb:23
+  Rendered admin/product_images/index.html.erb within admin/layouts/admin (Duration: 6.2ms | Allocations: 2708)
+  Rendered admin/layouts/_menu.html.erb (Duration: 0.4ms | Allocations: 204)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 55ms (Views: 50.3ms | ActiveRecord: 0.9ms | Allocations: 31123)
+
+

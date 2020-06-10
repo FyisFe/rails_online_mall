@@ -10,8 +10,7 @@ class Admin::ProductImagesController < Admin::BaseController
       params[:images].each do |image|
         @product.product_images << ProductImage.new(image: image)
       end
-  
-      redirect_to :back
+      redirect_back fallback_location: root_path
     end
   
     def destroy
@@ -22,7 +21,7 @@ class Admin::ProductImagesController < Admin::BaseController
         flash[:notice] = "Fail to delete"
       end
   
-      redirect_to :back
+      redirect_back fallback_location: root_path
     end
   
     def update
@@ -33,8 +32,8 @@ class Admin::ProductImagesController < Admin::BaseController
       else
         flash[:notice] = "Fail to update"
       end
-  
-      redirect_to :back
+      
+      redirect_back fallback_location: root_path
     end
   
     private

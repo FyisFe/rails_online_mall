@@ -47,7 +47,7 @@ class Admin::ProductsController < Admin::BaseController
         redirect_to admin_products_path
       else
         flash[:notice] = "Fail to delete"
-        redirect_to :back
+        redirect_back fallback_location: root_path
       end
     end
 
