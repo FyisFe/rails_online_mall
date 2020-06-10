@@ -17,7 +17,7 @@ class Product < ApplicationRecord
   validates :description, presence: { message: "Description must not be empty" }
 
   belongs_to :category
-  has_many :product_image
+  has_many :product_images
 
   before_create :set_default_attrs
 
